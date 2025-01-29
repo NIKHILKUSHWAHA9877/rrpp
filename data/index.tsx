@@ -1,6 +1,8 @@
 // "use client"; // Required for Next.js Client Component
 
 import { Button } from "@/components/ui/MovingBorders";
+import { IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix } from "@/components/Icons";
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
@@ -161,6 +163,7 @@ export const companies = [
     },
 ];
 
+
 export const workExperience = [
     {
         id: 1,
@@ -168,15 +171,18 @@ export const workExperience = [
         desc: "Build full-stack blockchain applications, from smart contracts to front-end interfaces using Solidity & React.js",
         className: "md:col-span-2",
         thumbnail: "/exp1.svg",
+        icons: [IconOne, IconTwo, IconThree] // Unique icons for this box
     },
     {
         id: 2,
         title: "Blockchain Intern",
         desc: "Assisted in developing tokenomics for a new cryptocurrency project.",
-        className: "md:col-span-2", // change to md:col-span-2
+        className: "md:col-span-2",
         thumbnail: "/exp2.svg",
+        icons: [IconFour, IconFive, IconSix] // Different icons for this box
     }
 ];
+
 
 export const socialMedia = [
     {
