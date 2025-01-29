@@ -1,5 +1,5 @@
 "use client";
-
+import './BentoGridItem.css'; 
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
@@ -27,7 +27,6 @@ export const BentoGrid = ({
         </div>
     );
 };
-
 export const BentoGridItem = ({
     className,
     title,
@@ -47,25 +46,29 @@ export const BentoGridItem = ({
     titleClassName?: string;
     spareImg?: string;
 }) => {
-
+    
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
         navigator.clipboard.writeText('nikhik15kumar@gmail.com');
-
         setCopied(true);
     }
 
     return (
+        
         <div
-            className={cn(
-                "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border border-white/[0.1]", className
-            )}
-            style={{
-                background: 'rgb(4, 7, 29)',
-                backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)'
-            }}
-        >
+        className={cn(
+            "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border border-white/[0.1] ",
+            className,
+            "hover:border-2 hover:gradient-border hover:rounded-[2rem]" // Adjust border radius on hover
+        )}
+        style={{
+            background: 'rgb(4, 7, 29)',
+            backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
+        }}
+    >
+            
+            {/* Rest of the existing content */}
             <div className={`${id === 6 && "flex justify-center"} h-full`}>
                 <div className="w-full h-full absolute">
                     {img && (
@@ -79,63 +82,50 @@ export const BentoGridItem = ({
                     )}
                 </div>
                 {id === 6 && (
-                    <BackgroundGradientAnimation>
-                       
-                    </BackgroundGradientAnimation>
+                    <BackgroundGradientAnimation />
                 )}
 
                 <div className={cn(
                     titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
                 )}>
-
-{id === 1 && (
-    <div className="font-sans font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
-  {description}
-    </div>
-)} 
-        
-
-{id === 2 && (
-    <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
-  {description}
-    </div>
-)} 
-{id === 4 && (
-    <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
-  {description}
-    </div>
-)} 
-{id === 5 && (
-    <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
-  {description}
-    </div>
-)} 
-    
-
-                    {/* <div className="font-sans font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
-                        {description}
-                    </div> */}
+                    {/* Existing content */}
+                    {id === 1 && (
+                        <div className="font-sans font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                            {description}
+                        </div>
+                    )}
+                    {id === 2 && (
+                        <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                            {description}
+                        </div>
+                    )}
+                    {id === 4 && (
+                        <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                            {description}
+                        </div>
+                    )}
+                    {id === 5 && (
+                        <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                            {description}
+                        </div>
+                    )}
 
                     <div
-    className={`font-sans text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-2`}
-    dangerouslySetInnerHTML={{ __html: title }}
-/>
-{id === 5 && (
-                      <div
-                      className={`font-sans text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-4`}
-                  />
-)}
+                        className={`font-sans text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-2`}
+                        dangerouslySetInnerHTML={{ __html: title }}
+                    />
 
-{id === 2 && (
-    <div className="absolute inset-0 z-0">
-        <GridGlobe />
-    </div>
-)}
+                    {id === 2 && (
+                        <div className="absolute inset-0 z-0">
+                            <GridGlobe />
+                        </div>
+                    )}
+
                     {id === 3 && (
                         <div className="flex gap-1 lg:gap-3 w-fit absolute -right-3 lg:-right-2">
                             <div className="flex flex-col gap-3 lg:gap-1">
                                 {['Solidity', 'Foundry'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-5 px-3 text-xs lg:text-base opacity-50lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+                                    <span key={item} className="py-2 lg:py-4 lg:px-5 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
                                         {item}
                                     </span>
                                 ))}
@@ -145,7 +135,7 @@ export const BentoGridItem = ({
                             <div className="flex flex-col gap-3 lg:gap-1">
                                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
                                 {['React.js', 'Express.js', 'MongoDB'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
                                         {item}
                                     </span>
                                 ))}
@@ -165,7 +155,13 @@ export const BentoGridItem = ({
                                     }
                                 }} />
                             </div>
-                            <MagicButton title={copied ? 'Email copied' : 'Copy my email'} icon={<IoCopyOutline />} position="left" otherClasses="bg-[#161a31]" handleClick={handleCopy} />
+                            <div className="bento-item relative z-20">
+                            <MagicButton 
+                              className="z-50"
+                            title={copied ? 'Email copied' : 'Copy my email'} 
+                            icon={<IoCopyOutline />} position="left" 
+                            otherClasses="bg-[#161a31]" handleClick={handleCopy} />
+                            </div>
                         </div>
                     )}
                 </div>

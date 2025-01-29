@@ -65,7 +65,55 @@
     --ring: 240 4.9% 83.9%;
   }
 }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
+
+/* border */
+/* Default border (on hover, it will apply the gradient) */
+/* Gradient border effect using pseudo-element */
+:hover.hover\:gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, #e92a67, #a853ba, #2a8af6, #e92a67);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  transition: border-radius 0.3s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Expand border-radius smoothly on hover */
+.bento-item:hover {
+  border-radius: 30px;
+   z-index: 20; 
+}
+.hover\:gradient-border:hover::before {
+  border-radius: 30px;
+  
+}
+
+.magic-button {
+  position: relative; /* Ensure it doesn't inherit parent's z-index */
+  z-index: 50 !important; /* Increase it above the gradient border */
+   /* Ensure it remains clickable */
+}
+
+
+
+
+ 
 @layer base {
   * {
     @apply border-border !scroll-smooth;

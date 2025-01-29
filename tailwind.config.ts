@@ -7,6 +7,8 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
+
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -16,6 +18,21 @@ const config = {
     "./src/**/*.{ts,tsx}",
     "./data/**/*.{ts,tsx}",
   ],
+
+  extend: {
+    keyframes: {
+      borderGlow: {
+        "0%": { "box-shadow": "0px 0px 6px 2px rgba(14, 165, 233, 0.5)" },
+        "50%": { "box-shadow": "0px 0px 12px 4px rgba(14, 165, 233, 0.8)" },
+        "100%": { "box-shadow": "0px 0px 6px 2px rgba(14, 165, 233, 0.5)" },
+      },
+    },
+    animation: {
+      borderGlow: "borderGlow 1.5s linear infinite",
+    },
+  },
+  
+
   prefix: "",
   theme: {
     container: {
@@ -200,5 +217,9 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": newVars,
   });
 }
+
+
+
+
 
 export default config;

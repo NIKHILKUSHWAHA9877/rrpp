@@ -24,6 +24,7 @@ export const gridItems = [
         titleClassName: "justify-end",
         img: "/b1.svg",
         spareImg: "",
+
     },
     {
         id: 2,
@@ -94,8 +95,6 @@ export const gridItems = [
         spareImg: "",
     },
 ];
-
-
 
 export const projects = [
     {
