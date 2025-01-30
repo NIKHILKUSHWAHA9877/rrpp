@@ -98,17 +98,192 @@ export const BentoGridItem = ({
                         <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
                             {description}
                         </div>
+
                     )}
-                    {id === 4 && (
+
+
+{id === 3 && (
                         <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
                             {description}
                         </div>
+
+
+
                     )}
-                    {id === 5 && (
-                        <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
-                            {description}
-                        </div>
-                    )}
+
+{id === 4 && (
+  <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
+  }}
+>
+     <div
+      style={{
+        position: 'absolute',
+        top: '1px', // Adjust vertical position
+        left: '12rem', // Adjust horizontal position
+        width: '18rem', // Set width of the PNG image container
+        height: '17rem', // Set height of the PNG image container
+        display: 'flex',
+        justifyContent: 'center',
+        borderRadius: '10px',
+        alignItems: 'center',
+        zIndex: 1,
+       
+      }}
+    >
+      <img
+        src="/ad.png"
+      />
+    </div>
+
+    {description}
+  </div>
+)}
+
+
+
+
+{id === 5 && (
+  <div
+    className="relative font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10"
+    style={{
+        
+    }}
+  >
+    {/* PNG Image 1 with individual background */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '5px', // Adjust vertical position
+        left: '25rem', // Adjust horizontal position
+        width: '8rem', // Set width of the PNG image container
+        height: '7rem', // Set height of the PNG image container
+        backgroundColor: '#06091f', // Background color for the image
+        display: 'flex',
+        justifyContent: 'center',
+        borderRadius: '10px',
+        alignItems: 'center',
+        zIndex: 1,
+      }}
+    >
+      <img
+        src="/influncer.png" // Replace with your actual PNG path
+        style={{
+          width: '100%', // Image takes full width of the container
+          height: '100%', // Image takes full height of the container
+        }}
+        alt="Influencer"
+      />
+    </div>
+
+    {/* PNG Image 2 with individual background */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '70px', // Adjust vertical position
+        left: '38rem', // Adjust horizontal position
+        width: '8rem', // Set width of the PNG image container
+        height: '7rem', // Set height of the PNG image container
+        backgroundColor: '#06091f', // Background color for the image
+        display: 'flex',
+        borderRadius: '10px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1,
+      }}
+    >
+      <img
+        src="/vid.png" // Replace with your actual PNG path
+        style={{
+          width: '100%', // Image takes full width of the container
+          height: '100%', // Image takes full height of the container
+        }}
+        alt="Video"
+      />
+    </div>
+
+    {/* PNG Image 3 with individual background */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '130px', // Adjust vertical position
+        left: '31rem', // Adjust horizontal position
+        width: '8rem', // Set width of the PNG image container
+        height: '7rem', // Set height of the PNG image container
+        backgroundColor: '#06091f', // Background color for the image
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1,
+        borderRadius: '10px',
+        transform: 'rotate(-32deg)', // Rotate image if needed
+      }}
+    >
+      <img
+        src="/ed.png" // Replace with your actual PNG path
+        style={{
+          width: '100%', // Image takes full width of the container
+          height: '100%', // Image takes full height of the container
+        }}
+        alt="Editing"
+      />
+    </div>
+
+    {/* PNG Image 4 with individual background */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '130px', // Adjust vertical position
+        left: '23rem', // Adjust horizontal position
+        width: '8rem', // Set width of the PNG image container
+        height: '7rem', // Set height of the PNG image container
+        backgroundColor: '#06091f', // Background color for the image
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '10px',
+        zIndex: 1,
+        transform: 'rotate(-10deg)', // Rotate image if needed
+      }}
+    >
+      <img
+        src="/dub.png" // Replace with your actual PNG path
+        style={{
+          width: '100%', // Image takes full width of the container
+          height: '100%', // Image takes full height of the container
+        }}
+        
+      />
+    </div>
+    <div
+      style={{
+        position: 'absolute',
+        top: '-23px', // Adjust vertical position
+        left: '35rem', // Adjust horizontal position
+        width: '8rem', // Set width of the PNG image container
+        height: '7rem', // Set height of the PNG image container
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '10px',
+        zIndex: 1,
+        transform: 'rotate(-10deg)', // Rotate image if needed
+      }}
+    >
+      <img
+        src="/gro.png" // Replace with your actual PNG path
+        style={{
+          width: '100%', // Image takes full width of the container
+          height: '100%', // Image takes full height of the container
+        }}
+        
+      />
+    </div>
+    {/* Description text */}
+    <div className="z-10">{description}</div>
+  </div>
+)}
+
+
 
                     <div
                         className={`font-sans text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-2`}
@@ -121,27 +296,58 @@ export const BentoGridItem = ({
                         </div>
                     )}
 
-                    {id === 3 && (
-                        <div className="flex gap-1 lg:gap-3 w-fit absolute -right-3 lg:-right-2">
-                            <div className="flex flex-col gap-3 lg:gap-1">
-                                {['Solidity', 'Foundry'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-5 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-                                        {item}
-                                    </span>
-                                ))}
-                                <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
-                            </div>
+{id === 3 && (
+    <div className="flex gap-1 lg:gap-3 w-fit absolute lg:right-0 right-0 top-0 lg:-right-13">
+        {/* First Column */}
+        <div className="flex flex-col gap-3 lg:gap-1">
+            {/* First Box */}
+            <div 
+                className="rounded-lg p-0 flex justify-center items-center" 
+                style={{
+                    backgroundColor: "#10132E",
+                    transform: "translateY(-47px)" // Moves the box 5px upwards
+                }}
+            >
+                <div className="rounded-lg p-2 flex justify-center items-center">
+                    <img src="/one.jpg" alt="Solidity" className="h-20 w-20 lg:h-25 lg:w-25" />
+                </div>
+            </div>
 
-                            <div className="flex flex-col gap-3 lg:gap-1">
-                                <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
-                                {['React.js', 'Express.js', 'MongoDB'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-                                        {item}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    )}
+            {/* Second Box */}
+            <div 
+                className="rounded-lg flex justify-center items-center" 
+                style={{
+                    backgroundColor: "#10132E",
+                    transform: "translateY(-39px) translateX(-5px)" // Moves the box 5px upwards
+                }}
+            >
+                <div className="flex p-2 justify-center items-center">
+                    <img src="/makt.jpg" alt="Makt" className="h-20 w-25 lg:h-25 lg:w-35" />
+                </div>
+            </div>
+
+            {/* Third Box (No image, only background) */}
+            <div 
+                className="rounded-lg p-1 flex justify-center items-center" 
+                style={{
+                    backgroundColor: "#202540",
+                    transform: "translateY(-29px) translateX(-5px)",
+                    minHeight: "5rem", // Minimum height to avoid compression
+                    width: "100%", // Ensure full width
+                    padding: ""
+                    
+                }}
+                
+            >
+                    <img src="/influmn.png" className="h-20 w-25 object-cover" />
+                
+            </div>
+        </div>
+    </div>
+)}
+
+
+
 
                     {id === 6 && (
                         <div className="mt-5 relative">

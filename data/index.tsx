@@ -33,7 +33,7 @@ export const gridItems = [
         title: `<small>▪️</small>3D Walkthrough Video Creation<br / > 
 <small>▪️</small>3D Floor Plan Visualization<br />
 <small>▪️</small>3D Animation & CGI`,
-        description: "Offering the best quality at affordable prices – guaranteed!",
+        description: "Offering the best quality at affordable prices – guaranteed!👨‍💼🤝",
         className: "lg:col-span-3 md:col-span-3 md:row-span-3 lg:min-h-[50vh]",
         imgClassName: "",
         titleClassName: "justify-start",
@@ -50,7 +50,7 @@ export const gridItems = [
             </div>
             <div class="mt-2 inline-flex items-start"><small>▪️</small>Social media management</div>
         `,
-        description: "",
+        description: "Connect with the Right Influencers for Success🪽",
         className: "lg:col-span-2 md:col-span-3 md:row-span-2",
         imgClassName: "",
         titleClassName: "justify-center",
@@ -60,9 +60,9 @@ export const gridItems = [
     {
         id: 4,
         title: `<small>▪️</small>Paid Ads<br/> 
-<small>▪️</small>Content Writing`,
+        <small>▪️</small>Content Writing`,
         description: "Boost Your Brand with Expert Paid Ads & Content Writing Services ✍️📈",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+        className: "lg:col-span-2 md:col-span-3 md:row-span-1 pt-6 pb-11",  // Only top and bottom padding
         imgClassName: "",
         titleClassName: "justify-start",
         img: "/grid.svg",
@@ -129,39 +129,6 @@ export const projects = [
     },
 ];
 
-
-export const companies = [
-    {
-        id: 1,
-        name: "cloudinary",
-        img: "/cloud.svg",
-        nameImg: "/cloudName.svg",
-    },
-    {
-        id: 2,
-        name: "appwrite",
-        img: "/app.svg",
-        nameImg: "/appName.svg",
-    },
-    {
-        id: 3,
-        name: "HOSTINGER",
-        img: "/host.svg",
-        nameImg: "/hostName.svg",
-    },
-    {
-        id: 4,
-        name: "stream",
-        img: "/s.svg",
-        nameImg: "/streamName.svg",
-    },
-    {
-        id: 5,
-        name: "docker.",
-        img: "/dock.svg",
-        nameImg: "/dockerName.svg",
-    },
-];
 
 
 export const workExperience = [

@@ -4,24 +4,20 @@ import React, { useState } from 'react';
 
 const testimonialsData = [
   {
-    name: "John Doe",
+    name: "Zack",
     review: "We’ve been extremely impressed with the speed and quality of output. They are always responsive to feedback and maintain a professional and vested approach to both the client and product.",
-    photo: "/testimonial1.jpg"
   },
   {
     name: "Jane Smith",
     review: "The team is professional in their approach and is willing to go the extra mile for client satisfaction, something we have never experienced until now.",
-    photo: "/testimonial2.jpg"
   },
   {
     name: "Mark Wilson",
-    review: "Relinns is highly reliable, always delivering on time and with high quality. Their attention to detail, professionalism, and responsiveness contribute to our success.",
-    photo: "/testimonial3.jpg"
+    review: "These guys are highly reliable, always delivering on time and with high quality. Their attention to detail, professionalism, and responsiveness contribute to our success.",
   },
   {
     name: "Lucy Brown",
     review: "Fantastic work, I saw results almost immediately. Worth every penny! Their commitment to excellence is unparalleled.",
-    photo: "/testimonial4.jpg"
   }
 ];
 
@@ -60,9 +56,10 @@ const Testimonials = () => {
               }}
             >
               <img
-                src={testimonial.photo}
-                alt={testimonial.name}
+                src="/tes.png"
+            
                 className="w-24 h-24 rounded-full object-cover border-4 border-yellow-400"
+                style={{ width: '96px', height: '96px', objectFit: 'cover' }}
               />
 
               {/* Testimonial Text with Fading Effect */}
