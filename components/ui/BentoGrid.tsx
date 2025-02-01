@@ -1,5 +1,4 @@
 "use client";
-import './BentoGridItem.css'; 
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
@@ -94,11 +93,38 @@ export const BentoGridItem = ({
                             {description}
                         </div>
                     )}
+
+
+
                     {id === 2 && (
                         <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+
+
+<div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
+  }}
+>
+     <div
+      style={{
+        position: 'absolute',
+        top: '3px', // Adjust vertical position
+        left: '28rem', // Adjust horizontal position
+        width: '20rem', // Set width of the PNG image container
+        height: '19rem', // Set height of the PNG image container
+        display: 'flex',
+        justifyContent: 'center',
+        borderRadius: '10px',
+        alignItems: 'center',
+        zIndex: 1,
+       
+      }}
+    >
+      <img
+        src="/color.png"
+      />
+    </div>
+</div>
                             {description}
                         </div>
-
                     )}
 
 

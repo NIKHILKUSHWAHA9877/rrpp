@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.5.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@react-three/drei": "^9.106.0",
     "@react-three/fiber": "^8.16.8",
+    "@shadcn/ui": "^0.0.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.474.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
