@@ -1,42 +1,49 @@
 import { projects } from '@/data';
-import React from 'react'
+import React from 'react';
 import { PinContainer } from './ui/3d-pin';
 import { FaLocationArrow } from 'react-icons/fa';
 
 const RecentProjects = () => {
     return (
-        <div className='py-10' id='projects'>
-            <h1 className='heading'>
-                A small selection of {' '}
-                <span className='text-purple'>
+        <div className="py-10 relative z-40" id="projects">
+            {/* Heading Text with 'projects' on the next line */}
+            <h1 className="heading text-center relative z-50">
+                A small selection of <br />
+                <span
+                   className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#338e62] to-[#66CDAA] transition-all"
+                >
                     recent projects
                 </span>
             </h1>
+            <hr className="fade-2"/>
 
-            <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
+            {/* Projects List - centered and on a new line */}
+            <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
                 {projects.map(({ id, title, des, img, link }) => (
-                    <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw]'>
+                    <div
+                        key={id}
+                        className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw]"
+                    >
                         <PinContainer title={link} href={link}>
-                            <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10'>
-                                {/* <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
-                                    <img src='/bg.png' alt='bg-img' />
-                                </div> */}
-                                <img src={img} alt='cover' className='z-10 absolute bottom-0' />
+                            <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
+                                <img src={img} alt="cover" className="z-10 absolute bottom-0" />
                             </div>
-                            <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>
+                            <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
                                 {title}
                             </h1>
 
-                            <p className='lg:text-xl lg:font-normal font-light text-sm line-clamp-2'>
+                            <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
                                 {des}
                             </p>
 
-                            <div className='mt-7 mb-3'>
-                                <div className='flex justify-center items-center'>
-                                    <p className='flex lg:text-xl md:text-xs text-sm text-purple'>
-                                        <a href={link} target='_blank' rel='noreferrer noopener'>Check Live Site</a>
+                            <div className="mt-7 mb-3">
+                                <div className="flex justify-center items-center">
+                                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                                        <a href={link} target="_blank" rel="noreferrer noopener">
+                                            Check Live Site
+                                        </a>
                                     </p>
-                                    <FaLocationArrow className='ms-3' color='#CBACF9' />
+                                    <FaLocationArrow className="ms-3" color="#CBACF9" />
                                 </div>
                             </div>
                         </PinContainer>
@@ -44,7 +51,7 @@ const RecentProjects = () => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RecentProjects;

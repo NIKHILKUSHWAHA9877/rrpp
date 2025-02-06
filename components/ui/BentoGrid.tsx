@@ -18,7 +18,7 @@ export const BentoGrid = ({
     return (
         <div
             className={cn(
-                "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+                "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 md:grid-auto-rows-auto gap-4 lg:gap-8 mx-auto",
                 className
             )}
         >
@@ -81,7 +81,7 @@ export const BentoGridItem = ({
                     )}
                 </div>
                 {id === 6 && (
-                    <BackgroundGradientAnimation />
+                    <BackgroundGradientAnimation className="z-40"/>
                 )}
 
                 <div className={cn(
@@ -90,6 +90,39 @@ export const BentoGridItem = ({
                     {/* Existing content */}
                     {id === 1 && (
                         <div className="font-sans font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+
+
+
+
+
+
+
+
+
+<div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
+  }}
+>
+     <div
+      style={{
+        position: 'absolute',
+        bottom: '-40px', // Adjust vertical position
+        left: '-8rem', // Adjust horizontal position
+        width: '20rem', // Set width of the PNG image container
+        height: '19rem', // Set height of the PNG image container
+        display: 'flex',
+        justifyContent: 'center',
+        borderRadius: '10px',
+        alignItems: 'center',
+        zIndex: 1,
+       transform: 'rotate(-28deg)',
+      }}
+    >
+      <img
+        src="/persona.webp"
+      />
+    </div>
+</div>
+
                             {description}
                         </div>
                     )}
@@ -160,7 +193,25 @@ export const BentoGridItem = ({
         src="/ad.png"
       />
     </div>
-
+    <div
+      style={{
+        position: 'absolute',
+        top: '-180px', // Adjust vertical position
+        left: '-8rem', // Adjust horizontal position
+        width: '18rem', // Set width of the PNG image container
+        height: '17rem', // Set height of the PNG image container
+        display: 'flex',
+        justifyContent: 'center',
+        borderRadius: '10px',
+        alignItems: 'center',
+        zIndex: 1, 
+        transform: 'rotate(180deg)', 
+      }}
+    >
+<img
+  src="/b4.svg"
+      />
+    </div>
     {description}
   </div>
 )}
@@ -376,7 +427,7 @@ export const BentoGridItem = ({
 
 
                     {id === 6 && (
-                        <div className="mt-5 relative">
+                        <div className="mt-5 relative z-40">
                             <div className={`absolute -bottom-5 right-0`}>
                                 <Lottie options={{
                                     loop: copied,

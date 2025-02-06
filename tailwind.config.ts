@@ -8,7 +8,6 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -217,7 +216,6 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": newVars,
   });
 }
-
 
 
 

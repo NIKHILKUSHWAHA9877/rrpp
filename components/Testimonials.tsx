@@ -1,6 +1,7 @@
 'use client';  // Required for Next.js Client Component
 
 import React, { useState } from 'react';
+import Head from 'next/head'; // Importing Next.js Head component for meta tags and links
 
 const testimonialsData = [
   {
@@ -29,13 +30,22 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 font-montserrat">
+    <section className="py-16 font-custom">
+      <Head>
+        {/* Google Fonts Link for Google Sans (Roboto as fallback) */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+
       {/* Title Section with Spotlight Gradient Effect */}
       <div className="text-center relative py-12"
         style={{
           background: "radial-gradient(circle, rgba(98, 0, 234, 0.6) 10%, rgba(98, 0, 234, 0) 40%)",
           paddingTop: "60px",
-          paddingBottom: "60px"
+          paddingBottom: "60px",
+         
         }}
       >
         <h2 className="mb-4 text-white text-[32px] font-semibold">Stories That <span className="text-yellow-400">Define Us</span></h2>
@@ -57,7 +67,6 @@ const Testimonials = () => {
             >
               <img
                 src="/tes.png"
-            
                 className="w-24 h-24 rounded-full object-cover border-4 border-yellow-400"
                 style={{ width: '96px', height: '96px', objectFit: 'cover' }}
               />
@@ -88,8 +97,8 @@ const Testimonials = () => {
 
       {/* CSS for Font & Fading Effect */}
       <style jsx>{`
-        .font-montserrat {
-          font-family: 'Montserrat', sans-serif;
+        .font-custom {
+         font-family: 'Poppins', sans-serif; /* Applying Roboto as font family */
         }
 
         /* Text Fade Effect */
@@ -99,7 +108,7 @@ const Testimonials = () => {
           max-height: 4.5rem;
           overflow: hidden;
         }
-        
+
         .fade-out::after {
           content: "";
           position: absolute;
