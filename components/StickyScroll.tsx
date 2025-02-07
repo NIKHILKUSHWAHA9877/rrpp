@@ -36,7 +36,13 @@ const StickyScroll = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative flex flex-col items-center justify-center min-h-screen">
+    <section
+    ref={containerRef}
+    className="relative flex flex-col items-center justify-center min-h-screen"
+    style={{ 
+      marginBottom: "-210px", 
+    }}
+  >
       
       {/* 🔹 Fixed Background Overlay to Prevent Flickering */}
       <div className="fixed top-0 left-0 w-full h-full bg-black opacity-100 pointer-events-none -z-10"></div>
