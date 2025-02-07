@@ -67,7 +67,7 @@ const Testimonials = () => {
             >
               <img
                 src="/tes.png"
-                className="w-24 h-24 rounded-full object-cover border-4 border-yellow-400"
+                className="w-24 h-24 rounded-full object-cover border-4 border-yellow-100"
                 style={{ width: '96px', height: '96px', objectFit: 'cover' }}
               />
 

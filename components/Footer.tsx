@@ -10,8 +10,7 @@ const Footer = () => {
         <footer className='w-full pb-10 mb-[100px] md:mb-5' id='contact'>
             <div className="flex flex-col items-center">
                 <h1 className="heading lg:max-w-[45vw]">
-                    Ready to take <span className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#5a6042] to-[#b4b98d]"
-                    >your</span> digital
+                    Ready to take <span className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#5a6042] to-[#b4b98d]">your</span> digital
                     presence to the next level?
                 </h1>
                 <p className="text-white-200 md:mt-3 my-5 text-center">
@@ -32,8 +31,13 @@ const Footer = () => {
                 <div className="top-portfolio-container">
                     {/* Left side: Video */}
                     <div className="portfolio-container-left">
-                        <video src="https://visiblegain.in/web-development-service/aaa.mp4" controls autoplay unmuted loop></video>
-
+                        <video
+                            src="/vid.mp4"
+                            controls
+                            autoPlay
+                            muted
+                            loop
+                        ></video>
 
                         <span>
                             {/* Wrapping each <p> inside a Button component for MovingBorder */}
@@ -89,10 +93,6 @@ const Footer = () => {
                                 </div>
                             </Button>
                         </span>
-
-
-
-
                     </div>
 
                     {/* Right side: Form */}
@@ -105,32 +105,37 @@ const Footer = () => {
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
                                 </svg>
-                                <input type="text" placeholder="Enter Name" id="name" name="NAME" required="" />
+                                <input type="text" placeholder="Enter Name" id="name" name="NAME" />
                             </span>
 
                             <span>
                                 <span className="prefix">+91</span>
-                                <input type="text" placeholder="Enter Phone Number" id="phone" name="NUMBER" required="" />
+                                <input type="text" placeholder="Enter Phone Number" id="phone" name="NUMBER" />
                             </span>
 
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
                                 </svg>
-                                <input type="text" placeholder="Enter Location" id="location" name="CITY" required="" />
+                                <input type="text" placeholder="Enter Location" id="location" name="CITY" />
                             </span>
 
                             <input type="hidden" id="submissionDate" name="submissionDate" />
                             <div className="cheak-box-class">
                                 <div className="chekbox-sec">
-                                    <input type="checkbox" required="" />
+                                    {/* Updated to ensure the checked attribute is a boolean */}
+                                    <input
+                                        type="checkbox"
+                                        checked={true} // Ensure this is a boolean value
+                                        required
+                                    />
                                     <label>By engaging Visible Gain, you consent to our Privacy Policy</label>
                                 </div>
                             </div>
 
                             <button className="dev-submit" type="submit">
-  <div className="button-text">Submit</div>
-</button>
+                                <div className="button-text">Submit</div>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -143,11 +148,9 @@ const Footer = () => {
                 </h2>
             </div>
 
-
             <div className="flex justify-center items-center min-h-screen w-full">
                 <FrequentQues />
             </div>
-
 
             <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
                 <p className="md:text-base text-sm md:font-normal font-light">

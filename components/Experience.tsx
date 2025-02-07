@@ -24,7 +24,7 @@ const Experience = () => {
                             <div className="flex space-x-6 justify-center p-4"> {/* Add padding and center */}
                                 {card.icons.map((IconComponent, index) => (
                                     <div key={index} className="p-13 m-2 bg-gray-800 rounded-lg"> {/* Wrap in div for spacing */}
-                                        <IconComponent className="w-9 h-12 text-white" /> {/* Increase size */}
+                                        <IconComponent/> {/* Increase size */}
                                     </div>
                                 ))}
                             </div>

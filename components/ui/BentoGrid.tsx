@@ -27,23 +27,23 @@ export const BentoGrid = ({
     );
 };
 export const BentoGridItem = ({
-    className,
-    title,
-    description,
-    id,
-    img,
-    imgClassName,
-    titleClassName,
-    spareImg
+  className,
+  title = '',  // Default title as empty string if undefined
+  description,
+  id,
+  img,
+  imgClassName,
+  titleClassName,
+  spareImg
 }: {
-    className?: string;
-    title?: string | React.ReactNode;
-    description?: string | React.ReactNode;
-    id: number;
-    img?: string;
-    imgClassName?: string;
-    titleClassName?: string;
-    spareImg?: string;
+  className?: string;
+  title?: string;  // Ensure title is always a string
+  description?: string | React.ReactNode;
+  id: number;
+  img?: string;
+  imgClassName?: string;
+  titleClassName?: string;
+  spareImg?: string;
 }) => {
     
     const [copied, setCopied] = useState(false);
@@ -55,20 +55,21 @@ export const BentoGridItem = ({
 
     return (
         
-        <div
-        className={cn(
-            "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border border-white/[0.1] ",
-            className,
-            "hover:border-2 hover:gradient-border hover:rounded-[2rem]" // Adjust border radius on hover
-        )}
-        style={{
-            background: 'rgb(4, 7, 29)',
-            backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
-        }}
-    >
+      <div
+      className={cn(
+          "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border border-white/[0.1] ",
+          className,
+          "hover:border-2 hover:gradient-border hover:rounded-[2rem]"
+      )}
+      style={{
+          background: 'rgb(4, 7, 29)',
+          backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
+      }}
+  >
             
             {/* Rest of the existing content */}
             <div className={`${id === 6 && "flex justify-center"} h-full`}>
+
                 <div className="w-full h-full absolute">
                     {img && (
                         <img src={img} alt={img} className={cn(imgClassName, 'object-cover object-center')} />
@@ -84,9 +85,10 @@ export const BentoGridItem = ({
                     <BackgroundGradientAnimation className="z-40"/>
                 )}
 
-                <div className={cn(
+<div className={cn(
                     titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
                 )}>
+
                     {/* Existing content */}
                     {id === 1 && (
                         <div className="font-sans font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
@@ -362,9 +364,11 @@ export const BentoGridItem = ({
 
 
 
-                    <div
+<div
                         className={`font-sans text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-2`}
-                        dangerouslySetInnerHTML={{ __html: title }}
+                        dangerouslySetInnerHTML={{
+                            __html: typeof title === 'string' ? title : '' // Ensure title is a valid string
+                        }}
                     />
 
                     {id === 2 && (

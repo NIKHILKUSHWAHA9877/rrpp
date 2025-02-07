@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import ScrollImage from "../components/ScrollImage"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,15 +27,8 @@ export default function RootLayout({
         >
           {/* Main wrapper with relative positioning */}
           <div className="relative">
-            {/* Image container positioned over the background */}
-            <div className="absolute top-[10rem] left-[2rem] sm:top-[20rem] sm:left-[10rem] md:top-[30rem] md:left-[20rem] lg:top-[40rem] lg:left-[50rem] xl:top-[138.3rem] xl:left-[70rem] z-10 pointer-events-none">
-              <img
-                src="/cod.png" // Path to your PNG image in the public folder
-                alt="Background Overlay"
-                className="object-contain w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[150px] md:h-[140px] lg:w-[55rem] lg:h-[50rem]"
-                loading="lazy"
-              />
-            </div>
+            {/* ✅ Use the Client Component to control image visibility */}
+            <ScrollImage />  
 
             {/* Main content */}
             <div className="relative z-5">
