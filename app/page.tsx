@@ -1,5 +1,3 @@
-// Home.tsx
-
 import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -11,33 +9,46 @@ import { FloatingNav } from "@/components/ui/FloatingNav";
 import AImodels from "@/components/AImodels";
 import Servic from "@/components/Servic";
 import StickyScroll from "@/components/StickyScroll";
-
+import WhiteBg from "@/components/WhiteBg";
 
 export default function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-0 px-0 overflow-clip">
-      {/* Content with constrained width */}
-      <div className="max-w-7xl w-full mx-auto">
-        <FloatingNav />
-        <Hero />
-        <Servic/>
-<StickyScroll/>
-        <Grid />
-        <RecentProjects />
-        <Experience />
-        <Approach />
-      </div>
+    <>
+      {/* Main Content */}
+      <main className="relative bg-[rgb(0,3,25)] flex justify-center items-center flex-col mx-auto sm:px-0 px-0 overflow-clip z-100 rounded-b-[120px]">
 
-      {/* Full width background container for AImodels */}
-      <div className="w-full m-0 p-0">
-        <AImodels /> {/* Full-width background section */}
-      </div>
+        {/* Content with constrained width */}
+        <div className="max-w-7xl w-full mx-auto">
+          <FloatingNav />
+          <Hero />
+          <Servic />
+          <StickyScroll />
+          <Grid />
+          <RecentProjects />
+          <Experience />
+          <Approach />
+        </div>
 
-      {/* Content with constrained width */}
-      <div className="max-w-7xl w-full mx-auto">
-        <Testimonials />
-        <Footer />
-      </div>
-    </main>
+        {/* Full width background container for AImodels */}
+        <div className="w-full m-0 p-0">
+          <AImodels />
+        </div>
+
+        {/* Content with constrained width */}
+        <div className="max-w-7xl w-full mx-auto">
+          <Testimonials />
+          <Footer />
+        </div>
+      </main>
+
+      {/* WhiteBg Outside Main */}
+      <WhiteBg
+        className="w-full h-[85vh] mt-[-120px]" // You can keep this negative margin to pull it up
+        style={{
+          zIndex: "1", // Ensuring it appears above the background, below the main content
+          display: "flex",
+        }}
+      />
+    </>
   );
 }

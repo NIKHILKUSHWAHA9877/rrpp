@@ -628,4 +628,115 @@ hr {
   background: none;
 }
 
-/* When visible, show background */
+
+.marquee-container {
+  position: absolute; /* Position it absolutely inside WhiteBg */
+  bottom: 2%; /* Adjust the vertical position (10% from the bottom) */
+  left: 0;
+  width: 100%;
+}
+
+.marquee {
+  overflow: hidden; /* Hide the overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  width: 100%; /* Ensure the marquee takes the full width */
+  font-size: 135px;
+}
+
+.marquee h2 {
+  display: inline-block; /* Important to make white-space: nowrap work */
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: marquee 90s linear infinite; /* Apply the animation */
+  transition: all; /* Add transition for smooth changes */
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* End position */
+  }
+}
+
+
+/* button */
+
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(
+      to bottom,
+      oklch(0.12 0.2 240 / 0.95),
+      oklch(0.12 0.2 240 / 0.95)
+    )
+    padding-box,
+    conic-gradient(
+      from var(--bg-angle) in oklch longer hue,
+      oklch(0.90 0.37 0) 0 0
+    )
+    border-box;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  color: white;
+  padding: 1rem;
+  width: min(170px);
+  height: min(40px);
+}
+
+article:hover {
+  animation: rotateGradient 0.5s linear infinite; /* Continuous animation */
+}
+
+@keyframes rotateGradient {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+
+article h1 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+
+/* top nav button */
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+.custom-button {
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px !important;
+  border: 3px solid transparent; /* Transparent border */
+  border-image: conic-gradient(from var(--bg-angle) in oklch longer hue, oklch(0.90 0.37 0) 0 0) 1;
+  background: none; /* Remove any existing background */
+  transition: all 0.3s; /* Smooth transitions */
+}
+
+.custom-button:hover {
+  animation: rotateGradient 0.5s linear infinite; /* Animate the gradient on hover */
+  /* Remove the background and border color fallbacks */
+}
+
+@keyframes rotateGradient {
+  to {
+    --bg-angle: 360deg;
+  }
+}

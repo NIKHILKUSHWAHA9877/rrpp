@@ -174,9 +174,9 @@ export const FloatingNav: React.FC = () => {
 
         {/* Get in Touch Button (Desktop) */}
         <div className="hidden md:block">
-          <Button className="border border-green-400 text-white px-6 py-2 rounded-full hover:bg-green-500 transition">
-            Get in Touch
-          </Button>
+        <Button className="custom-button border text-white px-6 py-2 transition">
+    Get in Touch
+</Button>
         </div>
       </div>
 
