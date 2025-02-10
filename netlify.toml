@@ -1,0 +1,6 @@
+[build]
+  command = "next build"
+  publish = ".next"  # Or "out" depending on your Next.js setup
+
+[build.environment]
+  GO_VERSION = "1.21.5"
