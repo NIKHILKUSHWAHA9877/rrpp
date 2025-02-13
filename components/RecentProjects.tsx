@@ -10,47 +10,32 @@ const RecentProjects = () => {
             <h1 className="heading text-center relative z-50">
                 A small selection of <br />
                 <span
-                   className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#338e62] to-[#66CDAA] transition-all"
+                    className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#338e62] to-[#66CDAA] transition-all"
                 >
                     recent projects
                 </span>
             </h1>
-            <hr className="fade-2"/>
+            <hr className="fade-2" />
 
             {/* Projects List - centered and on a new line */}
-            <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-                {projects.map(({ id, title, des, img, link }) => (
-                    <div
-                        key={id}
-                        className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw]"
-                    >
-                        <PinContainer title={link} href={link}>
-                            <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
-                                <img src={img} alt="cover" className="z-10 absolute bottom-0" />
-                            </div>
-                            <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                                {title}
-                            </h1>
+      
 
-                            <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
-                                {des}
-                            </p>
 
-                            <div className="mt-7 mb-3">
-                                <div className="flex justify-center items-center">
-                                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                                        <a href={link} target="_blank" rel="noreferrer noopener">
-                                            Check Live Site
-                                        </a>
-                                    </p>
-                                    <FaLocationArrow className="ms-3" color="#CBACF9" />
-                                </div>
-                            </div>
-                        </PinContainer>
-                    </div>
-                ))}
+
+
+
+               
+
+
+
+
+               
             </div>
-        </div>
+       
+
+
+
+
     );
 };
 

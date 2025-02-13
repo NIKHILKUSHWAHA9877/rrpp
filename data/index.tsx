@@ -21,11 +21,12 @@ export const gridItems = [
 <small>▪️</small>Voice Cloning & Customization (AI)<br />
 `,
         description: "Our Most Requested and Approved Services by Clients 👨‍💻",
-        className: "lg:col-span-5 md:col-span-5 md:row-span-4 h-[80vh]",
-        imgClassName: "w-full h-full bg-cover bg-center",
+        className: "lg:col-span-5 md:col-span-5 md:row-span-4 h-[80vh] ",
+        imgClassName: "w-full h-full bg-cover bg-center opacity-30 filter blur-118",
         titleClassName: "justify-end",
         img: "/b1.svg",
         spareImg: "",
+        
 
     },
     {

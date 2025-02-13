@@ -1,7 +1,9 @@
 "use client";
 
+
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./StickyScroll.css"
 
 const industryData = [
   { imageUrl: "/ecomm.png", text: "E-commerce" },
@@ -37,13 +39,12 @@ const StickyScroll = () => {
 
   return (
     <section
-    ref={containerRef}
-    className="relative flex flex-col items-center justify-center min-h-screen"
-    style={{ 
-      marginBottom: "-210px", 
-    }}
-  >
-      
+      ref={containerRef}
+      className="relative flex flex-col items-center justify-center min-h-screen"
+      style={{
+        marginBottom: "-210px",
+      }}
+    >
       {/* 🔹 Fixed Background Overlay to Prevent Flickering */}
       <div className="fixed top-0 left-0 w-full h-full bg-black opacity-100 pointer-events-none -z-10"></div>
 
@@ -102,7 +103,6 @@ const StickyScroll = () => {
           <div key={index} className="industry-section h-[60vh] flex items-center justify-center"></div>
         ))}
       </div>
-      
     </section>
   );
 };

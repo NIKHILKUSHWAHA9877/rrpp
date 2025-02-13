@@ -1,4 +1,6 @@
 "use client";
+import '@fontsource/mukta';  // Import Mukta font
+
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
@@ -91,10 +93,10 @@ export const BentoGridItem = ({
 
                     {/* Existing content */}
                     {id === 1 && (
-                        <div className="font-sans font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                        <div className="font-mukta font-extralight md:max-w-32 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
 
 
-<div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
+<div className="font-mukta font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
   }}
 >
      <div
@@ -125,10 +127,10 @@ export const BentoGridItem = ({
 
 
                     {id === 2 && (
-                        <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                        <div className="font-mukta font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
 
 
-<div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
+<div className="font-mukta font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
   }}
 >
      <div
@@ -157,7 +159,7 @@ export const BentoGridItem = ({
 
 
 {id === 3 && (
-                        <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
+                        <div className="font-mukta font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10">
                             {description}
                         </div>
 
@@ -166,7 +168,7 @@ export const BentoGridItem = ({
                     )}
 
 {id === 4 && (
-  <div className="font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
+  <div className="font-mukta font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10 relative" style={{
   }}
 >
      <div
@@ -216,7 +218,7 @@ export const BentoGridItem = ({
 
 {id === 5 && (
   <div
-    className="relative font-sans font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10"
+    className="relative font-mukta font-extralight md:max-w-33 md:text-xl lg:text-base text-sm text-[#C1C2D3] z-10"
     style={{
         
     }}
@@ -355,10 +357,8 @@ export const BentoGridItem = ({
   </div>
 )}
 
-
-
-<div
-                        className={`font-sans text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-2`}
+   <div
+                        className={`font-mukta text-lg lg:text-3xl max-w-100 font-bold z-10 space-y-2`}
                         dangerouslySetInnerHTML={{
                             __html: typeof title === 'string' ? title : '' // Ensure title is a valid string
                         }}

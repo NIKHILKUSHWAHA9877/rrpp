@@ -28,26 +28,27 @@ const WhiteBg: FC<WhiteBgProps> = ({ className = '', style, children }) => {
       </div>
 
       {/* Footer Section */}
-      <div className="absolute bottom-0 left-0 w-full px-6 py-4 flex justify-between items-center">
-        {/* Copyright Section */}
-        <p className="text-gray-600 md:text-base text-sm md:font-normal font-light">
-  Copyright © 2025 Designed & Developed with 💓 by <span className="font-custom underline text-blue-500">Nikhil</span> in India. All Rights Reserved. | Powered by Googenix
-</p>
+      <div className="absolute bottom-0 left-0 w-full px-4 py-3 flex flex-col md:flex-row justify-between items-center overflow-hidden text-center md:text-left">
+  {/* Copyright Section */}
+  <p className="text-gray-600 text-xs md:text-sm font-light md:font-normal fancy">
+    Copyright © 2025 Designed & Developed with 💓 by{" "}
+    <span className="font-custom underline text-blue-500">Nikhil</span> in India.
+    All Rights Reserved. | Powered by Googenix
+  </p>
 
-
-        {/* Social Media Section */}
-        <div className="flex items-center gap-6">
-          {socialMedia.map((info) => (
-            <div key={info.id}>
-              <a
-                href={info.link}
-                rel="noreferrer noopener"
-                target="_blank"
-                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-              >
-                <img src={info.img} alt="social icons" width={20} height={20} />
-              </a>
-            </div>
+  {/* Social Media Section */}
+  <div className="flex items-center gap-4 mt-3 md:mt-0">
+    {socialMedia.map((info) => (
+      <div key={info.id}>
+        <a
+          href={info.link}
+          rel="noreferrer noopener"
+          target="_blank"
+          className="w-8 h-8 md:w-10 md:h-10 flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+        >
+          <img src={info.img} alt="social icons" width={16} height={16} className="md:w-5 md:h-5" />
+        </a>
+      </div>
           ))}
         </div>
       </div>

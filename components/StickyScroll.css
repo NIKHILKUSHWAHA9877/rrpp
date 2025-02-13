@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 .sticky-wrapper {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    font-family: "Mulish", serif !important;
   }
   
   .sticky-background {
@@ -28,6 +31,7 @@
     align-items: center;
     justify-content: center;
     height: 200vh;
+    font-family: "Mulish", serif !important;
   }
   
   .sticky-content {
@@ -36,6 +40,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    font-family: "Mulish", serif !important;
   }
   
   .sticky-section {
@@ -50,5 +55,10 @@
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Mulish", serif !important;
+  }
+
+  .font-mulish {
+    font-family: "Mulish", sans-serif !important;
   }
   

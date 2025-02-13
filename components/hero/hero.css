@@ -1,0 +1,30 @@
+.underline-magical {
+    background-image: linear-gradient(to right, rgb(222, 29, 141), rgb(222, 29, 141));
+    background-repeat: no-repeat;
+    text-decoration: none;
+    background-position: 0 100%;
+    background-size: 100% 0.2em;
+    transition: all 0.3s ease;
+  }
+  
+  .underline-magical:focus {
+    background-size: 100% 100%;
+  }
+  
+  .underline-magical:hover {
+    color: white;
+    background-size: 100% 100%;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .underline-magical {
+      background-image: linear-gradient(to right, rgb(222, 29, 141), rgb(222, 29, 141));
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .underline-magical {
+      transition: all 0.3s ease;
+    }
+  }
+  

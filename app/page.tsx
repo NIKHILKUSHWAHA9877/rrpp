@@ -1,3 +1,5 @@
+
+import '@fontsource/mukta';
 import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -10,7 +12,8 @@ import AImodels from "@/components/AImodels";
 import Servic from "@/components/Servic";
 import StickyScroll from "@/components/StickyScroll";
 import WhiteBg from "@/components/WhiteBg";
-
+import Cardd from '@/components/ui/Cardd';
+import GridCards from '@/components/ui/gridcards';
 export default function Home() {
   return (
     <>
@@ -24,6 +27,8 @@ export default function Home() {
           <StickyScroll />
           <Grid />
           <RecentProjects />
+          <GridCards/>
+          <Cardd />
           <Experience />
           <Approach />
         </div>

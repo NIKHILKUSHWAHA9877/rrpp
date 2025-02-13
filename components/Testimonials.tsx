@@ -42,16 +42,25 @@ const Testimonials = () => {
       {/* Title Section with Spotlight Gradient Effect */}
       <div className="text-center relative py-12"
         style={{
-          background: "radial-gradient(circle, rgba(98, 0, 234, 0.6) 10%, rgba(98, 0, 234, 0) 40%)",
+          // background: "radial-gradient(circle, rgba(98, 0, 234, 0.6) 10%, rgba(98, 0, 234, 0) 40%)",
           paddingTop: "60px",
           paddingBottom: "60px",
          
         }}
       >
-        <h2 className="mb-4 text-white text-[32px] font-semibold">Stories That <span className="text-yellow-400">Define Us</span></h2>
+        {/* <h2 className="mb-4 text-white text-[32px] font-semibold">Stories That <span className="text-yellow-400">Define Us</span></h2> */}
+
+  <h6 className="background">
+  <h1 className='yeh1'><span className="aqua">Stories That 
+  </span> <span className="pink">Define Us</span></h1>
+</h6>
+
+
+
+
         <p className="text-gray-300 text-[22px] font-medium">Discover the Emotion, Trust, and Success Shared by Those We’ve Proudly Served</p>
       </div>
-
+      <hr className="slash-2"/>
       {/* Testimonials Section */}
       <div className="container mx-auto mt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,5 +1,7 @@
 "use client"
 
+import '@fontsource/dancing-script'; // For Fontsource import
+
 import React, { useState, useEffect, useMemo } from 'react';
 import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
@@ -79,13 +81,14 @@ const Hero = () => {
       <div className='flex justify-center relative my-20 z-10'>
         <div className='max-w-[89px] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
           <h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
-            Dynamic Web Magic with Next.js
+            {/* Dynamic Web Magic with Next.js */}
           </h2>
 
           <TextGenerateEffect className='text-center text-[30px] sm:text-[40px] md:text-5xl lg:text-6xl' words='Transforming concepts into seamless user experiences' />
 
-          <p className='text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-2xl'>
-            Hi, I&apos;m Nirban, a full-stack Web3 developer based in India.
+          <p className=''>
+          <h1 className='fancy'> <span>INNOVATING THE FUTURE IN A CHANGING ERA
+          </span></h1>
           </p>
 
           {/* Chatbot | Generative AI | LLM Section */}
