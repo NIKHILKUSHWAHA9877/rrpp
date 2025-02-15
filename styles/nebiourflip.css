@@ -1,0 +1,378 @@
+/* Card Style */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Raleway:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap');
+.custom-card {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    perspective: 1500px; /* Adds 3D effect */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Card Inner, for flipping animation */
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Front and Back of the Card */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .image-container {
+    width: 100%; 
+    height: auto;
+    border-bottom: 5px solid #000;
+    z-index: 1;
+    background-color: #E6B800;
+    object-fit: cover;
+    display: flex;
+}
+
+  /* Set up the background image to cover the whole card */
+  .card-front {
+    /* background-size: cover; 
+    background-position: center;  */
+    color: white;
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: flex-end; */
+    padding: 1rem;
+  }
+  .card-front-image{
+ background-size: cover; 
+    background-position: center;
+
+
+  }
+  
+  /* Add the flip effect to the back of the card */
+  .card-back {
+    background-color: rgba(237, 237, 237, 0.838);
+    color: white;
+    transform: rotateY(180deg); /* Initially hidden behind the front */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+align-items: center;
+text-align: center;
+    
+    backface-visibility: hidden;
+    border: 5px solid black;
+    height: 500px;
+    width: 350px;
+    /* Adjusting the box-shadow to ensure visibility on all sides */
+    box-shadow:0 0 0 7px #fff,0 0  8px 5px #000;
+    
+    /* Ensure visibility */
+    position: relative; /* To avoid any clipping issues */
+    margin: auto; /* Centering the element if needed */
+}
+
+
+  
+.card-back-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: start; /* Start stacking from the top */
+    gap: 20px; /* Add spacing between elements */
+}
+
+
+  /* Hover effect for the hovered card itself */
+  .custom-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Hover Effect for Neighbor Cards */
+  .custom-card.hovered .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Prevent the card flip animation on the card you hover over itself */
+  .custom-card:hover .card-inner:hover {
+    transform: none; /* Ensure no flip animation on the hovered card */
+  }
+  
+  /* Ensure the back image fills the back of the card */
+  .card-back-image-wrapper {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensure the image covers the full back of the card */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .card-back-image {
+    width: 70%; 
+    height: 100%; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+/* Optional: rounded corners for better look */
+justify-content: center; /* Center images */
+align-items: center; /* Rich gold-like yellow */
+margin-left: auto;
+margin-right: auto;
+}
+
+  /* Text area on the back */
+  .card-text {
+  
+    color: white;
+    font-size: 16px;
+    text-align: center;
+   
+  }
+  
+  .card-text .image-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* .card-text h2 {
+    background: linear-gradient(to right, #338e62, #66CDAA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: -28px;
+} */
+
+  
+  
+  /* Specific style for <p> inside .card-text */
+  /* .card-text p {
+    font-size: 1rem;
+    color: #ccc;  
+    margin-top: 5px;
+  } */
+  
+
+
+  /* card design */
+  .custom-card { 
+    position: relative;
+    border-radius: 1em;
+    overflow: hidden; /* Prevent the border effect from leaking */
+    z-index: 1; /* Default z-index */
+  }
+  
+  .custom-card:hover{
+    color: white;
+  
+    text-shadow: 0 1px 0 #000;
+    --border-angle: 0turn; /* For animation */
+    --main-bg: conic-gradient(
+      from var(--border-angle),
+      #1A1A1A,
+      #1A1A1A 0%,
+      #1A1A1A 0%,
+      #1A1A1A 0%
+    );
+    
+    border: solid 1px transparent;
+    border-radius: 1em;
+    
+    --gradient-border: conic-gradient(
+      from var(--border-angle),
+      transparent 25%,
+      #08f,
+      rgb(241, 64, 221) 99%, 
+      transparent
+    );
+    
+    background: 
+      var(--main-bg) padding-box, /* Apply background in the box */
+      var(--gradient-border) border-box; /* Gradient border */
+    
+    
+    background-position: center center;
+    
+    animation: bg-spin 7s linear infinite;
+  }
+  
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn; /* 360-degree turn */
+    }
+  }
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  
+  
+  
+  
+
+
+  /* ul design */
+ 
+  
+  :root {
+    --gray: #808080;
+    --gray-medium: #c1bfbf;
+    --gray-light: #d3d3d3;
+    --paper-color: #eff8fe;
+  }
+  
+.containerr{
+margin-top: -18px;
+}
+  
+  .DouYo{
+    font-size: 1.2rem;
+    margin-top: -12px;
+    font-weight: 500px;
+    color: #000;
+    font-family: "Mulish", sans-serif !important;
+  }
+  .DouYoP{
+    color: #000;
+    font-family: "Mulish", sans-serif !important;
+font-size: 11px;
+  }
+
+  .paper {
+    position: relative;
+    padding: 10px;
+    width: 15rem;
+    min-height: 120px;
+    background: linear-gradient(
+      135deg,
+      var(--paper-color),
+      85%,
+      var(--gray-light)
+    );
+    box-shadow: 1px 0 1px var(--gray);
+    text-align: center;
+  }
+  
+  /* Tacks */
+  .paper::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray);
+  }
+  
+  .paper::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray);
+  }
+  
+  .numbers {
+    display: flex;
+    min-height: 11rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .number {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      var(--paper-color),
+      80%,
+      var(--gray-light)
+    );
+    border-top: 1px dashed var(--gray);
+    box-shadow: 1px 1px 1px var(--gray);
+    transform-origin: center top;
+  }
+  
+  .link-wrapper {
+    position: absolute;
+    display: flex;
+    top: 0;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    font-size: 0.9rem;
+    margin-left: 1.7rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  
+  .link-wrapper i {
+    margin-right: 5px;
+    font-size: 1.1rem;
+  }
+  
+  .link-wrapper a {
+    text-decoration-style: dashed;
+    font-family: sans-serif;
+  }
+  
+  .number:nth-child(2) {
+    transform: skew(-5deg, 0deg);
+    background: var(--paper-color);
+  }
+  
+  .number:nth-child(2)::after,
+  .number:nth-child(4)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      var(--gray-light),
+      5%,
+      rgba(211, 211, 211, 0)
+    );
+  }
+  
+  .number:nth-child(1),
+  .number:nth-child(3) {
+    background: linear-gradient(
+      to right,
+      var(--paper-color),
+      60%,
+      var(--gray-light)
+    );
+  }
+  
+  .number:nth-child(4) {
+    transform: skew(-8deg, 0deg);
+    background: var(--paper-color);
+  }
+  
+  .number:nth-child(5) {
+    transform: skew(-3deg, 0deg);
+  }
+
+
+
+
+  /* single image edit */
+
+  /* Target only the special image with this class */

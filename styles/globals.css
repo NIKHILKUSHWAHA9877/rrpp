@@ -830,79 +830,16 @@ article h1 {
 
 .font-mulish2 {
   font-family: "Mulish", sans-serif !important;
-  font-weight: 200;
+  font-weight: 300;
   font-size:30px;
 }
 
 .font-mulish3 {
   font-family: "Mulish", sans-serif !important;
-  font-weight: 400;
-  font-size:15px;
+  font-weight: 200;
+  font-size:16.5px;
   margin-top: 10px;
 }
-
-
-/* border grid card */
-/* The card container */
-/* Neon Border Effect */
-/* In your CSS file or inline styles */
-.custom-card {
-  position: relative;
-  border-radius: 1em;
-  overflow: hidden; /* Prevent the border effect from leaking */
-  z-index: 1; /* Default z-index */
-}
-
-.custom-card:hover{
-  display: grid;
-  color: white;
-
-  text-shadow: 0 1px 0 #000;
-  --border-angle: 0turn; /* For animation */
-  --main-bg: conic-gradient(
-    from var(--border-angle),
-    #1A1A1A,
-    #1A1A1A 0%,
-    #1A1A1A 0%,
-    #1A1A1A 0%
-  );
-  
-  border: solid 1px transparent;
-  border-radius: 1em;
-  
-  --gradient-border: conic-gradient(
-    from var(--border-angle),
-    transparent 25%,
-    #08f,
-    rgb(241, 64, 221) 99%, 
-    transparent
-  );
-  
-  background: 
-    var(--main-bg) padding-box, /* Apply background in the box */
-    var(--gradient-border) border-box; /* Gradient border */
-  
-  
-  background-position: center center;
-  
-  animation: bg-spin 7s linear infinite;
-}
-
-@keyframes bg-spin {
-  to {
-    --border-angle: 1turn; /* 360-degree turn */
-  }
-}
-
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
-}
-
-
-
-
 
 
 @keyframes rotateGradient {
