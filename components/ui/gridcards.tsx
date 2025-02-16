@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect , useState} from "react";
+import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css"; // Import AOS styles
 import AOS from "aos";
 import { PinContainer } from './3d-pin';
@@ -15,8 +15,8 @@ const cardData = [
     description:
       "We offer professional video editing, color grading, dubbing, voice-overs, and subtitles to enhance your content. Whether you're a creator or a business, we ensure top-quality visuals and sound. Let’s bring your vision to life!",
     imageUrl: "/weedit.webp",
-    imageWidth: "100%",  // Add specific width
-    imageHeight: "62%",
+    imageWidth: "280%",  // Add specific width
+    imageHeight: "290px",
     link: "/dashboard",
     backContent: {
       images: [
@@ -25,9 +25,9 @@ const cardData = [
       text: [
         // <div><h2 key="heading">DO YOU KNOW?</h2>
         // </div>,  
-        <List/>
+        <List />
       ],
-    }, 
+    },
   },
 
 
@@ -37,8 +37,8 @@ const cardData = [
     description:
       "Our solutions are low on code but high on performance, resulting in faster & efficient apps.",
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-four.png",
-    imageWidth: "100%",  // Add specific width
-    imageHeight: "70%",
+    imageWidth: "100%",
+    imageHeight: "100%",  // Add specific width
     link: "/services/low-code-development",
     backContent: {
       images: [
@@ -58,7 +58,7 @@ const cardData = [
     backContent: {
       images: [
         "https://cdn.relinns.com/assets/images/home-what-we-do-one.png",
-        
+
       ],
       text: "3d"
     }, // Example route for this card
@@ -87,7 +87,7 @@ const cardData = [
     description:
       "We are your pathfinders in the generative AI age, helping you strategize the perfect blueprint for all things AI.",
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-three.png",
-    link: "/services/generative-ai-consulting", 
+    link: "/services/generative-ai-consulting",
     backContent: {
       images: [
         "/aurat.png",
@@ -113,7 +113,7 @@ const cardData = [
       text: "Here’s some more information about our Custom Software Development services. We provide scalable and customized solutions for your business."
     }, // Example route for this card
   },
-  
+
 ];
 
 
@@ -168,75 +168,85 @@ const GridCards = () => {
           >
             {/* Rotated Banner on top-left edge */}
             <div
-             className="absolute top-[70px] left-[-60px]  w-[200px] bg-black text-white text-center font-bold py-2 rotate-[45deg] hover:bg-red-500"
+              className="absolute top-[70px] left-[-60px]  w-[200px] bg-black text-white text-center font-bold py-2 rotate-[45deg] hover:bg-red-500"
               style={{
                 transform: "rotate(-35deg)",
                 transformOrigin: "left top",
               }}
             >
-              CLICK 
+              CLICK
             </div>
 
             <Link href={card.link}>
-  <div className="card-inner ">
-    <div className="card-front">
-      {/* Individual image with inline styles */}
-      <img
-        src={card.imageUrl}
-        alt={card.title}
-        className="card-front-image"
-        style={{ width: card.imageWidth, height: card.imageHeight }}
-      />
-      <h3 className="text-lg font-bold font-mulish2">{card.title}</h3>
-      <p className="text-sm font-mulish3">{card.description}</p>
-    </div>
-
-    <div className="card-back">
-      {hoveredDetails ? (
-        <div className="card-back-content">
-          <div className="image-container">
-            {hoveredDetails.backContent.images.map((img: string, imgIndex: number) => (
-              <img
-                key={imgIndex}
-                src={img}
-                alt={`Back image ${imgIndex}`}
-                className="card-back-image"
-              />
-            ))}
-          </div>
-          <div className="card-text">
-            <p>{hoveredDetails.backContent.text}</p>
-          </div>
-        </div>
-      ) : (
-        <div className="card-back-content">
-          <div className="image-container">
-            {hoveredDetails?.backContent.images.map((img: string, imgIndex: number) => (
-              <img
-                key={imgIndex}
-                src={img}
-                alt={`Back image ${imgIndex}`}
-                className="card-back-image"
-              />
-            ))}
-          </div>
-          <div className="card-text">
-            {hoveredDetails?.backContent.heading && (
-              <h2 className="text-2xl font-bold text-center mb-4">
-                {hoveredDetails?.backContent.heading}
-              </h2>
-            )}
-            <div className="leaderboard">
-              {hoveredDetails?.backContent.text.map((element, index) => (
-                <div key={index}>{element}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+            <div className="card-inner">
+  <div className="card-front">
+    {/* Individual image with inline styles */}
+    <img
+      src={card.imageUrl}
+      className="card-front-image"
+      style={{
+        width: card.imageWidth || "100%", // Uses per-card width
+        height: card.imageHeight || "auto", // Uses per-card height
+        objectFit: "cover", // Ensures the whole image is visible
+      }}
+    />
   </div>
-</Link>
+
+  {/* ✅ Fix typo here: className instead of clsssName */}
+  <div className="fronttext">
+    <h3 className="text-lg font-bold font-mulish2">{card.title}</h3>
+    <p className="text-sm font-mulish3">{card.description}</p>
+  </div>
+
+
+
+
+                <div className="card-back">
+                  {hoveredDetails ? (
+                    <div className="card-back-content">
+                      <div className="image-container">
+                        {hoveredDetails.backContent.images.map((img: string, imgIndex: number) => (
+                          <img
+                            key={imgIndex}
+                            src={img}
+                            alt={`Back image ${imgIndex}`}
+                            className="card-back-image"
+                          />
+                        ))}
+                      </div>
+                      <div className="card-text">
+                        <p>{hoveredDetails.backContent.text}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="card-back-content">
+                      <div className="image-container">
+                        {hoveredDetails?.backContent.images.map((img: string, imgIndex: number) => (
+                          <img
+                            key={imgIndex}
+                            src={img}
+                            alt={`Back image ${imgIndex}`}
+                            className="card-back-image"
+                          />
+                        ))}
+                      </div>
+                      <div className="card-text">
+                        {hoveredDetails?.backContent.heading && (
+                          <h2 className="text-2xl font-bold text-center mb-4">
+                            {hoveredDetails?.backContent.heading}
+                          </h2>
+                        )}
+                        <div className="leaderboard">
+                          {hoveredDetails?.backContent.text.map((element, index) => (
+                            <div key={index}>{element}</div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </Link>
 
           </li>
         );

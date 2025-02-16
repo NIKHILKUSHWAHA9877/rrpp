@@ -17,7 +17,8 @@ export default function Works() {
   }, []);
 
   if (!mounted) return null; // Prevent rendering on the server
-
+ 
+  
   return (
     <TileWrapper numOfPages={workTiles.length}>
       <TileBackground>

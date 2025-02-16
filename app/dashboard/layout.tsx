@@ -6,7 +6,7 @@ import ThemeProvider from '@/components/providers/ThemeProvider';
 // import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
-
+import "./routerr.css";
 // Set metadata for the entire app layout (using the new metadata API)
 
 
