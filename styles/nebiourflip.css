@@ -68,7 +68,7 @@
 
   /* Add the flip effect to the back of the card */
   .card-back {
-    background-color: rgba(237, 237, 237, 0.838);
+    background-color:white;
     color: white;
     transform: rotateY(180deg); /* Initially hidden behind the front */
     display: flex;

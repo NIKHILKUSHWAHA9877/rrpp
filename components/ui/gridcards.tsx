@@ -17,7 +17,7 @@ const cardData = [
     imageUrl: "/weedit.webp",
     imageWidth: "280%",  // Add specific width
     imageHeight: "290px",
-    link: "/dashboard",
+    link: "/dashboard/routerone",
     backContent: {
       images: [
         "/aurat.png",
@@ -54,7 +54,7 @@ const cardData = [
     description:
       "Get custom chatbots tailored for your use case & integrated with your existing & preferred software system.",
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-two.png",
-    link: "/services/custom-chatbot-development",
+    link: "/dashboard/VideoTwo",
     backContent: {
       images: [
         "https://cdn.relinns.com/assets/images/home-what-we-do-one.png",
