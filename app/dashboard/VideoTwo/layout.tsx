@@ -4,31 +4,30 @@ import { ReactNode } from "react";
 import { FloatingNav } from "@/components/ui/FloatingNav"; // Ensure this path is correct
 import "./3d-video.css"; // Import 3D video page styles
 import WhiteBg from "@/components/WhiteBg";
-interface LayoutProps {
-  children: ReactNode;
-}
+import Contact from "./Contact";
+import Page3DVideo from "./page";
 
-const Layout3DVideo = ({ children }: LayoutProps) => {
+
+const Layout3DVideo = () => {
   return (
     <>
-    <main>
+    <div className='overflow-clip z-100 rounded-b-[120px]'>
     <div>
       {/* Navigation Bar (Shared across the site) */}
       <FloatingNav/>
       {/* Page Content (Automatically renders `page.tsx`) */}
-      {children}
-     
+      
+     <Page3DVideo/>
     </div>
-     </main>
-    <WhiteBg
-        className="w-full h-[100vh] mt-[280px] footer2"
-         // Keep negative margin to pull up
-        style={{
-          zIndex: 1, // Ensuring it appears above the background but below the main content
-          display: "flex",
-          
-        }}
-      />
+    <Contact/>
+     </div>
+       <WhiteBg
+  className="w-full h-[100vh] mt-[-300px] sm:mt-[-180px]"
+  style={{
+    zIndex: 1,
+    display: "flex",
+  }}
+/> 
 </>
   );
 };

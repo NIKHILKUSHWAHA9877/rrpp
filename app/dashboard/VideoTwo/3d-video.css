@@ -23,12 +23,6 @@
     font-family: "Neue Haas Display", sans-serif;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
-
 #page1 {
     min-height: 100vh;
     width: 100%;
@@ -275,14 +269,35 @@ html, body {
 
 
 #page4 {
-    height: 70vh;
-    width: 100%;
+    height: 90vh;
+   
     background-color: black;
-    padding: 10vw 2vw;
-    border-radius: 0 0 90px 90px;
+    padding: 10vw;
+    
     overflow: hidden !important;
 }
+@media (max-width: 1024px) {
+    #page4 {
+        height: 60vh;
+        padding: 9vw 3vw;
+    }
+}
 
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+    #page4 {
+        height: 70vh;
+        padding: 8vw 4vw;
+    }
+}
+
+/* Extra small screens (very small devices like 320px width) */
+@media (max-width: 480px) {
+    #page4 {
+        height: 60vh;
+        padding: 7vw 5vw;
+    }
+}
 .swiper {
     width: 100%;
     height: 100%;
@@ -294,41 +309,7 @@ html, body {
     padding: 0 2vw;
 }
 
-#page5 {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    /* background-color: black; */
-}
 
-
-#main {
-    height: 350vh;
-    /* background-color: #000; */
-        position: relative;
-        z-index: 10;
-      
-       /* Prevents main background from scrolling too far up */
-      
-      
-}
-
-
-#footer {
-    position: fixed;
-    height: 200vh;
-    width: 100%;
-    background-color: white;
-    color: black;
-    z-index: 9;
-    bottom: 0;
-    display: flex;
-    /* align-items: flex-end; */
-    justify-content: flex-end;
-    flex-direction: column;
-    padding: 1vw 3vw;
-    
-}
 
 
 
@@ -479,37 +460,9 @@ html, body {
 
 }
 
-#loader{
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    transition: all ease 0.7s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#loader h1{
-    font-size: 4vw;
-    color: transparent;
-    background: linear-gradient(to right,orange,orangered);
-    -webkit-background-clip: text;
-    position: absolute;
-    opacity: 0;
-    animation-name: load;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-}
-#loader h1:nth-child(2){
-    animation-delay: 2s;
-}
-#loader h1:nth-child(3){
-    animation-delay: 3s;
-}
+
+
 
 @keyframes load {
     0%{
@@ -526,12 +479,7 @@ html, body {
     }
 }
 
-@media (max-width:600px) {
-    #loader h1{
-        font-size: 9vw;
-      
-    }
-}
+
 
 
 
@@ -563,4 +511,62 @@ html, body {
     transform: scale(1.2) rotateY(0deg) rotateX(0deg);  /* Animate scale and reset 3D rotation */
   }
   
+ 
+
+/* Slider Buttons Styles */
+/* Ensure swiper slides are full width and content is centered */
+.swiper-slide {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    height: 100%;  /* Ensure full height of the swiper slide */
+  }
   
+  /* Make sure images and videos are centered inside the slide */
+  .swiper-slide img, .swiper-slide video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;  /* Ensures the content scales properly */
+  }
+  
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important; /* Ensure visibility */
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+#slider-buttons {
+    margin-top: -10vh; /* Adjust this for better spacing based on viewport height */
+  }
+  
+  .slid {
+    margin-top: 15vh; /* Adjust this for better spacing on smaller screens */
+  }
+  
+  /* Media Query for Smaller Screens */
+  @media (max-width: 768px) {
+    #slider-buttons {
+      margin-top: 5vh; /* Reduced margin-top for smaller screens */
+    }
+  
+    .slid {
+      margin-top: 10vh; /* Reduced margin-top for smaller screens */
+    }
+  }
+  
+/* 
+  .contactt{
+    height: 90rem;
+  } */

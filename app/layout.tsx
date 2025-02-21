@@ -38,20 +38,7 @@ export default function RootLayout({
             {/* Conditionally render the background images only on specific pages */}
             {isMainPage && (
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                {/* First Image */}
-                <img
-                  src="/analytics.png"
-                  alt="Analytics"
-                  className="absolute z-20"
-                  style={{
-                    top: "365rem",   
-                    left: "68%",     
-                    opacity: 0.4,    
-                    maxWidth: "40vw",  
-                    maxHeight: "80vh", 
-                    height: "auto",
-                  }}
-                />
+                
 
                 {/* Second Image */}
                 <img

@@ -27,20 +27,39 @@ export const FloatingNav: React.FC = () => {
       href: "#",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Product 1", href: "/product-1" },
-        { label: "Product 2", href: "/product-2" },
+        { label: "Coming Soon", href: "" },
       ],
     },
     {
-      label: "Services",
-      href: "#about",
+      label: "Tech Services",
+      href: "#projects",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Service 1", href: "#about" },
-        { label: "Service 2", href: "#about" },
+        { label: "Video Editing", href: "/dashboard/routerone" },
+        { label: "Voice Solutions", href: "/dashboard/routerone" },
+        { label: "Software Development", href: "#about" },
+        { label: "App development", href: "#about" },
+        { label: "Website Development", href: "#about" },
+        { label: "3D Video Services", href: "/dashboard/VideoTwo" },
+        { label: "3D Animation & CGI", href: "/dashboard/VideoTwo" },
+        { label: "Graphics designing", href: "/dashboard/logoRoute" },
+        { label: "Logo designing", href: "/dashboard/logoRoute" },
+       
       ],
     },
-    {
+   {
+      label: "Business Growth Solutions",
+      href: "#projects",
+      hasDropdown: true,
+      dropdownItems: [
+        { label: "Ecommerce Listing Optimization", href: "#about" },
+        { label: "Paid Ads", href: "#about" },
+        { label: "SEO", href: "#about" },
+        { label: "Influencer Marketing Campaigns", href: "#about" },
+        { label: "Social media management", href: "#about" },
+        { label: "Content Writing", href: "#about" },
+      ],
+    }, {
       label: "Work",
       href: "#projects",
       hasDropdown: true,
@@ -68,8 +87,6 @@ export const FloatingNav: React.FC = () => {
       ],
     },
     { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Blogs", href: "/blogs" },
   ];
 
   useEffect(() => {
@@ -122,45 +139,48 @@ export const FloatingNav: React.FC = () => {
                   </svg>
                 )}
               </Link>
-
               {item.hasDropdown && item.dropdownItems && (
-                <div className="absolute left-0 hidden bg-[#333] border border-[#FFFFFF19] rounded-xl py-3 px-4 space-y-2 group-hover:block z-50 min-w-[200px]">
-                  {item.dropdownItems.map((dropdownItem) => (
-                    <div key={dropdownItem.label} className="relative group/sub">
-                      <Link
-                        href={dropdownItem.href}
-                        className="block text-white hover:text-gray-300 px-4 py-2 rounded-md hover:bg-[#444] transition-colors flex items-center justify-between"
-                      >
-                        {dropdownItem.label}
-                        {dropdownItem.subDropdownItems && (
-                          <svg
-                            className="w-4 h-4 ml-2"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        )}
-                      </Link>
-                      
-                      {dropdownItem.subDropdownItems && (
-                        <div className="absolute left-full top-0 hidden bg-[#333] border border-[#FFFFFF19] rounded-xl py-3 px-4 space-y-2 group-hover/sub:block min-w-[250px] max-h-[400px] overflow-y-auto z-50">
-                          {dropdownItem.subDropdownItems.map((subItem) => (
-                            <Link
-                              key={subItem.href}
-                              href={subItem.href}
-                              className="block text-white hover:text-gray-300 whitespace-nowrap hover:bg-[#444] px-4 py-2 rounded-md transition-colors"
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
+  <div className="absolute left-0 hidden bg-[#333] border border-[#FFFFFF19] rounded-xl py-2 px-3 space-y-1 group-hover:block z-50 min-w-[200px] sm:min-w-[220px] md:min-w-[250px]">
+    {item.dropdownItems.map((dropdownItem) => (
+      <div key={dropdownItem.label} className="relative group/sub">
+        <Link
+          href={dropdownItem.href}
+          className="block text-white hover:text-gray-300 px-3 py-1.5 rounded-md hover:bg-[#444] transition-colors flex items-center justify-between"
+        >
+          {dropdownItem.label}
+          {dropdownItem.subDropdownItems && (
+            <svg
+              className="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+        </Link>
+        
+        {dropdownItem.subDropdownItems && (
+          <div className="absolute left-full top-0 hidden bg-[#333] border border-[#FFFFFF19] rounded-xl py-2 px-3 space-y-1 group-hover/sub:block min-w-[250px] max-h-[300px] sm:max-h-[250px] md:max-h-[300px] overflow-y-auto z-50">
+            {dropdownItem.subDropdownItems.map((subItem) => (
+              <Link
+                key={subItem.href}
+                href={subItem.href}
+                className="block text-white hover:text-gray-300 whitespace-nowrap hover:bg-[#444] px-3 py-1.5 rounded-md transition-colors"
+              >
+                {subItem.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+)}
+
+
+
+
             </li>
           ))}
         </ul>
@@ -181,100 +201,103 @@ export const FloatingNav: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#333] border border-[#FFFFFF19] rounded-xl mt-2 p-4 space-y-3 z-50">
-          {navItems.map((item) => (
-            <div key={item.label} className="relative">
-              {item.hasDropdown ? (
-                <>
-                  <button
-                    className="w-full text-left text-white flex items-center justify-between p-2 rounded-md hover:bg-[#444]"
-                    onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
-                  >
-                    {item.label}
-                    <svg
-                      className={`w-4 h-4 transform transition-transform ${
-                        activeDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  
-                  {activeDropdown === item.label && item.dropdownItems && (
-                    <div className="ml-4 space-y-2">
-                      {item.dropdownItems.map((dropdownItem) => (
-                        <div key={dropdownItem.label} className="relative">
-                          {dropdownItem.subDropdownItems ? (
-                            <>
-                              <button
-                                className="w-full text-left text-white flex items-center justify-between p-2 rounded-md hover:bg-[#444]"
-                                onClick={() => setActiveSubDropdown(activeSubDropdown === dropdownItem.label ? null : dropdownItem.label)}
+{/* Mobile Navigation */}
+{/* Mobile Navigation */}
+{isMenuOpen && (
+  <div className="md:hidden absolute top-full left-0 right-0 bg-[#333] border border-[#FFFFFF19] rounded-xl mt-2 p-4 space-y-3 z-50">
+    {navItems.map((item) => (
+      <div key={item.label} className="relative">
+        {item.hasDropdown ? (
+          <>
+            <button
+              className="w-full text-left text-white flex items-center justify-between p-1.5 rounded-md hover:bg-[#444] text-xs" 
+              onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
+            >
+              {item.label}
+              <svg
+                className={`w-3 h-3 transform transition-transform ${
+                  activeDropdown === item.label ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {activeDropdown === item.label && item.dropdownItems && (
+              <div className="ml-3 space-y-1"> {/* Further reduced spacing */}
+                {item.dropdownItems.map((dropdownItem) => (
+                  <div key={dropdownItem.label} className="relative">
+                    {dropdownItem.subDropdownItems ? (
+                      <>
+                        <button
+                          className="w-full text-left text-white flex items-center justify-between p-1.5 rounded-md hover:bg-[#444] text-xs"
+                          onClick={() => setActiveSubDropdown(activeSubDropdown === dropdownItem.label ? null : activeSubDropdown)}
+                        >
+                          {dropdownItem.label}
+                          <svg
+                            className={`w-3 h-3 transform transition-transform ${
+                              activeSubDropdown === dropdownItem.label ? "rotate-90" : ""
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+
+                        {activeSubDropdown === dropdownItem.label && (
+                          <div className="ml-3 space-y-1"> {/* Further reduced sub-dropdown spacing */}
+                            {dropdownItem.subDropdownItems.map((subItem) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                className="block text-white p-1.5 rounded-md hover:bg-[#444] text-xs" 
+                                onClick={toggleMobileMenu}
                               >
-                                {dropdownItem.label}
-                                <svg
-                                  className={`w-4 h-4 transform transition-transform ${
-                                    activeSubDropdown === dropdownItem.label ? "rotate-90" : ""
-                                  }`}
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                              </button>
-                              
-                              {activeSubDropdown === dropdownItem.label && (
-                                <div className="ml-4 space-y-2">
-                                  {dropdownItem.subDropdownItems.map((subItem) => (
-                                    <Link
-                                      key={subItem.href}
-                                      href={subItem.href}
-                                      className="block text-white p-2 rounded-md hover:bg-[#444]"
-                                      onClick={toggleMobileMenu}
-                                    >
-                                      {subItem.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              )}
-                            </>
-                          ) : (
-                            <Link
-                              href={dropdownItem.href}
-                              className="block text-white p-2 rounded-md hover:bg-[#444]"
-                              onClick={toggleMobileMenu}
-                            >
-                              {dropdownItem.label}
-                            </Link>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="block text-white p-2 rounded-md hover:bg-[#444]"
-                  onClick={toggleMobileMenu}
-                >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          ))}
-          
-          {/* Get in Touch Button (Mobile) */}
-          <Button className="w-full border border-green-400 text-white rounded-full hover:bg-green-500 transition mt-2">
-            Get in Touch
-          </Button>
-        </div>
-      )}
+                                {subItem.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        href={dropdownItem.href}
+                        className="block text-white p-1.5 rounded-md hover:bg-[#444] text-xs" 
+                        onClick={toggleMobileMenu}
+                      >
+                        {dropdownItem.label}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <Link
+            href={item.href}
+            className="block text-white p-1.5 rounded-md hover:bg-[#444] text-xs"
+            onClick={toggleMobileMenu}
+          >
+            {item.label}
+          </Link>
+        )}
+      </div>
+    ))}
+
+    {/* Get in Touch Button (Mobile) */}
+    <Button className="w-full border border-green-400 text-white rounded-full hover:bg-green-500 transition mt-2 text-xs px-4 py-2">
+      Get in Touch
+    </Button>
+  </div>
+)}
+
+
     </motion.nav>
   );
 };

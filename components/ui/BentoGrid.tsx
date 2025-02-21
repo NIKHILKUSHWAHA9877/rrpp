@@ -30,7 +30,7 @@ export const BentoGrid = ({
 };
 export const BentoGridItem = ({
   className,
-  title = '',  // Default title as empty string if undefined
+  title = '',  
   description,
   id,
   img,

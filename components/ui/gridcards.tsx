@@ -3,11 +3,10 @@
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css"; // Import AOS styles
 import AOS from "aos";
-import { PinContainer } from './3d-pin';
-import { FaLocationArrow } from 'react-icons/fa';
 import Link from 'next/link'; // Importing the Link component
 import "@/styles/nebiourflip.css"
-import List from "./list";
+import ReactCompareImage from "react-compare-image";
+
 // Define card data dynamically
 const cardData = [
   {
@@ -20,12 +19,14 @@ const cardData = [
     link: "/dashboard/routerone",
     backContent: {
       images: [
-        "/aurat.png",
-      ],
+        "/aurat.png"],
+        backgroundColor: "#ffcc00",  // Custom background color
+        imageSize: { width: "70%", height: "100%" },
       text: [
-        // <div><h2 key="heading">DO YOU KNOW?</h2>
-        // </div>,  
-        <List />
+        <h2 className="thDh">DO YOU KNOW?</h2>,
+        <p className="thDp">🔝With over <b>400 million</b> views on YouTube, our work speaks for itself. We've partnered with industry giants like Amazon Prime Video, Stage OTT, and many more, delivering high-quality, impactful content that truly engages audiences. 🎥✨</p>,
+        <p className="thDp">🏆Googenix is Trusted by startups and enterprises alike for stunning work.
+</p>,
       ],
     },
   },
@@ -42,41 +43,55 @@ const cardData = [
     link: "/services/low-code-development",
     backContent: {
       images: [
-        "",
-      ],
+        "" ],
+        backgroundColor: "#ffcc00",  // Custom background color
+        imageSize: { width: "70%", height: "100%" },
       text: "software dev"
     },// Example route for this card
   },
 
 
   {
-    title: "Custom Chatbot Development",
+    title: "3D Visualization & Animation Services",
     description:
-      "Get custom chatbots tailored for your use case & integrated with your existing & preferred software system.",
-    imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-two.png",
+      "Step into the future with our cutting-edge 3D walkthrough videos, interactive floor plans, and mind-blowing CGI animations. Perfect for architects, realtors, and creatives—let's bring your vision to life with stunning realism and unbeatable prices-guaranteed!",
+    imageUrl: ["/3d blur.jpg", "/3d normal.jpg" ],
+      imageWidth: "280%",  // Add specific width
+    imageHeight: "320px",
     link: "/dashboard/VideoTwo",
     backContent: {
-      images: [
-        "https://cdn.relinns.com/assets/images/home-what-we-do-one.png",
-
+      images: ["/out-0.webp"],
+     borderRadius: "22px",
+      backgroundColor: "#A01F29",  // Custom background color
+      imageSize: { width: "85%", height: "100%" },
+      text: [
+        <h2 className="thDh">DO YOU KNOW?</h2>,
+        <p className="thDp">✅ We Successfully collaborated with 11+ clients on high-quality 3D projects.</p>,
+        <p className="thDp">🔁 Proud to have a 90% client retention rate, showcasing our commitment to quality and satisfaction.</p>,
+        <p className="thDp">🏆Googenix is Trusted by startups and enterprises alike for stunning 3D visuals.
+</p>,
       ],
-      text: "3d"
-    }, // Example route for this card
+    },
   },
 
 
   {
-    title: "eCommerce Solutions",
+    title: "🎨 Custom Logos & Graphics for Every Need",
     description:
-      "We craft scalable online stores with a user-centric view, be it web & mobile apps, chat storefronts, or AI-assisted e-shopping.",
-    imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-five.png",
-    link: "/services/ecommerce-solutions",
+      "We specialize in custom logo designs, YouTube thumbnail logos, social media graphics, and all types of photo designs to make your brand stand out. Whether you need a sleek professional logo or eye-catching visuals, our team delivers high-quality, affordable, and unique designs tailored to your vision.",
+    imageUrl: "/brabding.jpg",
+    imageWidth: "280%",  // Add specific width
+    imageHeight: "220px",
+    link: "/dashboard/logoRoute",
     backContent: {
-      images: [
-        "https://cdn.relinns.com/assets/images/home-what-we-do-one.png",
-        "https://cdn.relinns.com/assets/images/back-image-2.png",
-      ],
-      text: "Here’s some more information about our Custom Software Development services. We provide scalable and customized solutions for your business."
+      images: ["/lgoBck.jpg"],
+        backgroundColor: "#ffcc00",  // Custom background color
+        imageSize: { width: "100%", height: "250px" },
+      text: [<h2 className="thDh">DO YOU KNOW?</h2>,
+        <p className="thDp">🎨 Your brand’s first impression matters! We craft custom logos & graphics that capture your identity and leave a lasting impact.</p>,
+        <p className="thDp">🔥 50+ brands trust Googenix for visually stunning, memorable designs that set them apart.</p>,
+        <p className="thDp">✨ More options, better choices! Our designers don’t just create one logo—we provide multiple unique designs so you can choose the perfect fit for your brand.
+</p>,]
     }, // Example route for this card
   },
 
@@ -90,9 +105,10 @@ const cardData = [
     link: "/services/generative-ai-consulting",
     backContent: {
       images: [
-        "/aurat.png",
-        "https://cdn.relinns.com/assets/images/back-image-2.png",
-      ],
+        "/",
+        "https://cdn.relinns.com/assets/images/back-image-2.png"],
+        backgroundColor: "#ffcc00",  // Custom background color
+        imageSize: { width: "100%", height: "200px" },
       text: "Here’s some more information about our Custom Software Development services. We provide scalable and customized solutions for your business."
     },// Example route for this card
   },
@@ -108,8 +124,9 @@ const cardData = [
     backContent: {
       images: [
         "https://cdn.relinns.com/assets/images/back-image-1.png",
-        "https://cdn.relinns.com/assets/images/back-image-2.png",
-      ],
+        "https://cdn.relinns.com/assets/images/back-image-2.png"],
+        backgroundColor: "#ffcc00",  // Custom background color
+        imageSize: { width: "100%", height: "200px" },
       text: "Here’s some more information about our Custom Software Development services. We provide scalable and customized solutions for your business."
     }, // Example route for this card
   },
@@ -121,6 +138,29 @@ const cardData = [
 const GridCards = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredDetails, setHoveredDetails] = useState<any>(null);
+
+
+  const getFlippingCardIndex = (hoverIndex) => {
+    const columns = 3; // 3 cards per row
+    const row = Math.floor(hoverIndex / columns);
+    const column = hoverIndex % columns;
+  
+    if (row === 0) {
+      if (column === 0) return hoverIndex + 1; // Card 0 → Card 1 flips
+      if (column === 1) return hoverIndex + 1; // Card 1 → Card 2 flips
+      if (column === 2) return hoverIndex - 1; // Card 2 → Card 1 flips
+    }
+    
+    if (row === 1) {
+      if (column === 0) return hoverIndex + 1; // Card 3 → Card 4 flips
+      if (column === 1) return hoverIndex - 1; // Card 4 → Card 3 flips
+      if (column === 2) return hoverIndex - 1; // Card 5 → Card 4 flips
+    }
+  
+    return null; // Default case (should not happen)
+  };
+  
+  
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -167,30 +207,50 @@ const GridCards = () => {
             onMouseLeave={handleMouseLeave}
           >
             {/* Rotated Banner on top-left edge */}
-            <div
-              className="absolute top-[70px] left-[-60px]  w-[200px] bg-black text-white text-center font-bold py-2 rotate-[45deg] hover:bg-red-500"
-              style={{
-                transform: "rotate(-35deg)",
-                transformOrigin: "left top",
-              }}
-            >
-              CLICK
-            </div>
+          {/* Hide the banner when this card is hovered or when its neighboring card is flipping */}
+{hoveredIndex === null || index !== getFlippingCardIndex(hoveredIndex) ? (
+  <div
+    className="absolute top-[70px] left-[-60px] w-[200px] bg-black text-white text-center font-bold py-2 rotate-[45deg]  z-20"
+    style={{
+      transform: "rotate(-35deg)",
+      transformOrigin: "left top",
+    }}
+  >
+    CLICK
+  </div>
+) : null}
+
+
 
             <Link href={card.link}>
             <div className="card-inner">
-  <div className="card-front">
-    {/* Individual image with inline styles */}
+            <div className="card-front">
+  {card.title === "3D Visualization & Animation Services" && Array.isArray(card.imageUrl) ? (
+    <div className="image-comparison-container" style={{ width: "100%", height: "100%" }}>
+      <ReactCompareImage
+        leftImage={card.imageUrl[0]}  // First image
+        rightImage={card.imageUrl[1]} // Second image
+        sliderLineColor="white"
+        handleSize={40} // Adjust handle size
+        hover={true} // Enable hover slider
+      />
+    </div>
+  ) : (
     <img
-      src={card.imageUrl}
+      src={Array.isArray(card.imageUrl) ? card.imageUrl[0] : card.imageUrl}
       className="card-front-image"
       style={{
-        width: card.imageWidth || "100%", // Uses per-card width
-        height: card.imageHeight || "auto", // Uses per-card height
-        objectFit: "cover", // Ensures the whole image is visible
+        width: card.imageWidth || "100%",
+        height: card.imageHeight || "auto",
+        objectFit: "cover",
       }}
+      alt="Card Image"
     />
-  </div>
+  )}
+</div>
+
+
+
 
   {/* ✅ Fix typo here: className instead of clsssName */}
   <div className="fronttext">
@@ -201,35 +261,63 @@ const GridCards = () => {
 
 
 
-                <div className="card-back">
-                  {hoveredDetails ? (
-                    <div className="card-back-content">
-                      <div className="image-container">
-                        {hoveredDetails.backContent.images.map((img: string, imgIndex: number) => (
-                          <img
-                            key={imgIndex}
-                            src={img}
-                            alt={`Back image ${imgIndex}`}
-                            className="card-back-image"
-                          />
-                        ))}
-                      </div>
-                      <div className="card-text">
-                        <p>{hoveredDetails.backContent.text}</p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="card-back-content">
-                      <div className="image-container">
-                        {hoveredDetails?.backContent.images.map((img: string, imgIndex: number) => (
-                          <img
-                            key={imgIndex}
-                            src={img}
-                            alt={`Back image ${imgIndex}`}
-                            className="card-back-image"
-                          />
-                        ))}
-                      </div>
+  <div className="card-back">
+  {hoveredDetails ? (
+    <div className="card-back-content">
+      {/* Use the dynamic background color and image size */}
+      <div
+        className="image-container"
+        style={{
+          backgroundColor: hoveredDetails.backContent.backgroundColor, // Use card's background color
+        }}
+      >
+        {hoveredDetails.backContent.images.map((img: string, imgIndex: number) => (
+          <img
+            key={imgIndex}
+            src={img}
+            alt={`Back image ${imgIndex}`}
+            className="card-back-image"
+            style={{
+              width: hoveredDetails.backContent.imageSize.width,  // Use card's image width
+              height: hoveredDetails.backContent.imageSize.height,  // Use card's image height
+              objectFit: 'cover',
+            }}
+          />
+        ))}
+      </div>
+      <div className="card-text">
+        <p>{hoveredDetails.backContent.text}</p>
+      </div>
+    </div>
+  ) : (
+    <div className="card-back-content">
+      {/* Same logic for non-hovered state */}
+      <div
+        className="image-container"
+        style={{
+          backgroundColor: hoveredDetails?.backContent.backgroundColor,
+        }}
+      >
+        {hoveredDetails?.backContent.images.map((img: string, imgIndex: number) => (
+          <img
+            key={imgIndex}
+            src={img}
+            alt={`Back image ${imgIndex}`}
+            className="card-back-image"
+            style={{
+              width: hoveredDetails?.backContent.imageSize.width,
+              height: hoveredDetails?.backContent.imageSize.height,
+              objectFit: 'cover',
+            }}
+          />
+        ))}
+      </div>
+ 
+
+
+
+
+
                       <div className="card-text">
                         {hoveredDetails?.backContent.heading && (
                           <h2 className="text-2xl font-bold text-center mb-4">
