@@ -17,19 +17,23 @@ export default function Works() {
   }, []);
 
   if (!mounted) return null; // Prevent rendering on the server
- 
-  
+
   return (
     <TileWrapper numOfPages={workTiles.length}>
       <TileBackground>
         <WorkBackground />
       </TileBackground>
       <TileContent>
-        {workTiles.map((work, i) => (
-          <Tile page={i} key={work.title}>
-            <WorkContent work={work} />
-          </Tile>
-        ))}
+        {workTiles.map((work, i) => {
+          // Ensure key is always a valid string or number, falling back to index i
+          const key = typeof work.title === 'string' && work.title.trim() !== '' ? work.title : i;
+          
+          return (
+            <Tile page={i} key={key}>
+              <WorkContent work={work} />
+            </Tile>
+          );
+        })}
       </TileContent>
     </TileWrapper>
   );
