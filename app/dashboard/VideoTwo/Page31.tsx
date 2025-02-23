@@ -46,7 +46,11 @@ const Page31 = () => {
         "#34A853", "#FBBC05", "#4285F4", "#7FBC00", "FFBA01", "#01A6F0"
       ];
       var random_color = colors[Math.floor(Math.random() * colors.length)];
-      document.querySelector(".content")!.style.color = random_color;
+      
+      const contentElement = document.querySelector(".content") as HTMLElement; // Explicitly cast to HTMLElement
+      if (contentElement) {
+        contentElement.style.color = random_color;
+      }
     }
   }, [scriptLoaded]);
 
@@ -60,3 +64,4 @@ const Page31 = () => {
 };
 
 export default Page31;
+
