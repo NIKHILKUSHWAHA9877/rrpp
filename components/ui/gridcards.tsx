@@ -140,7 +140,7 @@ const GridCards = () => {
   const [hoveredDetails, setHoveredDetails] = useState<any>(null);
 
 
-  const getFlippingCardIndex = (hoverIndex) => {
+  const getFlippingCardIndex = (hoverIndex: number): number | null => {
     const columns = 3; // 3 cards per row
     const row = Math.floor(hoverIndex / columns);
     const column = hoverIndex % columns;
@@ -325,7 +325,7 @@ const GridCards = () => {
                           </h2>
                         )}
                         <div className="leaderboard">
-                          {hoveredDetails?.backContent.text.map((element, index) => (
+                          {hoveredDetails?.backContent.text.map((element: string, index: number) => (
                             <div key={index}>{element}</div>
                           ))}
                         </div>
