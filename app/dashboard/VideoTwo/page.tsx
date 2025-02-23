@@ -14,7 +14,7 @@ import Page31 from "./Page31";
 const Page3DVideo = () => {
   const fixedImageRef = useRef<HTMLDivElement>(null);
   const elemContainerRef = useRef<HTMLDivElement>(null);
-  const loaderRef = useRef<HTMLDivElement>(null);
+  
   const [menuOpen, setMenuOpen] = useState(false);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
@@ -32,11 +32,7 @@ const Page3DVideo = () => {
   useEffect(() => {
     if (!isClient) return; // Only execute the code after the component is mounted on the client
 
-    if (loaderRef.current) {
-      setTimeout(() => {
-        loaderRef.current.style.top = "-100%";
-      }, 4200);
-    }
+ 
 
     // Initialize LocomotiveScroll and Swiper only on the client-side
     const scrollContainer = document.querySelector("#page1") as HTMLElement;
