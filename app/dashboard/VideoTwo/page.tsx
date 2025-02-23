@@ -25,38 +25,42 @@ const Page3DVideo = () => {
   const swiperRef = useRef<Swiper | null>(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (loaderRef.current) {
-        loaderRef.current.style.top = "-100%";
-      }
-    }, 4200);
+    // Ensure code runs only on the client-side (browser)
+    if (typeof window !== "undefined" && document) {
+      // Hide loader after 4.2 seconds
+      setTimeout(() => {
+        if (loaderRef.current) {
+          loaderRef.current.style.top = "-100%";
+        }
+      }, 4200);
 
-    const scrollContainer = document.querySelector("#page1") as HTMLElement;
-    if (!scrollContainer) return;
+      const scrollContainer = document.querySelector("#page1") as HTMLElement;
+      if (!scrollContainer) return;
 
-    const scroll = new LocomotiveScroll({
-      el: scrollContainer,
-    });
-
-    // Ensure Swiper initializes AFTER elements exist
-    setTimeout(() => {
-      swiperRef.current = new Swiper(".mySwiper", {
-        slidesPerView: 3,  // Shows 3 slides at once
-        centeredSlides: true,
-        spaceBetween: 20,
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-          },
-          480: {
-            slidesPerView: 2,
-          },
-          0: {
-            slidesPerView: 1,
-          },
-        },
+      // Initialize Locomotive Scroll
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer,
       });
-    }, 500); // Wait for DOM to fully load
+
+      // Initialize Swiper after DOM is fully loaded
+      setTimeout(() => {
+        swiperRef.current = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          centeredSlides: true,
+          spaceBetween: 20,
+          breakpoints: {
+            768: {
+              slidesPerView: 3,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          },
+        });
+      }, 500); // Wait for DOM to fully load
 
     // ✅ Page 3 Hover Effect
     if (elemContainerRef.current && fixedImageRef.current) {
@@ -84,6 +88,7 @@ const Page3DVideo = () => {
       scroll.destroy();
       if (swiperRef.current) swiperRef.current.destroy();
     };
+  }
   }, []);
 
   useEffect(() => {
