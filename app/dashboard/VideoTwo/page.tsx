@@ -10,6 +10,7 @@ import { renderCanvas } from "@/components/hero/renderCanvas";
 import "./3d-video.css";
 import Page31 from "./Page31";
 
+
 const Page3DVideo = () => {
   const fixedImageRef = useRef<HTMLDivElement>(null);
   const elemContainerRef = useRef<HTMLDivElement>(null);
@@ -141,9 +142,6 @@ const Page3DVideo = () => {
     );
   };
   
-
-  
-
 
   return (
     

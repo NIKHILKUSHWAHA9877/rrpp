@@ -1,5 +1,6 @@
 
 import '@fontsource/mukta';
+import "../styles/globals.css";
 import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -14,16 +15,23 @@ import StickyScroll from "@/components/StickyScroll";
 import WhiteBg from "@/components/WhiteBg";
 import Cardd from '@/components/ui/Cardd';
 import GridCards from '@/components/ui/gridcards';
+
 export default function Home() {
   return (
     <>
       {/* Main Content */}
-      <main className="relative bg-[rgb(0,3,25)] flex justify-center items-center flex-col mx-auto sm:px-0 px-0 overflow-clip z-100 rounded-b-[120px]">
+      <main className="relative bg-[rgb(0,3,25)] flex justify-center items-center flex-col mx-auto sm:px-0 px-0 overflow-clip  rounded-b-[120px]">
         {/* Content with constrained width */}
         <div className="max-w-7xl w-full mx-auto">
           <FloatingNav />
           <Hero />
-          <Servic />
+          <Servic 
+          className="" // Negative margin to pull up
+        style={{
+          zIndex: "9999", // Increased z-index
+    position: "relative", // Ensuring positioning is applied
+    
+        }}/>
           <StickyScroll />
           <Grid />
           <RecentProjects />

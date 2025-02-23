@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 
+
+interface ServicProps extends React.HTMLProps<HTMLElement> {}
+
 const stats = [
   { label: "Projects Delivered", value: 150 },
   { label: "Countries Served", value: 80 },
@@ -33,7 +36,7 @@ const AnimatedNumber = ({ value }: { value: number }) => {
   return <>{count}</>;
 };
 
-const Servic = () => {
+const Servic: React.FC<ServicProps> = ({ className, style }) => {
   return (
     <>
       <Head>
@@ -47,14 +50,16 @@ const Servic = () => {
 
       {/* ✅ Fixed Section */}
       <section
+        className={className}
         style={{
           paddingTop: "14px",
-          height: "auto",
-          overflow: "hidden",
           backgroundColor: "#000319",
+          zIndex: "9999", // Increased z-index
+    position: "relative", // Ensuring positioning is applied
+    
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center z-100   ">
           {stats.map((stat, index) => (
             <div key={index} className="b-number-wrapper">
               <p className="text-gray-300 font-semibold mb-2 font-quicksand">{stat.label}</p>

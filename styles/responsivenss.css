@@ -1,0 +1,215 @@
+
+
+
+   
+    @media screen and (max-width: 480px) {
+        .top-portfolio-container {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0;
+          margin-right: 0;
+          gap: 15px; /* Space between elements */
+        }
+        
+        .portfolio-container-left {
+          flex: 100%;
+          /* margin-bottom: -20px; */
+        }
+        .portfolio-container-left span {
+        
+        width: auto !important;
+          overflow-x: auto; /* Horizontal scrolling if needed */
+          padding: 10px; /* Add padding for better visuals */
+        }
+        .portfolio-container-left p {
+          margin-top: -10px;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center;
+        
+          font-size: 14px; /* Font size for readability */
+          margin-left: 0;
+          line-height: 1; /* Line spacing */
+          padding: 25px; /* Minimal vertical padding */
+          text-align: center; /* Align text to the left */
+        
+          height: 20px; /* Set height */
+          min-width: 250px !important;
+          max-width: none; /* Remove constraints from parent or global rules */
+          
+        }
+        .LpForm-p{
+          margin-top: -10px;
+          font-size: 15px !important;
+        }
+        .portfolio-form-right{
+         
+          margin: 10px;
+          
+        }
+        .portfolio-form-right form span {
+         
+          width: 85%;
+          padding:5%;
+        }
+        
+        .submit-down-p {
+          font-size: 10px;
+        }
+        
+        .portfolio-form-right form h4 {
+          font-size: 16px;
+        }
+        
+        .portfolio-form-right form p {
+          font-size: 14px;
+        }
+        }
+        
+
+
+
+
+    @media screen and (max-width: 780px) {
+    .top-portfolio-container {
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0px;
+    }
+    
+    .portfolio-container-left {
+      flex: 100%;
+      margin-bottom: 30px;
+    }
+    
+    .portfolio-form-right {
+      flex: 100%;
+    }
+    
+    .portfolio-container-left p {
+      width: 90%;
+      margin-top: 20px;
+    }
+    
+    .portfolio-form-right form span {
+      width: 80%;
+    }
+    
+    .submit-down-p {
+      font-size: 12px;
+    }
+    
+    .portfolio-form-right form h4 {
+      font-size: 18px;
+    }
+    
+    .portfolio-form-right form p {
+      font-size: 12px;
+    }
+    }
+    
+    @media (min-width: 768px) {
+        .dev-submit {
+          font-size: 24px;
+          min-width: 196px;
+        }
+      }
+ 
+
+      /* @media screen and (max-width: 992px) {
+        .top-portfolio-container {
+          flex-direction: column;
+          margin-left: 0;
+          margin-right: 0;
+          padding-top: 0px;
+        }
+        
+        .portfolio-container-left {
+          flex: 100%;
+          margin-bottom: 30px;
+        }
+        
+        .portfolio-form-right {
+          flex: 100%;
+        }
+        
+        .portfolio-container-left span {
+          overflow: scroll;
+          width: 100%;
+          scroll-behavior: smooth;
+          margin-top:5%;
+        }
+        
+        .portfolio-container-left p {
+          width: 100%;
+          margin-top: 20px;
+        }
+        
+        .portfolio-form-right form span {
+          width: 100%;
+        }
+        
+        .portfolio-form-right input[type="checkbox"] {
+          width: 18px;
+          height: 18px;
+        }
+        
+        
+        .submit-down-p {
+          font-size: 12px;
+        }
+        } */
+        
+    
+    /* Responsive Design */
+@media all and (min-width: 1334px){
+    .top-portfolio-container {
+      margin-left: 5%;
+      margin-right: 5%;
+      gap: 20px;
+      background-color: brown !important;
+    }
+    .portfolio-container-left {
+      flex: 60%;
+    }
+    
+    .portfolio-form-right {
+      flex: 40%;
+    }
+    
+    .portfolio-container-left p {
+      width: 40%;
+    }
+    
+    .portfolio-form-right form h4 {
+      font-size: 18px;
+    }
+    }
+    
+
+    /* @media (min-width: 1324px) and (max-width: 1600px) {
+       
+    
+        .top-portfolio-container {
+          margin-left: 5%;
+          margin-right: 5%;
+          gap: 20px;
+          background-color: pink ;
+        }
+        .portfolio-container-left {
+          flex: 60%;
+        }
+        
+        .portfolio-form-right {
+          flex: 40%;
+        }
+        
+        .portfolio-container-left p {
+          width: 40%;
+        }
+        
+        .portfolio-form-right form h4 {
+          font-size: 18px;
+        }
+        } */
+        

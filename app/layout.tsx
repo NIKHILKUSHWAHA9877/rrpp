@@ -1,29 +1,54 @@
-"use client"
-import { usePathname } from 'next/navigation';  // Import usePathname hook
+"use client";
+
+import { usePathname } from "next/navigation";  
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+// import "../styles/responsivenss.css";
 import "../styles/globals.css";
-import { ThemeProvider } from "./provider";  
+
+import { ThemeProvider } from "./provider";
+import { useState, useEffect } from "react";  // Import React hooks
 
 const inter = Inter({ subsets: ["latin"] });
 
- const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Nikhil's Portfolio",
   description: "My portfolio made with Next.js, TypeScript, and Tailwind CSS",
 };
 
+// Define the viewport hook inside this file
+function useViewport() {
+  const [width, setWidth] = useState<number | undefined>(undefined);
+  const [height, setHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+
+    // Set initial size
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return { width, height };
+}
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();  // Get the current path
+  const { width, height } = useViewport();  // Get viewport dimensions
 
-  // Determine if we're on a specific route where we want the images
-  const isMainPage = pathname === "/";  // Assuming your main page is at '/'
-  const isAboutPage = pathname === "/about";  // Example for another specific route
+  // Check if we are on specific pages
+  const isMainPage = pathname === "/";
+  const isAboutPage = pathname === "/about";
 
   return (
+    
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
@@ -32,29 +57,28 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Main wrapper with rounded bottom corners */}
+          {/* Main wrapper */}
           <div className="relative w-full rounded-b-2xl z-0">
             
-            {/* Conditionally render the background images only on specific pages */}
+            {/* Conditionally render images on specific pages */}
             {isMainPage && (
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                
-
-                {/* Second Image */}
                 <img
                   src="/color.png"
                   alt="Second Image"
                   className="absolute z-20"
                   style={{
-                    top: "7rem",   
-                    left: "80.6%",  
-                    opacity: 0.4,   
-                    maxWidth: "50vw", 
-                    maxHeight: "70vh", 
+                    top: width && width < 768 ? "5rem" : "7rem",  // Adjust for small screens
+                    left: width && width < 768 ? "50%" : "80.6%",
+                    transform: width && width < 768 ? "translateX(-50%)" : "none",
+                    opacity: 0.4,
+                    maxWidth: "50vw",
+                    maxHeight: "70vh",
                     height: "auto",
                   }}
                 />
               </div>
+
             )}
 
             {/* Main content */}
