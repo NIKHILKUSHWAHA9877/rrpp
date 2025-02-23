@@ -15,6 +15,7 @@ const Page3DVideo = () => {
   const elemContainerRef = useRef<HTMLDivElement>(null);
   const loaderRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   // Add state to handle the active slider (Interior Plan, Floor Plan, 3D Animation)
   const [activeSlider, setActiveSlider] = useState<string>("3d");
@@ -103,16 +104,35 @@ const Page3DVideo = () => {
 
   // Render function for Swiper content based on the active slider
   const renderSlider = (type: string) => {
+    const iframeLinks = [
+      "https://player.vimeo.com/video/1059320240?h=01ee56eef6&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", // First iframe
+      "https://player.vimeo.com/video/1059333410?h=48eb1a42e0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", // Second iframe
+      "https://player.vimeo.com/video/1059246509?h=8c517e01ed&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", // Third iframe
+    ];
+
+
     return (
-      
       <div className="swiper mySwiper">
-        <div className="swiper-wrapper">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <div key={index} className="swiper-slide">
-              {type === "3d" ? (
-                <video autoPlay loop muted src={`/video/3d-animation${index + 1}.mp4`} controls />
-              ) : (
-                <img src={`/images/${type}-plan/${type}-plan${index + 1}.jpg`} alt={`${type} Plan ${index + 1}`} />
+      <div className="swiper-wrapper">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <div key={index} className="swiper-slide">
+            {type === "3d" ? (
+              // For each slide, use the corresponding iframe URL from the array
+              <iframe
+                width="100%"
+                height="300px" // Adjust height as needed
+                src={iframeLinks[index]} // Use the iframe link for the current index
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+              />
+            ) : (
+                <img
+                  src={`/images/${type}-plan/${type}-plan${index + 1}.jpg`}
+                  alt={`${type} Plan ${index + 1}`}
+                  className="image"
+                  onClick={() => setZoomedImage(`/images/${type}-plan/${type}-plan${index + 1}.jpg`)}
+                />
               )}
             </div>
           ))}
@@ -120,6 +140,7 @@ const Page3DVideo = () => {
       </div>
     );
   };
+  
 
   
 
@@ -137,22 +158,39 @@ const Page3DVideo = () => {
           <div id="center">
             <div id="left">
               <h3>
-                Sundown is a multi-disciplinary studio focused on creating
-                unique, end-to-end experiences and environments.
+              Here’s where vision meets reality!<br/>Below, are collection of our completed projects
+              and the esteemed clients who trusted us to bring their ideas to life.🚀 
               </h3>
             </div>
             <div id="right">
               <h1>
-                SPACES <br />
-                THAT <br />
-                INSPIRE
+              GOOGENIX <br />
+              FUTURE <br />
+                READY
               </h1>
             </div>
           </div>
 
           {/* Hero Shape */}
           {/* Video */}
-          <video autoPlay loop muted src="/video.mp4"></video>
+          {/* <video autoPlay loop muted src="/video.mp4"></video> */}
+          <div className="arbitrarily-placed-and-sized-parent-element">
+  <div className="video-embed-object-fit-cover">
+    <iframe
+      src="https://player.vimeo.com/video/1059246509?h=8c517e01ed&title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&controls=0&muted=1&loop=1"
+      allow="autoplay; fullscreen"
+      frameBorder="0"
+      title="Vimeo video"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
+
+
+ 
+
+
+
 
           {/* Add Canvas here */}
           <canvas className="bg-skin-base pointer-events-none absolute inset-0" id="canvas"></canvas>
@@ -162,11 +200,11 @@ const Page3DVideo = () => {
         <div id="page2">
           <div id="moving-text">
             <div className="con">
-              <h1>EXPERIENCES</h1>
+              <h1>EXPERIENCE</h1>
               <div id="gola"></div>
-              <h1>CONTENT</h1>
+              <h1>TRUST</h1>
               <div id="gola"></div>
-              <h1>ENVIRONMENTS</h1>
+              <h1>COMMITMENT</h1>
               <div id="gola"></div>
             </div>
           </div>
@@ -201,23 +239,39 @@ const Page3DVideo = () => {
 
         {/* Page 3 - Image Hover Animation */}
         <div id="page3">
-          <div id="elem-container" ref={elemContainerRef}>
-            {[
-              "Makers Studio HOI",
-              "50th Anniversary",
-              "NYFW Popup",
-              "Air Force 1 2021",
-              "SOHO NYC",
-              "SOHO 2023",
-              "Play New Kidvision",
-            ].map((title, index) => (
-              <div key={index} className="elem" data-image={`/images/image${index + 1}.jpg`}>
-                <div className="overlay"></div>
-                <h2>{title}</h2>
-              </div>
-            ))}
-          </div>
-        </div>
+  <div id="elem-container" ref={elemContainerRef}>
+    <div className="elem" data-image="/images/image1.jpg">
+      <div className="overlay"></div>
+      <h2 className="orclient">
+      <b>Our Clients</b></h2>
+    </div>
+    <div className="elem" data-image="/alvista.png">
+      <div className="overlay"></div>
+      <h2>ALVISTA</h2>
+    </div>
+    <div className="elem" data-image="/kharche.png">
+      <div className="overlay"></div>
+      <h2>KHARCHE ASSOCIATES</h2>
+    </div>
+    <div className="elem" data-image="/skr.png">
+      <div className="overlay"></div>
+      <h2>SKR CONSTRUCTIONS</h2>
+    </div>
+    <div className="elem" data-image="/decristo.png">
+      <div className="overlay"></div>
+      <h2>DeCristo Design Interiors</h2>
+    </div>
+    <div className="elem" data-image="/Aanchal.png">
+      <div className="overlay"></div>
+      <h2>AANCHAL REALTORS</h2>
+    </div>
+    <div className="elem" data-image="/247.png">
+      <div className="overlay"></div>
+      <h2>24/7 REAL ESTATE</h2>
+    </div>
+  </div>
+</div>
+
 
         <div>
           <Page31 />
@@ -252,9 +306,17 @@ const Page3DVideo = () => {
           {/* Render the active slider dynamically */}
           <div className="slid">{renderSlider(activeSlider)}
           </div>
-
+          {zoomedImage && (
+          <div className="modal-overlay" onClick={() => setZoomedImage(null)}>
+            <div className="modal-content">
+              <img src={zoomedImage} alt="Zoomed" className="zoomed-image" />
+            </div>
+          </div>
+        )}
+     
+  
           {/* Custom Navigation Buttons */}
-          <div className="prevnex" style={{ textAlign: "center", marginTop: "20px" }}>
+          <div className="prevnex" style={{ textAlign: "center", marginTop: "30px" }}>
   <button
     onClick={handlePrevClick}
     className="bg-white text-black border-2 border-emerald-400 text-center w-20 h-8 relative text-sm font-semibold group mr-2"

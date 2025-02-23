@@ -122,9 +122,9 @@ const Layout: React.FC = () => {
             </main>
 
             <WhiteBg
-                className="w-full h-[90vh] mt-[-150px] sm:mt-[-150px] footer2"
+                className="w-full h-[90vh] mt-[-150px] sm:mt-[-150px] footer2 white-bg"
                 style={{
-                    zIndex: 0, // Ensuring it appears above the background but below the main content
+                    zIndex: 50, // Ensuring it appears above the background but below the main content
                     display: "flex",
                 }}
             />

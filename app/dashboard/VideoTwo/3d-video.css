@@ -22,12 +22,14 @@
     box-sizing: border-box;
     font-family: "Neue Haas Display", sans-serif;
 }
-
+body{
+    overflow-x: hidden;
+}
 #page1 {
-    min-height: 100vh;
+    min-height: 200vh;
     width: 100%;
     background-color: black;
-    position: relative;
+    /* position: relative; */
     padding: 0 2vw;
     overflow: hidden !important;
 
@@ -53,10 +55,32 @@
 
 #left h3 {
     width: 25vw;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     line-height: 2vw;
   
 }
+#left h3 {
+    text-decoration: none; /* Remove default underline */
+    /* Default text color */
+    position: relative; /* Necessary for positioning pseudo-elements */
+    display: inline-block; /* Make the h3 behave like an inline block for width */
+    padding-bottom: 2px; /* Space for the underline */
+  }
+  
+  
+  
+  #left h3:hover::after {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Make the underline span the entire width */
+    height: 2px; /* Set the thickness of the underline */
+    background-color: hsl(280, 80%, 50%); /* Underline color */
+  }
+  
+  
+  
 
 #center h1 {
     font-size: 10vw;
@@ -64,15 +88,10 @@
     line-height: 8vw;
 }
 
-#page1 video {
-    position: relative;
-    border-radius: 30px;
-    margin-top: 4vw;
-    width: 100%;
-}
 
 
 #page2 {
+   
     min-height: 100vh;
     width: 100%;
     background-color: black;
@@ -82,6 +101,7 @@
 }
 
 #moving-text {
+    margin-top: -200px;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -200,6 +220,75 @@
   }
   
 
+  /* #page1 iframe{
+    position: relative;
+    border-radius: 30px;
+    margin-top: 4vw;
+    width: 100%;
+    height: 70vh;
+    object-fit: cover !important;
+    
+} */
+
+/* 
+  Arbitrarily sized & positioned element that will 
+  contain the embedded video as background.
+*/
+.arbitrarily-placed-and-sized-parent-element {
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+  width: 50vw;
+  height: 50vh;
+}
+
+/*
+  This element contains the iframe, will take it's size from
+  it's parent and will behave like an image/video 
+  with object-fit: cover.
+*/
+.video-embed-object-fit-cover {
+  position: absolute;
+  /* ensure positioning regardless of parent flex settings */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+    margin-top: -1vw;
+  width: 180%;
+  height: 200% !important;
+
+  /* important */
+  container-type: size;
+
+  /* cut off overflowing video */
+  overflow: hidden;
+}
+
+.video-embed-object-fit-cover > iframe {
+  position: absolute;
+  /* keep video centered both vertically and horizontally */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+
+  /* force aspect ratio based on parent container */
+  @container (min-aspect-ratio: 16/9) {
+    height: 56.25cqw; /* 100*9/16 */
+  }
+
+
+
+  /* prevent interaction */
+  pointer-events: none;
+}
+
+
 #page3 {
     min-height: 100vh;
     width: 100%;
@@ -269,8 +358,8 @@
 
 
 #page4 {
-    height: 90vh;
-   
+    height: 100vh;
+
     background-color: black;
     padding: 10vw;
     
@@ -315,11 +404,16 @@
 
 
 @media (max-width:600px) {
-
+body{
+    background-color: black;
+    overflow-x: hidden !important;
+}
     #page1 {
-        min-height: 100vh;
+        min-height: 120vh;
+        margin-top: 90px;
         width: 100vw;
         padding: 0 0vw;
+        overflow: hidden !important;
     }
     #center {
         height: 62vh;
@@ -335,6 +429,7 @@
         flex-direction: column-reverse;
         position: relative;
         z-index: 9;
+        overflow: hidden !important;
     }
 
     #left h3 {
@@ -350,23 +445,53 @@
         line-height: 15vw;
     }
 
-    #page1 video {
-        position: relative;
-        border-radius: 15px;
-        margin-top: 4vw;
-        height: 70vh;
-        object-fit: cover;
-        object-position: center;
-        width: 92%;
-        margin-left: 4%;
-    }
+    .video-embed-object-fit-cover {
+        position: absolute;
+        /* ensure positioning regardless of parent flex settings */
+        display: flex;
+        
+        left: 0;
+        right: 100px;
+        border-radius: 30px;
+          margin-top: -13vw;
+        width: 160%;
+        height: 120% !important;
+      
+        /* important */
+        container-type: size;
+      
+        /* cut off overflowing video */
+        overflow: hidden !important;
+      }
+      
+      .video-embed-object-fit-cover > iframe {
+        position: absolute;
+        /* keep video centered both vertically and horizontally */
+   
+      
+        width: 170%;
+      
+        /* force aspect ratio based on parent container */
+        
+      
+      
+      
+        /* prevent interaction */
+        pointer-events: none;
+      }
+          
+
+
+
 
     #page2 {
         min-height: 100vh;
         width: 100%;
         background-color: black;
         padding: 8vw 0;
+        
         position: relative;
+        overflow: hidden !important;
     }
 
     #moving-text {
@@ -408,11 +533,13 @@
         /* background-color: aliceblue; */
         padding: 10vw 4vw;
         display: flex;
+        margin-top: 150px;
         align-items: flex-start;
         justify-content: space-between;
         position: relative;
         flex-direction: column;
         z-index: 9;
+        overflow: hidden !important;
     }
 
     #page2-bottom h1 {
@@ -433,7 +560,7 @@
 
     #bottom-part2 p {
         font-weight: 200;
-        margin-top: 2vw;
+        margin-top: 9.8vw;
         font-size: 3vw;
     }
 
@@ -456,12 +583,27 @@
         animation-timing-function: ease-in-out;
 
     }
+#page3{
+    overflow: hidden !important;
+}
+#page4{
+    overflow: hidden !important;
+}
+#elem-container{
+    overflow: hidden !important
 
+}
+.footer3{
 
+    overflow: hidden !important;
+}
 }
 
 
-
+#right h1{
+font-size: 7rem;
+line-height: 0.9;
+}
 
 
 @keyframes load {
@@ -566,7 +708,50 @@
     }
   }
   
-/* 
-  .contactt{
-    height: 90rem;
-  } */
+
+.orclient{
+
+    display: inline-block; /* Make sure it doesn’t span the full width */
+  border-bottom: 5px solid #ff6347; /* Change the color as needed */
+  padding-bottom: 5px; 
+}
+
+
+
+/* Full-screen modal overlay */
+.modal-overlay {
+    position: fixed; /* Make the modal cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal is on top of other content */
+  }
+  
+  /* The image inside the modal */
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative; /* Position the modal content properly */
+    z-index: 1001; /* Ensure image is on top within the modal */
+  }
+  
+  .zoomed-image {
+    width: 60%;
+    height: auto;
+    object-fit: contain; /* Ensure the image fits within the modal */
+    border-radius: 8px;
+  }
+  
+  /* Styling for images inside the slider */
+  .swiper-slide img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 10; /* Ensure images stay in their normal stacking context */
+  }
+  
+  

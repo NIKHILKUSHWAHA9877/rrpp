@@ -36,7 +36,7 @@
     width: 100%;  /* Grid item takes full width */
   /* Let the height adjust based on content */
     opacity: 1;  /* Ensure the grid items are visible */
-    background-color: rgb(26, 26, 26);  /* Maintain the background */
+    background-color: rgb(2, 2, 2);  /* Maintain the background */
     border-radius: 21px;  /* Rounded corners for the grid items */
     transition: 0.2s;  /* Smooth transition for hover effects */
   }
@@ -58,7 +58,7 @@
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   clip-path: polygon(0 0, 100% 0, 100% 62%, 0% 83%);
-  margin-bottom: 120px !important;
+ 
 }
 
 .testimonial-grid figure:nth-child(2) {
@@ -206,41 +206,116 @@ figcaption > div div {
 }
 
 /* ============== RESPONSIVENESS ============== */
+@media (max-width: 1024px) {
+    .testimonial-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      grid-template-rows: auto;
+      grid-auto-rows: minmax(200px, auto);
+      gap: 15px;
+    }
+    
+    .testimonial-grid figure {
+      grid-column: auto !important;
+      grid-row: auto !important;
+      clip-path: unset !important;
+      height: auto;
+    }
+    
+    /* Ensure large grid items take full width */
+    .testimonial-grid figure:nth-child(1),
+    .testimonial-grid figure:nth-child(2),
+    .testimonial-grid figure:nth-child(4),
+    .testimonial-grid figure:nth-child(6) {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr; /* Single column */
+      grid-auto-rows: minmax(250px, auto);
+    }
+  
+    .testimonial-grid figure {
+      width: 100%;
+      clip-path: unset !important;
+    }
+  
+    /* Fix text alignment for better readability */
+    .testimonial-grid figcaption {
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .testimonial-grid figure {
+      height: auto;
+      clip-path: unset !important;
+    }
+  
+    .testimonial-grid figure img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  
 
-@media (max-width: 800px) {
-  .testimonial-grid figure:nth-child(1) figcaption {
-    padding-left: 0;
-    height: 40px;
-  }
-}
 
-@media (max-width: 600px) {
-  .testimonial-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px;
-    grid-auto-rows: 200px;
-  }
-  .testimonial-grid figure {
-    grid-column: auto!important;
-    grid-row: auto!important;
-    clip-path: unset!important;
-  }
-  .testimonial-grid figure:nth-child(2),
-  .testimonial-grid figure:nth-child(8),
-  .testimonial-grid figure:nth-child(9),
-  .testimonial-grid figure:nth-child(10) {
-    grid-row: auto / span 2 !important;
-    width: auto;
-  }
-}
 
-@media (max-width: 420px) {
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-  .testimonial-grid figure {
-    grid-column-end: div 1!important;
-    grid-row: auto!important;
-  }
-}
 
+
+
+/* text highlighting effect */
+.testimonial-line {
+   
+    transition: opacity 0.5s ease-in-out;
+    padding: 10px !important;
+    font-size: 19px;
+    line-height: 1.6;
+  }
+  
+  .testimonial-line.highlight {
+    opacity: 1;
+  }
+  
+  .testimonial-content {
+    padding: 10px;
+    font-family: "Mulish", sans-serif !important;
+  }
+  
+
+  
+  .testimonial-line.highlight {
+    opacity: 1;
+  }
+  
+/* text highlighting effect responsiveness*/
+
+  @media (max-width: 768px) {
+    .testimonial-grid figcaption {
+      font-size: 1rem; 
+      padding: 5px 10px;
+      background: linear-gradient(90deg, #ff8c00, #ff0080);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative; /* Avoids overlap issues */
+      bottom: auto;
+      padding: 8px;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .testimonial-grid:last-child {
+      margin-bottom: 120px; /* Adjust this value as needed */
+    }
+  }
+ 

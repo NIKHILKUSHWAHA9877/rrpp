@@ -1,10 +1,15 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState , useEffect , useRef } from 'react';
 import "./logo.css"
 import Londa from './londa';
+import { renderCanvas } from '@/components/hero/renderCanvas';
 // Define the component to display the list of books (images)
 const BookList: React.FC = () => {
+
+
+ 
+
     const [selectedImage, setSelectedImage] = useState<string | null>(null); // Track selected image
   
     // Handle the image click event
@@ -16,11 +21,26 @@ const BookList: React.FC = () => {
     const closeImage = () => {
       setSelectedImage(null); // Reset selected image to null
     };
-  
+
+   
+     // Initialize the canvas when the component mounts
+  useEffect(() => {
+    renderCanvas(); // Call the renderCanvas function to start the animation
+
+    return () => {
+      // Cleanup: any required code when the component unmounts
+    };
+  }, []);
+    
+
     return (
-       
+    
+
 
       <div>
+        {/* Canvas for the animation */}
+<canvas id="canvas"></canvas>
+
         {/* Display a modal with the clicked image */}
         {selectedImage && (
           <div className="modal" onClick={closeImage}>
@@ -142,8 +162,9 @@ const BookList: React.FC = () => {
 
 
     </ul>
-    
+   
     </div>
+    
     
   );
 };

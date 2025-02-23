@@ -35,11 +35,11 @@ export const FloatingNav: React.FC = () => {
       href: "#projects",
       hasDropdown: true,
       dropdownItems: [
-        { label: "Video Editing", href: "/dashboard/routerone" },
-        { label: "Voice Solutions", href: "/dashboard/routerone" },
         { label: "Software Development", href: "#about" },
         { label: "App development", href: "#about" },
         { label: "Website Development", href: "#about" },
+        { label: "Video Editing", href: "/dashboard/routerone" },
+        { label: "Voice Solutions", href: "/dashboard/routerone" },
         { label: "3D Video Services", href: "/dashboard/VideoTwo" },
         { label: "3D Animation & CGI", href: "/dashboard/VideoTwo" },
         { label: "Graphics designing", href: "/dashboard/logoRoute" },

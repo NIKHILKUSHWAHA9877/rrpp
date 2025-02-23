@@ -700,3 +700,28 @@ display: flex !important;
   }
   
   
+
+  /* Make sure the canvas fills the entire page */
+canvas {
+  position: fixed;   /* Fixed position so it stays in the background */
+  top: 0;
+  left: 0;
+  width: 100vw;       /* Full viewport width */
+  height: 100vh;      /* Full viewport height */
+  z-index: -2;  
+  pointer-events: none;      /* Send the canvas behind the rest of the content */
+   /* Disable interactions with the canvas */
+}
+
+
+/* Additional styles for the modal and text */
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.white-bg {
+ 
+  z-index: 50 !important; /* WhiteBg needs to appear above the canvas */
+}

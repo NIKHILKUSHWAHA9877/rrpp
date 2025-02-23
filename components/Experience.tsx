@@ -52,7 +52,7 @@ const Experience = () => {
         className="p-6 m-2 bg-gray-800 rounded-lg flex items-center justify-center"
         style={{ width: "250px", height: "100px" }} // Set custom width and height
       >
-        <img src="/prime.svg" alt="Prime Logo" width="100" height="100" /> {/* Image inside with fixed size */}
+        <img src="/alpino.svg" alt="Prime Logo" width="100" height="100" /> {/* Image inside with fixed size */}
       </div>
     </div>
   </div>
