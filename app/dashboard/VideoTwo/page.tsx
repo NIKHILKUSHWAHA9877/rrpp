@@ -17,6 +17,7 @@ const Page3DVideo = () => {
   const loaderRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   // Add state to handle the active slider (Interior Plan, Floor Plan, 3D Animation)
   const [activeSlider, setActiveSlider] = useState<string>("3d");
@@ -25,9 +26,10 @@ const Page3DVideo = () => {
   const swiperRef = useRef<Swiper | null>(null);
 
   useEffect(() => {
-    // Ensure code runs only on the client-side (browser)
+    // Only set the state once the component mounts (client-side)
+    setIsClient(true);
+
     if (typeof window !== "undefined" && document) {
-      // Hide loader after 4.2 seconds
       setTimeout(() => {
         if (loaderRef.current) {
           loaderRef.current.style.top = "-100%";
@@ -37,12 +39,10 @@ const Page3DVideo = () => {
       const scrollContainer = document.querySelector("#page1") as HTMLElement;
       if (!scrollContainer) return;
 
-      // Initialize Locomotive Scroll
       const scroll = new LocomotiveScroll({
         el: scrollContainer,
       });
 
-      // Initialize Swiper after DOM is fully loaded
       setTimeout(() => {
         swiperRef.current = new Swiper(".mySwiper", {
           slidesPerView: 3,
@@ -60,8 +60,7 @@ const Page3DVideo = () => {
             },
           },
         });
-      }, 500); // Wait for DOM to fully load
-
+      }, 500);
     // ✅ Page 3 Hover Effect
     if (elemContainerRef.current && fixedImageRef.current) {
       const elemContainer = elemContainerRef.current;
@@ -90,6 +89,8 @@ const Page3DVideo = () => {
     };
   }
   }, []);
+
+ 
 
   useEffect(() => {
     // Call renderCanvas only for Page 1 when it's mounted
