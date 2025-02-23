@@ -26,10 +26,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <div className="bg-white text-black antialiased dark:bg-black dark:text-white">
       <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem={false}
-        themes={['dark', 'light']}
+       
+        
+       
       >
         <Header />
         <LenisProvider>{children}</LenisProvider>
