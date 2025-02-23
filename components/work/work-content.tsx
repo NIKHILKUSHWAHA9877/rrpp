@@ -48,7 +48,6 @@ export default function WorkContent({ work, progress = 0 }: WorkContentProps) {
                 slot="media"
                 src={media.src}
                 playsInline
-                crossOrigin
                 style={{
                   width: "auto",
                   height: "100%",
