@@ -25,56 +25,55 @@ const Page3DVideo = () => {
   // Swiper reference
   const swiperRef = useRef<Swiper | null>(null);
 
-
   useEffect(() => {
-    // Check if window is defined (client-side)
-    if (typeof window !== 'undefined') {
-      setIsClient(true); // Set client-side flag
-    }
+    setIsClient(typeof window !== "undefined");
   }, []);
 
-
   useEffect(() => {
-    if (isClient && loaderRef.current) { // Added a null check
+    if (!isClient) return; // Only execute the code after the component is mounted on the client
+
+    if (loaderRef.current) {
       setTimeout(() => {
-        if (loaderRef.current) {
-          loaderRef.current.style.top = "-100%";
-        }
+        loaderRef.current.style.top = "-100%";
       }, 4200);
     }
-  }, [isClient]); // Runs once the component is mounted on the client
-  
 
-      useEffect(() => {
-        if (isClient) {
-          const scrollContainer = document.querySelector("#page1") as HTMLElement;
-          if (scrollContainer) {
-            // Type-casting to ensure the 'destroy' method is available
-            const scroll = new LocomotiveScroll({
-              el: scrollContainer,
-            }) as any;
-
-    // Initialize Swiper only on client-side
-   
-    setTimeout(() => {
-      swiperRef.current = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        centeredSlides: true,
-        spaceBetween: 20,
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-          },
-          480: {
-            slidesPerView: 2,
-          },
-          0: {
-            slidesPerView: 1,
-          },
-        },
+    // Initialize LocomotiveScroll and Swiper only on the client-side
+    const scrollContainer = document.querySelector("#page1") as HTMLElement;
+    if (scrollContainer) {
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer,
       });
-    }, 500);
-    // ✅ Page 3 Hover Effect
+
+      setTimeout(() => {
+        swiperRef.current = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          centeredSlides: true,
+          spaceBetween: 20,
+          breakpoints: {
+            768: {
+              slidesPerView: 3,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          },
+        });
+      }, 500);
+
+      // Cleanup on component unmount
+      return () => {
+        scroll.destroy();
+        if (swiperRef.current) swiperRef.current.destroy();
+      };
+    }
+  }, [isClient]);
+
+  // Hover effect for Page 3
+  useEffect(() => {
     if (elemContainerRef.current && fixedImageRef.current) {
       const elemContainer = elemContainerRef.current;
       const fixedImage = fixedImageRef.current;
@@ -97,12 +96,13 @@ const Page3DVideo = () => {
     }
 
     return () => {
-      scroll.destroy();  // Now this will work without TypeScript errors
-      if (swiperRef.current) swiperRef.current.destroy();
+      // Cleanup hover events on unmount
+      const elems = document.querySelectorAll(".elem");
+      elems.forEach((e) => {
+        e.removeEventListener("mouseenter", () => {});
+      });
     };
-  }
-}
-}, [isClient]);
+  }, []);
 
  
 
