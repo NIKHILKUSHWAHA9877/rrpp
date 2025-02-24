@@ -9,7 +9,11 @@ import "swiper/css/pagination";
 import { renderCanvas } from "@/components/hero/renderCanvas"; 
 import "./3d-video.css";
 import Page31 from "./Page31";
-
+import dynamic from 'next/dynamic'
+dynamic(
+  
+  { ssr: false }
+)
 
 const Page3DVideo = () => {
   const fixedImageRef = useRef<HTMLDivElement>(null);
@@ -33,14 +37,18 @@ const Page3DVideo = () => {
     if (!isClient) return; // Only execute the code after the component is mounted on the client
 
  
+    if (typeof window !== 'undefined') {
+
+      const scrollContainer = document.querySelector("#page1") as HTMLElement;
+      if (scrollContainer) {
+        const scroll = new LocomotiveScroll({
+          el: scrollContainer,
+        }) as any;;
+  
+    
 
     // Initialize LocomotiveScroll and Swiper only on the client-side
-    const scrollContainer = document.querySelector("#page1") as HTMLElement;
-    if (scrollContainer) {
-      const scroll = new LocomotiveScroll({
-        el: scrollContainer,
-      });
-
+   
       setTimeout(() => {
         swiperRef.current = new Swiper(".mySwiper", {
           slidesPerView: 3,
@@ -59,11 +67,12 @@ const Page3DVideo = () => {
           },
         });
       }, 500);
-
+    
       // Cleanup on component unmount
       return () => {
         scroll.destroy();
         if (swiperRef.current) swiperRef.current.destroy();
+      }
       };
     }
   }, [isClient]);
