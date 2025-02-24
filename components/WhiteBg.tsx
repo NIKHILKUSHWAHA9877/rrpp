@@ -21,7 +21,7 @@ const WhiteBg: FC<WhiteBgProps> = ({ className = '', style, children }) => {
       {/* Marquee Effect Inside WhiteBg */}
       <div className="marquee-container">
         <div className="marquee w-full">
-          <h2 className="mb-0 text-black leading-none">
+          <h2 className="mb-0 text-black  leading-none">
             LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER ·
           </h2>
         </div>
@@ -30,11 +30,20 @@ const WhiteBg: FC<WhiteBgProps> = ({ className = '', style, children }) => {
       {/* Footer Section */}
       <div className="absolute bottom-0 left-0 w-full px-4 py-3 flex flex-col md:flex-row justify-between items-center overflow-hidden text-center md:text-left">
   {/* Copyright Section */}
-  <p className="text-gray-600 text-xs md:text-sm font-light md:font-normal fancy">
-    Copyright © 2025 Designed & Developed with 💓 by{" "}
-    <span className="font-custom underline text-blue-500">Nikhil</span> in India.
-    All Rights Reserved. | Powered by Googenix
-  </p>
+  <p className="text-gray-600 text-xs md:text-sm font-light md:font-normal fancy2">
+  Copyright © 2025 Designed & Developed with 💓 by{" "}
+  <span className="font-custom underline text-blue-500">Nikhil</span> in India.
+  All Rights Reserved. | Powered by Googenix
+</p>
+
+{/* Default: Hidden on all screens */}
+<p className="hidden text-gray-600 text-xs font-light fancy3 custom-small-text">
+<span className="fancy3">Copyright © 2025 Designed & Developed with 💓 by{" "} <span className="font-custom underline text-blue-500">Nikhil</span></span> 
+ 
+  <br /> <span className="fancy3">in India All Rights Reserved.| Powered by  
+  <span className="fancy"> Googenix</span></span> 
+</p>
+
 
   {/* Social Media Section */}
   <div className="flex items-center gap-4 mt-3 md:mt-0">

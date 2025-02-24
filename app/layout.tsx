@@ -66,7 +66,7 @@ export default function RootLayout({
                 <img
                   src="/color.png"
                   alt="Second Image"
-                  className="absolute z-20"
+                  className="absolute colorpng z-20"
                   style={{
                     top: width && width < 768 ? "5rem" : "7rem",  // Adjust for small screens
                     left: width && width < 768 ? "50%" : "80.6%",

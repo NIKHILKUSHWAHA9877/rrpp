@@ -44,31 +44,124 @@
 
 .fancy {
   position: relative;
-  white-space: nowrap;
-  &:after {
-    --deco-height: 0.3125em;
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(var(--deco-height) * -0.625);
-    height: var(--deco-height);
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-    background-size: auto 100%;
-    background-repeat: round;
-    background-position: 0em;
-  }
+  white-space: nowrap; /* Prevent text from wrapping */
+  font-size: 2rem; /* Set a default font size */
+  transition: font-size 0.3s ease; /* Smooth transition for resizing */
+}
+
+.fancy:after {
+  --deco-height: 0.3125em;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--deco-height) * -0.625);
+  height: var(--deco-height);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: auto 100%;
+  background-repeat: round;
+  background-position: 0em;
+}
+
+.fancy2{
+  cursor: url("https://assets.codepen.io/174183/spiral_1.png"), auto;
+  font-size: 20px;
+}
+
+.fancy2 {
+  position: relative;
+  white-space: nowrap; /* Prevent text from wrapping */
+  font-size: 2rem; /* Set a default font size */
+  transition: font-size 0.3s ease; /* Smooth transition for resizing */
+}
+
+.fancy2:after {
+  --deco-height: 0.3125em;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--deco-height) * -0.625);
+  height: var(--deco-height);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: auto 100%;
+  background-repeat: round;
+  background-position: 0em;
+}
+
+.fancy3{
+  cursor: url("https://assets.codepen.io/174183/spiral_1.png"), auto;
+  font-size: 20px;
+}
+
+.fancy3{
+  position: relative;
+  white-space: nowrap; /* Prevent text from wrapping */
+  font-size: 2rem; /* Set a default font size */
+  transition: font-size 0.3s ease; /* Smooth transition for resizing */
+}
+
+.fancy3:after {
+  --deco-height: 0.3125em;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--deco-height) * -0.625);
+  height: var(--deco-height);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: auto 100%;
+  background-repeat: round;
+  background-position: 0em;
 }
 
 
-/* testimonials */
-/* .background {
+@media (max-width: 768px) {
+  .fancy3{
+   display:block;
+   font-size: 0.7rem;
+   text-align: left;
+  }
+}
 
-  background-image: radial-gradient(lightgrey 10%, transparent 5%),
-    radial-gradient(lightgrey 10%, transparent 5%);
-  background-size: 20px 20px;
-  background-position: 0 0, 20px 20px;
-} */
+@media (max-width: 768px) {
+  .fancy2 {
+   display: none;/* Reduce font size on smaller screens */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fancy {
+    font-size: 0.9rem; /* Reduce font size on smaller screens */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fancy {
+    font-size: 0.9rem; /* Reduce font size on smaller screens */
+  }
+  .leading-none{
+
+ /* Position it absolutely inside WhiteBg */
+    bottom: -92%; /* Adjust the vertical position (10% from the bottom) */
+  display: flex;
+
+  }
+  .marquee-container{
+height: 50vh;
+
+  }
+  .marquee-container h2{
+    margin-top: 50vh;
+    
+      }
+    
+}
+
+
+
 
 .yeh1{
   font-size: 60px;
@@ -189,15 +282,7 @@
   }
 }
 
-/* html, body {
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-} */
 
-
-/* border */
-/* Default border (on hover, it will apply the gradient) */
 /* Gradient border effect using pseudo-element */
 :hover.hover\:gradient-border::before {
   content: "";
@@ -845,56 +930,38 @@ article h1 {
   }
   }
 
-/* @media screen and (max-width: 1200px) {
-.top-portfolio-container {
-  margin-left: 5%;
-  margin-right: 5%;
-  gap: 20px;
-}
 
-.portfolio-container-left {
-  flex: 60%;
-}
+/* forn below buttones typye4 */
 
-.portfolio-form-right {
-  flex: 40%;
-}
-
-.portfolio-container-left p {
-  width: 40%;
-}
-
-.portfolio-form-right form h4 {
-  font-size: 18px;
-}
-} */
-
-
-
-
-@media screen and (min-width: 1634px){
-  .top-portfolio-container {
-    margin-left: 5%;
-    margin-right: 5%;
-    gap: 20px;
-    background-color: brown !important;
+@media (max-width: 768px) {
+  .button-container {
+    display: flex;
+    flex-wrap: wrap; /* For 2 buttons per row */
   }
 
+  .button-container > Button {
+    width: 45% !important; 
+    box-sizing: border-box !important; 
+  }
+
+  /* Text inside button */
+  .button-container > Button p {
+    font-size: 15px !important; 
+    text-align: center; 
+    white-space: normal !important;
+    margin: 0; 
+    padding: 0 50px; 
+    word-wrap: break-word !important; 
+    word-break: break-word !important; 
+  }
+}
 
 
-  /* .portfolio-container-left {
-    flex: 60%;
-  }
-  
-  .portfolio-form-right {
-    flex: 40%;
-  }
-  
-  .portfolio-container-left p {
-    width: 40%;
-  }
-  
-  .portfolio-form-right form h4 {
-    font-size: 18px;
-  } */
-  }
+/* main pg img */
+@media (max-width: 768px) {
+.colorpng{
+
+left: 20.4rem !important;
+
+}
+}

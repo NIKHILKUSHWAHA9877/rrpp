@@ -39,60 +39,60 @@ const Footer = () => {
                             loop
                         ></video>
 
-                        <span>
-                            {/* Wrapping each <p> inside a Button component for MovingBorder */}
-                            <Button
-                                duration={2000}
-                                borderRadius="10px"
-                                className="relative text-xl text-white bg-transparent p-0 m-0"
-                                style={{ width: '30%', marginTop: '40px', height: '120px' }}
-                            >
-                                <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
-                                    <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
-                                        Responsive and Mobile-Friendly Design
-                                    </p>
-                                </div>
-                            </Button>
+<span className="button-container">
+    <Button
+        duration={2000}
+        borderRadius="10px"
+        className="relative text-xl text-white bg-transparent p-0 m-0"
+        style={{ width: '30%', marginTop: '40px', height: '120px' }}
+    >
+        <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
+            <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
+                Responsive and Mobile-Friendly Design
+            </p>
+        </div>
+    </Button>
 
-                            <Button
-                                duration={2000}
-                                borderRadius="10px"
-                                className="relative text-xl text-white bg-transparent p-0 m-0"
-                                style={{ width: '30%', marginTop: '40px', height: '120px' }}
-                            >
-                                <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
-                                    <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
-                                        Fast Loading Speed and Performance
-                                    </p>
-                                </div>
-                            </Button>
+    <Button
+        duration={2000}
+        borderRadius="10px"
+        className="relative text-xl text-white bg-transparent p-0 m-0"
+        style={{ width: '30%', marginTop: '40px', height: '120px' }}
+    >
+        <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
+            <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
+                Fast Loading Speed and Performance
+            </p>
+        </div>
+    </Button>
 
-                            <Button
-                                duration={2000}
-                                borderRadius="10px"
-                                className="relative text-xl text-white bg-transparent p-0 m-0"
-                                style={{ width: '30%', marginTop: '40px', height: '120px' }}
-                            >
-                                <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
-                                    <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
-                                        SEO and Visibility in Search Engines
-                                    </p>
-                                </div>
-                            </Button>
+    <Button
+        duration={2000}
+        borderRadius="10px"
+        className="relative text-xl text-white bg-transparent p-0 m-0"
+        style={{ width: '30%', marginTop: '40px', height: '120px' }}
+    >
+        <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
+            <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
+                SEO and Visibility in Search Engines
+            </p>
+        </div>
+    </Button>
 
-                            <Button
-                                duration={2000}
-                                borderRadius="10px"
-                                className="relative text-xl text-white bg-transparent p-0 m-0"
-                                style={{ width: '30%', marginTop: '40px', height: '120px' }}
-                            >
-                                <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
-                                    <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
-                                        Unlimited Scalability
-                                    </p>
-                                </div>
-                            </Button>
-                        </span>
+    <Button
+        duration={2000}
+        borderRadius="10px"
+        className="relative text-xl text-white bg-transparent p-0 m-0"
+        style={{ width: '30%', marginTop: '40px', height: '120px' }}
+    >
+        <div className="relative flex items-center justify-center w-full h-full p-0 m-0 bg-black rounded-lg overflow-hidden">
+            <p className="text-white text-center p-4 m-0 text-[15px] font-medium whitespace-normal">
+                Unlimited Scalability
+            </p>
+        </div>
+    </Button>
+</span>
+
                     </div>
 
                     {/* Right side: Form */}
