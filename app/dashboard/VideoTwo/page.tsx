@@ -36,8 +36,8 @@ const Page3DVideo = () => {
  // Only execute the code after the component is mounted on the client
 
  if (typeof window !== 'undefined') {
-  const scrollContainer = document.querySelector("#page1") as HTMLElement;
-  if (scrollContainer) {
+  const scrollContainer = document.querySelector("#page1");
+  if (scrollContainer instanceof HTMLElement) {
     import("locomotive-scroll").then((module) => {
       const LocomotiveScroll = module.default;
       const scroll = new LocomotiveScroll({

@@ -754,4 +754,180 @@ line-height: 0.9;
     z-index: 10; /* Ensure images stay in their normal stacking context */
   }
   
+
+
+
+  @media (max-width: 380px) {
+    #right h1{
+     font-size: 3.7rem !important; 
+     margin-top: 50px;
+    }
+  
+    .arbitrarily-placed-and-sized-parent-element {
+        position: relative;
+        top: 50px;
+        left: 2px !important;
+      
+        width: 50vw;
+        height: 7vh;
+      }
+      
+      .video-embed-object-fit-cover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 30px;
+          
+        width: 190%;
+        height: 440% !important;
+        container-type: size;
+        overflow: hidden;
+      }
+      
+      .video-embed-object-fit-cover > iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        width: 140%;
+        height: 140%;
+      
+        /* force aspect ratio based on parent container */
+        @container (min-aspect-ratio: 16/9) {
+          height: 56.25cqw; /* 100*9/16 */
+        }
+    
+        pointer-events: none;
+      }
+
+      #page2-bottom{
+margin-top: 60px;
+
+
+      }
+      #page1 {
+        min-height: 100vh;
+        width: 100%;
+        background-color: black;
+        /* position: relative; */
+        padding: 0 2vw;
+        overflow: hidden !important;
+    
+    }
+
+    #page2-bottom {
+        height: 80vh !important;
+        width: 100%;
+        /* background-color: aliceblue; */
+        padding: 4.5vw;
+        margin-top: 89px !important;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 9;
+    }
+
+
+  }
+  
+
+
+
+
+  @media (max-width: 768px) {
+    #right h1{
+     font-size: 4rem; 
+     margin-top: 50px;
+    }
+  
+    .arbitrarily-placed-and-sized-parent-element {
+        position: relative;
+        top: 50px;
+        left: 2px ;
+      
+        width: 50vw;
+        height: 7vh;
+      }
+      
+      /*
+        This element contains the iframe, will take it's size from
+        it's parent and will behave like an image/video 
+        with object-fit: cover.
+      */
+      .video-embed-object-fit-cover {
+        position: absolute;
+        /* ensure positioning regardless of parent flex settings */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 30px;
+          
+        width: 190%;
+        height: 440% !important;
+      
+        /* important */
+        container-type: size;
+      
+        /* cut off overflowing video */
+        overflow: hidden;
+      }
+      
+      .video-embed-object-fit-cover > iframe {
+        position: absolute;
+        /* keep video centered both vertically and horizontally */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        width: 140%;
+        height: 140%;
+      
+        /* force aspect ratio based on parent container */
+        @container (min-aspect-ratio: 16/9) {
+          height: 56.25cqw; /* 100*9/16 */
+        }
+      
+      
+      
+        /* prevent interaction */
+        pointer-events: none;
+      }
+
+      #page2-bottom{
+margin-top: 60px;
+
+
+      }
+      #page1 {
+        min-height: 100vh;
+        width: 100%;
+        background-color: black;
+        /* position: relative; */
+        padding: 0 2vw;
+        overflow: hidden !important;
+    
+    }
+
+    #page2-bottom {
+        height: 70vh;
+        width: 100%;
+        /* background-color: aliceblue; */
+        padding: 4.5vw;
+        margin-top: 110px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 9;
+    }
+
+    /* #bottom-part2 video{
+        margin-top: 160px;
+
+
+    } */
+  }
   
