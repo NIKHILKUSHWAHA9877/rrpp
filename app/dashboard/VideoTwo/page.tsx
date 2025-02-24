@@ -33,49 +33,44 @@ const Page3DVideo = () => {
     setIsClient(typeof window !== "undefined");
   }, []);
 
-  useEffect(() => {
-    if (!isClient) return; // Only execute the code after the component is mounted on the client
+ // Only execute the code after the component is mounted on the client
 
- 
-    if (typeof window !== 'undefined') {
-
-      const scrollContainer = document.querySelector("#page1") as HTMLElement;
-      if (scrollContainer) {
-        const scroll = new LocomotiveScroll({
-          el: scrollContainer,
-        }) as any;;
+ if (typeof window !== 'undefined') {
+  const scrollContainer = document.querySelector("#page1") as HTMLElement;
+  if (scrollContainer) {
+    import("locomotive-scroll").then((module) => {
+      const LocomotiveScroll = module.default;
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer,
+      });
+          setTimeout(() => {
+            swiperRef.current = new Swiper(".mySwiper", {
+              slidesPerView: 3,
+              centeredSlides: true,
+              spaceBetween: 20,
+              breakpoints: {
+                768: {
+                  slidesPerView: 3,
+                },
+                480: {
+                  slidesPerView: 2,
+                },
+                0: {
+                  slidesPerView: 1,
+                },
+              },
+            });
+          }, 500);
+          // Cleanup on component unmount
+          return () => scroll.destroy();
+        });
+      }
+    }
+    
   
     
 
-    // Initialize LocomotiveScroll and Swiper only on the client-side
-   
-      setTimeout(() => {
-        swiperRef.current = new Swiper(".mySwiper", {
-          slidesPerView: 3,
-          centeredSlides: true,
-          spaceBetween: 20,
-          breakpoints: {
-            768: {
-              slidesPerView: 3,
-            },
-            480: {
-              slidesPerView: 2,
-            },
-            0: {
-              slidesPerView: 1,
-            },
-          },
-        });
-      }, 500);
-    
-      // Cleanup on component unmount
-      return () => {
-        scroll.destroy();
-        if (swiperRef.current) swiperRef.current.destroy();
-      }
-      };
-    }
-  }, [isClient]);
+
 
   // Hover effect for Page 3
   useEffect(() => {
@@ -404,4 +399,4 @@ const Page3DVideo = () => {
   );
 };
 
-export default Page3DVideo;
+export default dynamic(() => Promise.resolve(Page3DVideo), { ssr: false });
