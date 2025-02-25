@@ -45,7 +45,7 @@
 .fancy {
   position: relative;
   white-space: nowrap; /* Prevent text from wrapping */
-  font-size: 2rem; /* Set a default font size */
+  font-size: 1.3rem; /* Set a default font size */
   transition: font-size 0.3s ease; /* Smooth transition for resizing */
 }
 
@@ -531,10 +531,7 @@ border-radius: 30px !important;
   font-size: 10px;
 }
 
-/* Responsive Design */
 
-
-/* saval */
 
 
 /* Reset */
@@ -972,4 +969,11 @@ article h1 {
 left: 20.4rem !important;
 
 }
+}
+
+@media (min-width: 1300px) {
+  .thDp {
+    font-size: 13px;
+   
+  }
 }

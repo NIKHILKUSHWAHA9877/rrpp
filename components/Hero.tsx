@@ -142,7 +142,7 @@ const Hero = () => {
       href="#about"
       className="sec-button pointer bg-[#38413A] text-sm sm:text-base md:text-xl text-[#e0e4e1] font-regular flex items-center justify-center cursor-pointer py-2 px-4 sm:py-4 sm:px-7 rounded-3xl border-2 border-[#6D3776] hover:shadow-[0_0_15px_4px_rgba(255,255,255,0.4)] transition-all duration-300"
     >
-      <span className="cursor-pointer">Build AI with Us</span>
+      <span className="cursor-pointer">Book Our Creatives</span>
     </a>
   </div>
 </div>
