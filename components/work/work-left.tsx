@@ -9,10 +9,10 @@ export function WorkLeft({ children, progress }: WorkProps) {
 
   return (
     <div
-      className="flex h-[30vh] flex-col items-center justify-center text-3xl lg:h-auto lg:text-3xl"
+      className="flex  sm:h-[20vh] md:h-[20vh]  lg:h-auto flex-col items-center bg-black justify-center  "
       style={{ transform: `translateY(${translateY}px)` }}
     >
-      <div className="leading-10 text-white">{children}</div>
+      <div className="leading-1 p-2 md:leading-10 text-white">{children}</div>
     </div>
   );
 }

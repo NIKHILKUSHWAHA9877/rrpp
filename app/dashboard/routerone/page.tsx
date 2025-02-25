@@ -7,6 +7,7 @@ import Works from '@/components/work/works'; // Ensure the correct import for Wo
 import Contact from '../../projects/contact';
 import Hero from '@/components/hero/hero'; // Same for Hero component
 import { ScrollProvider } from '@/components/providers/ScrollProvider';
+import "./routerr.css";
 
 const Projects = () => {
   return (

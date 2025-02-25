@@ -39,7 +39,7 @@ export default function Hero() {
               </h2>
               <Link
                 href="/about"
-                className="underline-magical text-md w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl mt-6"
+                className="underline-magical text-sm w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl mt-6"
               >
                 Below Explore Our Most Popular Edits Right Now &rarr;
               </Link>

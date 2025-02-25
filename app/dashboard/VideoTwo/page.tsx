@@ -29,6 +29,7 @@ const Page3DVideo = () => {
   // Swiper reference
   const swiperRef = useRef<Swiper | null>(null);
 
+
   useEffect(() => {
     setIsClient(typeof window !== "undefined");
   }, []);
@@ -40,9 +41,6 @@ const Page3DVideo = () => {
   if (scrollContainer instanceof HTMLElement) {
     import("locomotive-scroll").then((module) => {
       const LocomotiveScroll = module.default;
-      const scroll = new LocomotiveScroll({
-        el: scrollContainer,
-      });
           setTimeout(() => {
             swiperRef.current = new Swiper(".mySwiper", {
               slidesPerView: 3,
@@ -291,7 +289,7 @@ const Page3DVideo = () => {
 </div>
 
 
-        <div>
+        <div >
           <Page31 />
         </div>
 
@@ -299,22 +297,37 @@ const Page3DVideo = () => {
         <div id="page4">
           {/* Buttons to switch sliders */}
           <div id="slider-buttons" className="flex justify-center space-x-4 ">
-  <button
-    onClick={() => setActiveSlider("interior")}
+               
+  <button 
+ // Prevent bubbling issues
+    onClick={(e) =>  {
+      e.preventDefault();
+      e.stopPropagation(); 
+      console.log("Button clicked!");
+       setActiveSlider("interior")
+       return false;
+    }}
     className="group relative bg-slate-900 h-16 w-64 border-2 border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 before:rounded-full before:blur-lg before:transition-all before:duration-500 after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur hover:after:-right-6 hover:after:scale-110"
-  >
+    >
+ 
     Interior Plan
   </button>
-
-  <button
-    onClick={() => setActiveSlider("floor")}
+  
+  <button 
+    onClick={(e) =>{
+      e.preventDefault();
+      e.stopPropagation(); 
+      setActiveSlider("floor")}}
     className="group relative bg-slate-900 h-16 w-64 border-2 border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 before:rounded-full before:blur-lg before:transition-all before:duration-500 after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur hover:after:-right-6 hover:after:scale-110"
   >
     Floor Plan
   </button>
 
-  <button
-    onClick={() => setActiveSlider("3d")}
+  <button  
+     onClick={(e) =>{
+      e.preventDefault();
+      e.stopPropagation();
+      setActiveSlider("3d")}}
     className="group relative bg-slate-900 h-16 w-64 border-2 border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 before:rounded-full before:blur-lg before:transition-all before:duration-500 after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur hover:after:-right-6 hover:after:scale-110"
   >
     3D Animation
@@ -338,7 +351,7 @@ const Page3DVideo = () => {
   <button
     onClick={handlePrevClick}
     className="bg-white text-black border-2 border-emerald-400 text-center w-20 h-8 relative text-sm font-semibold group mr-2"
-    type="button"
+    
   >
     <div
       className="bg-green-400 rounded-xl h-6 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[80px] z-10 duration-500"
@@ -364,7 +377,7 @@ const Page3DVideo = () => {
   <button
     onClick={handleNextClick}
     className="bg-white text-black border-2 border-emerald-400 text-center w-20 h-8 relative text-sm font-semibold group"
-    type="button"
+    
   >
     <div
       className="bg-green-400 rounded-xl h-6 w-1/4 flex items-center justify-center absolute right-1 top-[4px] group-hover:w-[80px] z-10 duration-500"

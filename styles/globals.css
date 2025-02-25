@@ -140,15 +140,9 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .fancy {
-    font-size: 0.9rem; /* Reduce font size on smaller screens */
+    font-size: 0.9rem; 
   }
-  .leading-none{
-
- /* Position it absolutely inside WhiteBg */
-    bottom: -92%; /* Adjust the vertical position (10% from the bottom) */
-  display: flex;
-
-  }
+ 
   .marquee-container{
 height: 50vh;
 

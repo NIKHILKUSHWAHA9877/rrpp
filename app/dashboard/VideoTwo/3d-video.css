@@ -924,10 +924,17 @@ margin-top: 60px;
         z-index: 9;
     }
 
-    /* #bottom-part2 video{
-        margin-top: 160px;
-
-
-    } */
   }
-  
+  .marquee-containerr h2{
+    margin-top: 47vh;
+  }
+
+  @media (max-width: 768px) {
+    .marquee-containerr h2{
+      margin-top: 47vh;
+    }
+    #page4{
+
+      height: 90vh;
+    }
+  }

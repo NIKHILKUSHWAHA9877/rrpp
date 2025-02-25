@@ -65,3 +65,45 @@
     border: 6px solid hsl(0, 77%, 48%);
     clip-path: polygon(0 0, 50% 50%, 100% 0);
   }
+
+  @media (max-width: 768px) {
+    .fancy {
+      font-size: 0.9rem; 
+    }
+   
+    .marquee-container{
+  height: 50vh;
+  
+    }
+    .marquee-container h2{
+      margin-top: 20vh;
+      
+        }
+      
+  }
+
+
+  @media (max-width: 768px) {
+    .imgimg{
+      width: 200px !important;
+      height: 300px !important;
+      margin-top: 30px;
+    }
+
+   .vidvid{
+    width: 250px !important;
+    height: 280px !important;
+    margin-top: -80px;
+align-items: center;
+
+   }
+
+      
+  }
+
+
+  /* Default styles for the work-tile */
+
+/* Responsive font size for smaller screens */
+
+/* Default styles for the work-tile */

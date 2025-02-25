@@ -16,20 +16,14 @@ export default function WorkContent({ work, progress = 0 }: WorkContentProps) {
   return (
     <WorkContainer>
       <WorkLeft progress={progress}>
-        <div className="text-2xl p-2 font-medium md:text-2xl xl:text-3xl">{description}</div>
-        <span className="text-4xl font-bold tracking-tight md:text-3xl xl:text-6xl">{title}</span>
+        <div className="text-sm p-2 font-medium md:text-sm xl:text-2xl">{description}</div>
+        <span className="text-xl font-bold tracking-tight md:text-2xl xl:text-5xl">{title}</span>
       </WorkLeft>
 
       <WorkRight progress={progress}>
-        <div className="drop-shadow-2xl sm:mt-10 md:mt-24 relative">
+        <div className="drop-shadow-2xl mt-0 sm:mt-10 md:mt-2 lg:mt-24 relative">
           {/* Background Wrapper */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              width: "120%",  // Expands background width
-              height: "100%",  // Full height
-            }}
-          ></div>
+        
 
           {/* ✅ Render Image or Video Based on `media.type` */}
           {media.type === "image" ? (
