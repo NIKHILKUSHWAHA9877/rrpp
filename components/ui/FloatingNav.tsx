@@ -112,13 +112,16 @@ export const FloatingNav: React.FC = () => {
       animate={{ y: isVisible ? 0 : -100, opacity: isVisible ? 1 : 0 }}
       transition={{ type: "spring", stiffness: 100 }}
     >
-      <div className="flex justify-between items-center">
-        <img
-          src="https://ik.imagekit.io/ats/icons/logo.png"
+      <div className="flex justify-between items-center h-14">
+        <div className="logo items-center  "> <img
+          src="/logo.png"
           alt="Logo"
-          className="logo cursor-pointer w-[38px] h-[38px] md:w-[54px] md:h-[56px]"
+          className="cursor-pointer w-[200px] h-auto  mt-[-45px] flex"
         />
-
+        
+        <div className="fancy4 w-[130px] mt-[-125px] absolute left-1/2 transform -translate-x-1/2"></div>
+        </div>
+    
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-6 text-base font-medium">
           {navItems.map((item) => (
