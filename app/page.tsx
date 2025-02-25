@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* WhiteBg Outside Main */}
       <WhiteBg
-        className="w-full h-[85vh] mt-[-120px]" // Negative margin to pull up
+        className="w-full h-[85vh] mt-[-100px]" // Negative margin to pull up
         style={{
           zIndex: "1", // Ensuring it appears above the background, below the main content
           display: "flex",

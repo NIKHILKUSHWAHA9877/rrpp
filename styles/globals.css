@@ -114,7 +114,21 @@
   background-repeat: round;
   background-position: 0em;
 }
+@media (max-width: 468px) {
+  .fancy {
+    font-size: 0.9rem; 
+  }
+ 
+  .marquee-container{
+height: 50vh;
 
+  }
+  .marquee-container h2{
+    margin-top: 70vh;
+    
+      }
+    
+}
 
 @media (max-width: 768px) {
   .fancy3{
