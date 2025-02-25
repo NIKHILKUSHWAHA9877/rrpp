@@ -60,7 +60,6 @@ const Page3DVideo = () => {
             });
           }, 500);
           // Cleanup on component unmount
-          return () => scroll.destroy();
         });
       }
     }
@@ -312,7 +311,7 @@ const Page3DVideo = () => {
  
     Interior Plan
   </button>
-  
+
   <button 
     onClick={(e) =>{
       e.preventDefault();
