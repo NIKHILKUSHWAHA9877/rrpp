@@ -86,9 +86,11 @@ export const FloatingNav: React.FC = () => {
         },
       ],
     },
-    { label: "About", href: "/about" },
+    { label: "About", href: "/dashboard/about" },
   ];
 
+
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap');
+
+body{
+    font-family: "Mulish", sans-serif !important;
+background-color: black;
+
+}
+
+.abtmain{
+
+    font-family: "Mulish", sans-serif !important;
+}
+
+
+/* From Uiverse.io by Cobp */ 
+.card-container {
+    width: 260px;
+    background: linear-gradient(
+      to top right,
+      #975af4,
+      #2f7cf8 40%,
+      #78aafa 65%,
+      #934cff 100%
+    );
+    padding: 4px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-container .title-card {
+    display: flex;
+    /* align-items: center; */
+    padding: 16px 18px;
+    justify-content: space-between;
+    color: #fff;
+  }
+  .card-container .title-card p {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    text-shadow: 2px 2px 6px #2975ee;
+  }
+  
+  .card-container .card-content {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    font-size: 14px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card-container .card-content .title {
+    font-weight: 600;
+    color: #bab9b9;
+  }
+  .card-container .card-content .plain :nth-child(1) {
+    font-size: 36px;
+    color: #fff;
+  }
+  
+  
+  .card-container .card-content .card-btn:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #fff;
+    transform: scale(1.03);
+  }
+  .card-container .card-content .card-btn:active {
+    transform: scale(1);
+  }
+  
