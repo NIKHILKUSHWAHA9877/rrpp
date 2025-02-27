@@ -74,7 +74,7 @@ overflow-x: hidden;
 
 
 .marquee-containerrr{
-
+overflow: hidden;
 margin-top: 120px;
 position: absolute; /* Position it absolutely inside WhiteBg */
 
@@ -97,7 +97,7 @@ align-items: center;
     height: 100px;
     position: relative; /* Ensures positioning relative to the viewport */
     top: 18rem;
-    opacity: 0.8;
+    opacity: 0.5;
 
    
     align-items: center;

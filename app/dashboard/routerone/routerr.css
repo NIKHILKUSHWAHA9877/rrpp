@@ -1,4 +1,9 @@
 
+body{
+overflow-x: hidden;
+
+}
+
   .underlined {
   /*   background: red; */
     position: relative;
@@ -74,12 +79,13 @@
   }
 .marquee-containerrrO{
 position: absolute;
+overflow: hidden;
 
 }
 
 .marqueeOne h2{
 margin-top: 190px;
-
+overflow: hidden;
 }
 
 
@@ -89,9 +95,10 @@ margin-top: 190px;
   width: 90px;
   height: 100px;
   position: relative;
-  top: 32rem;
+  top: 30rem;
   margin-left: 20px;
-  opacity: 0.8;
+  opacity: 0.5;
+
 }
 
 
@@ -101,7 +108,8 @@ margin-top: 190px;
     height: 100px;
     position: relative; /* Ensures positioning relative to the viewport */
     top: 22rem;
-    opacity: 0.8;
+    opacity: 0.5;
+
 
    
     align-items: center;

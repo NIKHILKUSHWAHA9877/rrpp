@@ -737,9 +737,10 @@ margin-top:180px;
   width: 90px;
   height: 100px;
   position: relative;
-  top: 34.5rem;
+  top: 32rem;
   margin-left: 20px;
-  opacity: 0.8;
+  opacity: 0.5;
+
 }
 
 @media (max-width: 700px) {
@@ -764,7 +765,8 @@ margin-top:180px;
     height: 100px;
     position: relative; /* Ensures positioning relative to the viewport */
     top: 24rem;
-    opacity: 0.8;
+    opacity: 0.5;
+
 
    
     align-items: center;

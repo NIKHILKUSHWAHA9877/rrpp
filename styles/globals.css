@@ -808,9 +808,10 @@ article h1 {
   width: 90px;
   height: 100px;
   position: relative;
-  top: 32rem;
+  top: 30rem;
   margin-left: 20px;
-  opacity: 0.8;
+  opacity: 0.5;
+
 }
 
 
@@ -1037,10 +1038,8 @@ width: 85px;
       width: 90px;
       height: 100px;
       position: relative; /* Ensures positioning relative to the viewport */
-      top: 12rem;
-      opacity: 0.8;
- 
-     
+      top: 9rem;
+      opacity: 0.5;
       align-items: center;
       justify-content: center;
       margin: 0 auto; /* Centers horizontally */

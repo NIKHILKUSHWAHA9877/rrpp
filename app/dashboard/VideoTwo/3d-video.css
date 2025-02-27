@@ -23,7 +23,7 @@
     font-family: "Neue Haas Display", sans-serif;
 }
 body{
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 #page1 {
     min-height: 200vh;
@@ -974,9 +974,10 @@ position: absolute;
       width: 90px;
       height: 100px;
       position: relative; /* Ensures positioning relative to the viewport */
-      top: 38rem;
-      opacity: 0.8;
- 
+      top: 35rem;
+      opacity: 0.5;
+
+ overflow: hidden;
      
       align-items: center;
       justify-content: center;
