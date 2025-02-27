@@ -79,7 +79,7 @@ const StickyScroll = () => {
             return (
               <motion.p
                 key={industry.text}
-                className="font-mulish font-bold text-white text-center w-full transition-all text-2xl"
+                className="font-mulish  text-white text-center w-full transition-all text-2xl"
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity, scale, y: translateY }}
                 exit={{ opacity: 0, scale: 0.9, y: -20 }}
@@ -88,6 +88,8 @@ const StickyScroll = () => {
                   whiteSpace: "nowrap",
                   display: opacity === 0 ? "none" : "block",
                   position: "absolute",
+                    fontFamily: '"Mulish", serif',
+                    fontWeight: "lighter",
                 }}
               >
                 {industry.text}

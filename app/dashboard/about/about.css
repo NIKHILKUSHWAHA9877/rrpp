@@ -73,7 +73,7 @@ overflow-x: hidden;
 
 
 
-.marquee-containerrr{
+.marquee-containe5{
 overflow: hidden;
 margin-top: 120px;
 position: absolute; /* Position it absolutely inside WhiteBg */
@@ -85,7 +85,7 @@ position: absolute; /* Position it absolutely inside WhiteBg */
   height: 100px;
  position: relative;
 align-items: center;
-  top: 27.4rem;
+  top: 25.4rem;
   opacity: 0.8;
 
 }

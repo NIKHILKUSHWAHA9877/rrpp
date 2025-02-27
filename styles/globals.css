@@ -4,6 +4,7 @@
 /* Add this to your global.css file */
 @import url('https://fonts.googleapis.com/css2?family=Matter:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @font-face {
   font-family: "WHOA Spine Minimum";
@@ -48,7 +49,10 @@
   font-size: 1.3rem; /* Set a default font size */
   transition: font-size 0.3s ease; /* Smooth transition for resizing */
 }
-
+/* .wheel-and-hamster {
+  font-family: inherit !important;
+  font-weight: normal !important;
+} */
 .fancy:after {
   --deco-height: 0.3125em;
   content: "";
@@ -417,11 +421,48 @@ height: 50vh;
 
 /* video controls and form */
 /* Main container holding the video and form side by side */
+
+.requirements-box {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.requirements-textarea {
+  width: 100%;
+  height: 90px;
+  resize: none;
+  padding: 10px;
+  padding-bottom: 40px; /* Extra padding for button space */
+}
+
+.file-upload-label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #007bff;
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Hide default file input */
+.file-input {
+  display: none;
+}
+
+
+
 .Top-container{
   margin-top: 30px;
 }
 .top-portfolio-container {
   display: flex;
+  align-items: stretch;
   gap: 30px;
   margin-bottom: 100px;
 }
@@ -435,7 +476,7 @@ height: 50vh;
 
 .portfolio-container-left video{
 width: 100% !important; 
-height: auto !important; 
+height: 70% !important; 
 border-radius: 30px !important;
 }
 
@@ -453,7 +494,7 @@ border-radius: 30px !important;
 
 
 .portfolio-form-right {
-  flex: 35%;
+  flex: 40%;
   border: 2px solid white;
   border-radius: 30px;
    /*height: 10vh !important;*/
@@ -477,7 +518,7 @@ border-radius: 30px !important;
   font-size: 15px;
 }
 .LpForm-p{
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 20px !important;
 }
 
@@ -488,8 +529,8 @@ border-radius: 30px !important;
   border: 2px solid #808080;
   gap: 40px;
   padding: 10px;
-  margin-bottom: 10%;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-top: 20px;
   border-radius: 5px;
 }
 
@@ -517,40 +558,6 @@ border-radius: 30px !important;
   display: block;
   font-weight: bold; 
   /* background-color: #fff; */
-}
-
-.portfolio-form-right input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  border: 2px solid white;
-  background-color: #de3063;
-}
-
-.cheak-box-class {
-  display: flex;
-  flex-direction: column;
-}
-
-.chekbox-sec {
-  display: flex;
-  gap: 20px;
-}
-
-.chekbox-sec input {
-  height: 22px;
-  width: 22px;
-  border: 2px solid white;
-  background-color: #de3063;
-}
-
-.chekbox-sec label {
-  margin-top: 5px;
-  display: flex;
-  gap: 5px;
-  font-size: 15px;
-  justify-content: first baseline;
-  width: 80%;
-  color: #808080;
 }
 
 
@@ -1049,6 +1056,7 @@ width: 85px;
   
     
 
+  
 
 
 

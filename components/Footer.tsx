@@ -109,29 +109,54 @@ const Footer = () => {
                             </span>
 
                             <span>
-                                <span className="prefix">+91</span>
+                                <span className="prefix"/>
                                 <input type="text" placeholder="Enter Phone Number" id="phone" name="NUMBER" />
                             </span>
 
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
                                 </svg>
                                 <input type="text" placeholder="Enter Location" id="location" name="CITY" />
                             </span>
+                            <div className="form-group"> 
+  
+  <div className="requirements-box">
+    <textarea 
+      id="requirements" 
+      name="requirements" 
+      className="requirements-textarea"
+      placeholder="Write Your Requirements here"
+    ></textarea>
+    
+    {/* File Upload (Hidden) */}
+    <input 
+      type="file" 
+      id="fileUpload" 
+      className="file-input" 
+      multiple 
+    />
+    
+    {/* Browse Files Button Inside Textarea */}
+    <label htmlFor="fileUpload" className="file-upload-label">
+      BROWSE FILES
+    </label>
+  </div>
+</div>
 
-                            <input type="hidden" id="submissionDate" name="submissionDate" />
+
+                            {/* <input type="hidden" id="submissionDate" name="submissionDate" />
                             <div className="cheak-box-class">
                                 <div className="chekbox-sec">
-                                    {/* Updated to ensure the checked attribute is a boolean */}
+                                    
                                     <input
                                         type="checkbox"
-                                        checked={true} // Ensure this is a boolean value
+                                        checked={true} 
                                         required
                                     />
                                     <label>By engaging Visible Gain, you consent to our Privacy Policy</label>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <button className="dev-submit" type="submit">
                                 <div className="button-text">Submit</div>

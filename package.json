@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource/dancing-script": "^5.1.1",
     "@fontsource/mukta": "^5.1.1",
+    "@fontsource/mulish": "^5.1.1",
     "@react-three/drei": "^9.106.0",
     "@react-three/fiber": "^8.16.8",
     "@shadcn/ui": "^0.0.4",

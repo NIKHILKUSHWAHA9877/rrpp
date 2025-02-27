@@ -19,7 +19,7 @@ const WhiteBg: FC<WhiteBgProps> = ({ className = '', style, children }) => {
       {children}
 
       {/* Marquee Effect Inside WhiteBg */}
-      <div className="marquee-containerrr">
+      <div className="marquee-containe5">
         <div className="marquee w-full">
           <h2 className="mb-0 text-black  leading-none">
             LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER ·

@@ -1,36 +1,37 @@
-"use client"
+"use client";
+
 import '@fontsource/mukta';
 import Header from '@/components/layouts/header';
 import LenisProvider from '@/components/providers/LenisProvider';
 import ThemeProvider from '@/components/providers/ThemeProvider';
-// import { Metadata } from 'next';
-import { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation'; // Import usePathname
 import "./routerr.css";
-// Set metadata for the entire app layout (using the new metadata API)
-
+import HamsterLoader from '@/components/ui/Hamster'; // Import the Hamster Loader
 
 interface RootLayoutProps {
   children: ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) return null; // You can render a loading state or just return null while loading
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 600); // Simulate loading delay
+    return () => clearTimeout(timer);
+  }, [pathname]); // Runs when pathname changes
 
   return (
     <div className="bg-white text-black antialiased dark:bg-black dark:text-white">
-      <ThemeProvider
-       
-        
-       
-      >
+      <ThemeProvider>
         <Header />
+        {loading && (
+          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black  z-50">
+            <HamsterLoader /> {/* Show the Hamster Loader when loading */}
+          </div>
+        )}
         <LenisProvider>{children}</LenisProvider>
       </ThemeProvider>
     </div>

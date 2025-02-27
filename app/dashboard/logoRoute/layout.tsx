@@ -1,136 +1,128 @@
-import React from 'react';
-import BookList from './page';  // Make sure the path is correct
-import { FloatingNav } from '@/components/ui/FloatingNav';
-import WhiteBg from './WhiteBg';
-import Contact from './Contact';
-import Londa from './londa';
-import "./logo.css"
+"use client";
+import React, { useEffect, useState } from "react";
+import BookList from "./page";
+import { FloatingNav } from "@/components/ui/FloatingNav";
+import WhiteBg from "./WhiteBg";
+import Contact from "./Contact";
+import Londa from "./londa";
+import HamsterLoader from "@/components/ui/Hamster";
+import { usePathname } from "next/navigation";
+import "./logo.css";
 
 const Layout: React.FC = () => {
-    return (
-        <>
-            <main className='maain relative mx-auto sm:px-0 px-0 overflow-clip z-100 rounded-b-[120px]'>
+  const [loading, setLoading] = useState(false);
+  const pathname = usePathname();
 
-                {/* Insert the BookList component here */}
-                <FloatingNav />
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
+  return (
+    <>
+     {loading ? (
+        // Show Hamster Loader while loading
+        <div className="flex bg-black justify-center items-center h-screen">
+          <HamsterLoader />
+        </div>
+      ) : (
+        <main className="maain relative mx-auto sm:px-0 px-0 overflow-clip z-100 rounded-b-[120px]">
+          <FloatingNav />
+          <BookList />
+          <div>
+            <p className="browser-warning">
+              If this looks wonky to you, it’s because this browser doesn’t support the CSS
+              property 'aspect-ratio'.
+            </p>
 
-
-
-                <BookList />
-
-                <div>
-                    <p className="browser-warning">
-                        If this looks wonky to you it's because this browser doesn't support the CSS
-                        property 'aspect-ratio'.
-                    </p>
-
-
-
-<Londa/>
-                    <div className="stack">
-                        <div className="card">
-                            <div className="image">
-                                <div className='tr'> <img src="https://cdn.relinns.com/assets/images/home-rt-integrity-logo.png" alt="Logo" className="logo5" />
-                                    <h2>Detailed Brand Analysis</h2></div>
-
-                                <ul className='ju'>
-                                    <li>🚀We research your brand’s identity.</li>
-                                    <li>🚀We study competitors to stand out.</li>
-                                    <li>🚀We create designs tailored to your audience.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="image">
-                                <div className='tr'>  <img src="https://cdn.relinns.com/assets/images/home-rt-collaboration-logo.png" alt="Logo" className="logo5" />
-                                    <h2>Most Affordable Packages</h2></div>
-
-                                <ul className='ju'>
-                                    <li>🚀Flexible plans to suit all budgets.</li>
-                                    <li>🚀Transparent pricing with no hidden fees.</li>
-                                    <li>🚀High-quality designs at affordable rates.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="image">
-                                <div className='tr'>    <img src="https://cdn.relinns.com/assets/images/home-rt-responsibility-logo.png" alt="Logo" className="logo5" />
-                                    <h2>Experienced Designers</h2></div>
-
-                                <ul className='ju'>
-                                    <li>🚀Skilled designers with years of experience.</li>
-                                    <li>🚀Expertise in crafting unique, professional logos.</li>
-                                    <li>🚀Creative solutions that align with your brand.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="image">
-                                <div className='tr'>  <img src="https://cdn.relinns.com/assets/images/home-rt-taking-initiative-logo.png" alt="Logo" className="logo5" />
-                                    <h2>Multiple Design Concepts</h2> </div>
-
-                                <ul className='ju'>
-                                    <li>🚀We provide several unique logo concepts.</li>
-                                    <li>🚀You can choose the design that fits best.</li>
-                                    <li>🚀Revisions included for perfect results.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="image">
-                                <div className='tr'> <img src="https://cdn.relinns.com/assets/images/home-rt-excellence-logo.png" alt="Logo" className="logo5" />
-                                    <h2>4.8/5 rating</h2></div>
-
-                                <ul className='ju'>
-                                    <li>🚀That’s our average customer rating from 1000+ reviews</li>
-                                    <li>🚀Money back guarantee! Yes that's true</li>
-                                    <li><br></br></li>
-                                    
-
-
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="image">
-                                <div className='tr'><img src="https://cdn.relinns.com/assets/images/home-innovation-logo.png" alt="Logo" className="logo5" />
-                                    <h2>24/7 creativity</h2>
-                                </div>
-
-                                <ul className='ju'>
-                                    <li>🚀Professional designers online and available worldwide</li>
-                                    <li>🚀Day or Night we are always available </li>
-                                    <li><br></br></li>
-                                    
-
-                                </ul>
-                            </div>
-
-                        </div>
-
+            <Londa />
+            <div className="stack">
+              {/** Extract this into a separate component if needed */}
+              {[
+                {
+                  img: "https://cdn.relinns.com/assets/images/home-rt-integrity-logo.png",
+                  title: "Detailed Brand Analysis",
+                  points: [
+                    "🚀We research your brand’s identity.",
+                    "🚀We study competitors to stand out.",
+                    "🚀We create designs tailored to your audience.",
+                  ],
+                },
+                {
+                  img: "https://cdn.relinns.com/assets/images/home-rt-collaboration-logo.png",
+                  title: "Most Affordable Packages",
+                  points: [
+                    "🚀Flexible plans to suit all budgets.",
+                    "🚀Transparent pricing with no hidden fees.",
+                    "🚀High-quality designs at affordable rates.",
+                  ],
+                },
+                {
+                  img: "https://cdn.relinns.com/assets/images/home-rt-responsibility-logo.png",
+                  title: "Experienced Designers",
+                  points: [
+                    "🚀Skilled designers with years of experience.",
+                    "🚀Expertise in crafting unique, professional logos.",
+                    "🚀Creative solutions that align with your brand.",
+                  ],
+                },
+                {
+                  img: "https://cdn.relinns.com/assets/images/home-rt-taking-initiative-logo.png",
+                  title: "Multiple Design Concepts",
+                  points: [
+                    "🚀We provide several unique logo concepts.",
+                    "🚀You can choose the design that fits best.",
+                    "🚀Revisions included for perfect results.",
+                  ],
+                },
+                {
+                  img: "https://cdn.relinns.com/assets/images/home-rt-excellence-logo.png",
+                  title: "4.8/5 rating",
+                  points: [
+                    "🚀That’s our average customer rating from 1000+ reviews.",
+                    "🚀Money-back guarantee! Yes, that's true.",
+                  ],
+                },
+                {
+                  img: "https://cdn.relinns.com/assets/images/home-innovation-logo.png",
+                  title: "24/7 Creativity",
+                  points: [
+                    "🚀Professional designers online and available worldwide.",
+                    "🚀Day or Night we are always available.",
+                  ],
+                },
+              ].map((item, index) => (
+                <div className="card" key={index}>
+                  <div className="image">
+                    <div className="tr">
+                      <img src={item.img} alt="Logo" className="logo5" />
+                      <h2>{item.title}</h2>
                     </div>
-
+                    <ul className="ju">
+                      {item.points.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                <Contact />
-            </main>
+          <Contact />
+        </main>
+      )}
 
-            <WhiteBg
-                className="w-full h-[90vh] mt-[-150px] sm:mt-[-150px] footer2 white-bg"
-                style={{
-                    zIndex: 50, // Ensuring it appears above the background but below the main content
-                    display: "flex",
-                }}
-            />
-        </>
-    );
-
+      <WhiteBg
+        className="w-full h-[90vh] mt-[-150px] sm:mt-[-150px] footer2 white-bg"
+        style={{
+          zIndex: 50,
+          display: "flex",
+        }}
+      />
+    </>
+  );
 };
 
 export default Layout;
