@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { socialMedia } from '@/data'; // Import social media data
-import "./3d-video.css"
 interface WhiteBgProps {
   className?: string;
   style?: React.CSSProperties;
@@ -19,8 +18,8 @@ const WhiteBg: FC<WhiteBgProps> = ({ className = '', style, children }) => {
       {children}
 
       {/* Marquee Effect Inside WhiteBg */}
-      <div className="marquee-containerr">
-        <div className="marquee w-full">
+      <div className="marquee-containerrrO">
+        <div className="marquee marqueeOne w-full">
           <h2 className="mb-0 text-black  leading-none">
             LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER · LET’S WORK TOGETHER ·
           </h2>

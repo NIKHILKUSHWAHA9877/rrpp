@@ -661,7 +661,7 @@ hr {
 
 .marquee-container {
   position: absolute; /* Position it absolutely inside WhiteBg */
-  bottom: 2%; /* Adjust the vertical position (10% from the bottom) */
+  bottom: 2%; 
   left: 0;
   width: 100%;
 }
@@ -804,7 +804,14 @@ article h1 {
 }
 
 
-
+.bottomG{
+  width: 90px;
+  height: 100px;
+  position: relative;
+  top: 32rem;
+  margin-left: 20px;
+  opacity: 0.8;
+}
 
 
 
@@ -1025,10 +1032,24 @@ width: 85px;
   }
 
   }
+  @media (max-width: 768px) {
+    .bottomG {
+      width: 90px;
+      height: 100px;
+      position: relative; /* Ensures positioning relative to the viewport */
+      top: 12rem;
+      opacity: 0.8;
+ 
+     
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* Centers horizontally */
+      display: block; /* Moves the element back by half its width */
+    }
+  }
+  
+    
 
-/* .logo img{
 
-width: 90px;
-        
-transform: scale(1.3, 1.2); 
-} */
+
+

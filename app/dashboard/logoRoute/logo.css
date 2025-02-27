@@ -719,3 +719,57 @@ display: flex !important;
  
   z-index: 50 !important; /* WhiteBg needs to appear above the canvas */
 }
+
+.marquee-containerrrr{
+position: absolute;
+
+}
+
+.marqueelogo h2{
+
+margin-top:180px;
+
+}
+
+
+
+.bottomG{
+  width: 90px;
+  height: 100px;
+  position: relative;
+  top: 34.5rem;
+  margin-left: 20px;
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .bottomG {
+    width: 90px;
+    height: 100px;
+    position: relative; /* Ensures positioning relative to the viewport */
+    top: 20rem;
+    opacity: 0.8;
+
+   
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centers horizontally */
+    display: block; /* Moves the element back by half its width */
+  }
+}
+
+@media (max-width: 768px) {
+  .bottomG {
+    width: 90px;
+    height: 100px;
+    position: relative; /* Ensures positioning relative to the viewport */
+    top: 24rem;
+    opacity: 0.8;
+
+   
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centers horizontally */
+    display: block; /* Moves the element back by half its width */
+  }
+}

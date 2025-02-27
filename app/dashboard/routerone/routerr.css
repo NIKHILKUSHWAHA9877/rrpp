@@ -70,17 +70,51 @@
     .fancy {
       font-size: 0.9rem; 
     }
-   
-    .marquee-container{
-  height: 50vh;
-  
-    }
-    .marquee-container h2{
-      margin-top: 20vh;
-      
-        }
-      
+     
   }
+.marquee-containerrrO{
+position: absolute;
+
+}
+
+.marqueeOne h2{
+margin-top: 190px;
+
+}
+
+
+
+
+.bottomG{
+  width: 90px;
+  height: 100px;
+  position: relative;
+  top: 32rem;
+  margin-left: 20px;
+  opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+  .bottomG {
+    width: 90px;
+    height: 100px;
+    position: relative; /* Ensures positioning relative to the viewport */
+    top: 22rem;
+    opacity: 0.8;
+
+   
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centers horizontally */
+    display: block; /* Moves the element back by half its width */
+  }
+}
+
+
+
+
+
 
 
   @media (max-width: 768px) {
@@ -102,8 +136,3 @@ align-items: center;
   }
 
 
-  /* Default styles for the work-tile */
-
-/* Responsive font size for smaller screens */
-
-/* Default styles for the work-tile */

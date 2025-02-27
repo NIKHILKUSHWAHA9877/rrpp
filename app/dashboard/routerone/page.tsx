@@ -1,7 +1,7 @@
 // pages/projects.tsx
 import React from 'react';
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import WhiteBg from '@/components/WhiteBg';
+import WhiteBg from './WhiteBg';
 import Intro from '../../projects/intro';
 import Works from '@/components/work/works'; // Ensure the correct import for Works component
 import Contact from '../../projects/contact';

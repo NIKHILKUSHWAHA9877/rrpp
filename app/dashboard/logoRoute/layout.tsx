@@ -1,7 +1,7 @@
 import React from 'react';
 import BookList from './page';  // Make sure the path is correct
 import { FloatingNav } from '@/components/ui/FloatingNav';
-import WhiteBg from '@/components/WhiteBg';
+import WhiteBg from './WhiteBg';
 import Contact from './Contact';
 import Londa from './londa';
 import "./logo.css"

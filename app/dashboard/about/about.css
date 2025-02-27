@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap');
 
-/* body{
+body{
     font-family: "Mulish", sans-serif !important;
-background-color: black;
 overflow-x: hidden;
-} */
+}
 
 .abtmain{
 
@@ -77,11 +76,36 @@ overflow-x: hidden;
 .marquee-containerrr{
 
 margin-top: 120px;
-overflow: hidden;
+position: absolute; /* Position it absolutely inside WhiteBg */
+
+}
+
+.bottomG{
+  width: 90px;
+  height: 100px;
+ position: relative;
+align-items: center;
+  top: 27.4rem;
+  opacity: 0.8;
 
 }
 
 
+@media (max-width: 768px) {
+  .bottomG {
+    width: 90px;
+    height: 100px;
+    position: relative; /* Ensures positioning relative to the viewport */
+    top: 18rem;
+    opacity: 0.8;
+
+   
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centers horizontally */
+    display: block; /* Moves the element back by half its width */
+  }
+}
   
     
   

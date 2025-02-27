@@ -938,3 +938,50 @@ margin-top: 60px;
       height: 90vh;
     }
   }
+.marquee-containerr{
+position: absolute;
+
+}
+
+
+  .bottomG{
+    width: 90px;
+    height: 100px;
+    position: relative;
+    top: 39rem;
+    margin-left: 20px;
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 700px) {
+    .bottomG {
+      width: 90px;
+      height: 100px;
+      position: relative; /* Ensures positioning relative to the viewport */
+      top: 28rem;
+      opacity: 0.8;
+ 
+     
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* Centers horizontally */
+      display: block; /* Moves the element back by half its width */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bottomG {
+      width: 90px;
+      height: 100px;
+      position: relative; /* Ensures positioning relative to the viewport */
+      top: 38rem;
+      opacity: 0.8;
+ 
+     
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* Centers horizontally */
+      display: block; /* Moves the element back by half its width */
+    }
+  }
+  
