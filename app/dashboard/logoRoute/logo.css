@@ -7,13 +7,7 @@
     --green: rgba(6, 141, 126, 1);
     --white: rgba(248, 255, 229, 1);
   }
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-   
-}
+
 
  .maain{
     background-color:black;
@@ -298,7 +292,7 @@
     padding: 10px; /* Padding inside the border */
   }
   
-  .logo {
+  .logo5 {
     width: 40px; /* Adjust logo size */
     height: 40px;
     margin-right: 10px; /* Adds space between the logo and title */
@@ -702,7 +696,7 @@ display: flex !important;
   
 
   /* Make sure the canvas fills the entire page */
-canvas {
+#canvas6 {
   position: fixed;   /* Fixed position so it stays in the background */
   top: 0;
   left: 0;

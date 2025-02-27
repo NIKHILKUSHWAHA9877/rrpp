@@ -39,12 +39,12 @@ const Page = () => {
 
 
 
-  const handleReadMoreFounder = (e) => {
+  const handleReadMoreFounder = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setShowMoreFounder(!showMoreFounder);
   };
 
-  const handleReadMoreCofounder = (e) => {
+  const handleReadMoreCofounder = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setShowMoreCofounder(!showMoreCofounder);
   };
@@ -70,13 +70,13 @@ const Page = () => {
       {/* The Googenix Story Section */}
       <section className="text-center py-16">
         <h1 className="text-6xl mt-28 text-white">The Googenix Story</h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-white">
+        <p className="mt-4 max-w-2xl mx-auto text-xl text-white">
           Our repertoire caters to everything digital and necessary for today’s businesses. Our work culture mirrors our digital solutions, forged for reliability, innovation, & speed. It starts with a line of code and ends with our clients' smiles.
         </p>
       </section>
 
       {/* Founder and Cofounder Section */}
-      <section className="flex justify-center items-start py-16 space-x-8">
+      <section className="flex mb-32 justify-center items-start py-16 space-x-8">
         {/* Founder */}
         <div className="flex flex-col items-center">
           <div className="w-40 h-40 mb-4">
@@ -86,14 +86,15 @@ const Page = () => {
               className="rounded-full w-full h-full object-cover"
             />
           </div>
-          <h2 className="mt-4 font-semibold text-white">Founder</h2>
-          <p className="mt-2 text-sm text-white">
+          <h2 className="mt-4 font-semibold text-2xl text-white">Founder</h2>
+          <small className="opacity-35">Personal Working Experience</small>
+          <p className="mt-2 text-lg text-white">
             <span className="mr-2 inline-block">Freelancer , </span>
             <span className="mr-2 inline-block">Entrepreneur</span>
           </p>
 
           {/* Text container with fixed height */}
-          <div className="mt-2 w-full h-32 overflow-hidden relative">
+          <div className="mt-2  w-full h-auto overflow-hidden relative">
             <div
               className={`transition-all duration-500 ease-in-out ${
                 showMoreFounder ? "max-h-full opacity-100" : "max-h-0 opacity-0"
@@ -101,14 +102,15 @@ const Page = () => {
               style={{
                 maxHeight: showMoreFounder ? "1000px" : "0", // Adjusted to prevent collapse issues
                 transition: "max-height 0.5s ease, opacity 0.5s ease",
+               
                 overflow: "hidden",
               }}
             >
-              <div className="text-center">
+              <div className="text-center text-lg">
                 {founderText.map((text, index) => (
                   <span
                     key={index}
-                    className={`text-sm ${
+                    className={`text-lg ${
                       showMoreFounder
                         ? "text-white opacity-100"
                         : "text-gray-500 opacity-70"
@@ -143,14 +145,15 @@ const Page = () => {
               className="rounded-full w-full h-full object-cover"
             />
           </div>
-          <h2 className="mt-4 font-semibold text-white">Co-founder</h2>
+          <h2 className="mt-4 font-semibold text-white text-2xl ">Co-founder</h2>
+          <small className="opacity-35">Personal Working Experience</small>
           <p className="mt-2 text-sm text-white">
-            <span className="mr-2 inline-block">Software Developer</span>
+            <span className="mr-2 text-lg inline-block">Software Developer</span>
             
           </p>
 
           {/* Text container with fixed height */}
-          <div className="mt-2 w-full h-32 overflow-hidden relative">
+          <div className="mt-2 w-full h-auto overflow-hidden relative">
             <div
               className={`transition-all duration-500 ease-in-out ${
                 showMoreCofounder ? "max-h-full opacity-100" : "max-h-0 opacity-0"
@@ -165,7 +168,7 @@ const Page = () => {
                 {cofounderText.map((text, index) => (
                   <span
                     key={index}
-                    className={`text-sm ${
+                    className={`text-lg ${
                       showMoreCofounder
                         ? "text-white opacity-100"
                         : "text-gray-500 opacity-70"
@@ -203,7 +206,7 @@ const Page = () => {
 
     {/* Approach 1 */}
     <div className="p-6 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between">
-      <h3 className="text-2xl font-semibold text-yellow-400 mb-4">Approach 1: Direct & Dedicated Collaboration</h3>
+      <h3 className="text-3xl font-semibold text-blue-500 mb-4">Approach 1: Direct & Dedicated Collaboration</h3>
       <p className="text-[19px] mb-4">
         At Googenix, we believe in a hands-on approach. Once we understand your requirements, we assign a dedicated team of 50+ highly skilled professionals who will immediately start working on your project. Throughout the process, we keep you updated at every step, ensuring you are always in the loop and your expectations are met without compromise. We work closely with you, ensuring that the solution is tailored perfectly to your needs.
       </p>
@@ -222,7 +225,7 @@ const Page = () => {
 
     {/* Approach 2 */}
     <div className="p-6 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between">
-      <h3 className="text-2xl font-semibold text-yellow-400 mb-4">Approach 2: Best of India’s Talent</h3>
+      <h3 className="text-3xl font-semibold text-blue-500 mb-4">Approach 2: Best of India’s Talent</h3>
       <p className="text-lg mb-4">
         India is home to some of the most intelligent, creative, and cost-effective developers and designers. With this in mind, we bring the best talent right to your doorstep. After understanding your requirements clearly, our team at Googenix will select the finest professionals from India to work on your project. You don’t need to worry about anything—our team will handle everything from start to finish. You can focus on growing your business while we manage all the details of your project, delivering exceptional results, on time, and within budget.
       </p>
@@ -324,26 +327,6 @@ const Page = () => {
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </section>
@@ -520,9 +503,9 @@ const Page = () => {
                 <img
                   loading="lazy"
                   className="object-contain"
-                  src="https://cdn.relinns.com/assets/badges/client-badges/authentic.svg"
-                  alt="Authentic Drilling logo"
-                  style={{ width: "150px", height: "100px" }}
+                  src="https://cdn.relinns.com/assets/images/home-almas.svg"
+                  
+                  style={{ width: "200px", height: "100px" , filter: "invert(1)" }}
                 />
               </div>
               <div data-aos="zoom-in" data-aos-once="true" data-aos-delay="100" className="badge aos-init aos-animate">
@@ -538,8 +521,9 @@ const Page = () => {
                 <img
                   loading="lazy"
                   className="object-contain"
-                  src="https://cdn.relinns.com/assets/badges/client-badges/the-university.svg"
+                  src="https://cdn.relinns.com/assets/images/home-sanesa.svg"
                   alt="University of California logo"
+                  style={{ width: "200px", height: "100px" , filter: "invert(1)" }}
                 />
               </div>
               <div
@@ -551,9 +535,9 @@ const Page = () => {
   <img
     loading="lazy"
     className="object-contain"
-    src="https://cdn.relinns.com/assets/badges/client-badges/int.svg"
+    src="https://cdn.relinns.com/assets/images/home-eventure.svg"
     alt="Intervue logo"
-    style={{ height: "100px", position: "relative", left: "-40px" }}
+    style={{ height: "100px", position: "relative", left: "-5px" , filter: "invert(1)" }}
   />
 </div>
 
@@ -561,9 +545,9 @@ const Page = () => {
                 <img
                   loading="lazy"
                   className="object-contain"
-                  src="https://cdn.relinns.com/assets/badges/client-badges/medo-plus.svg"
+                  src="https://cdn.relinns.com/assets/images/home-educo-global.svg"
                   alt="Medoplus"
-                  style={{ height: "70px"  }}
+                  style={{ height: "110px" }}
                 />
               </div>
               {/* Repeat for the remaining images */}
@@ -571,25 +555,27 @@ const Page = () => {
                 <img
                   loading="lazy"
                   className="object-contain"
-                  src="https://cdn.relinns.com/assets/badges/client-badges/ministry-of-education.svg"
+                  src="/alpino.svg"
                   alt="UAE Ministry of Education logo"
-                  style={{  height:"100px"}}
+                  style={{ width: "140px", height: "100px" }}
                 />
               </div>
               <div data-aos="zoom-in" data-aos-once="true" data-aos-delay="100" className="badge aos-init aos-animate">
                 <img
                   loading="lazy"
                   className="object-contain"
-                  src="https://cdn.relinns.com/assets/badges/client-badges/zircle.svg"
+                  src="/stage.webp"
                   alt="Zircle logo"
+                  style={{ width: "150px", height: "100px" }}
                 />
               </div>
               <div data-aos="zoom-in" data-aos-once="true" data-aos-delay="100" className="badge aos-init aos-animate">
                 <img
                   loading="lazy"
                   className="object-contain"
-                  src="https://cdn.relinns.com/assets/badges/client-badges/manchester-city.svg"
+                  src="/ZEE.png"
                   alt="Manchester City logo"
+                  style={{ width: "160px", height: "90px" }}
                 />
               </div>
               <div data-aos="zoom-in" data-aos-once="true" data-aos-delay="100" className="badge aos-init aos-animate">

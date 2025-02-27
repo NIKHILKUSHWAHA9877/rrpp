@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap');
 
-body{
+/* body{
     font-family: "Mulish", sans-serif !important;
 background-color: black;
-
-}
+overflow-x: hidden;
+} */
 
 .abtmain{
 
@@ -71,4 +71,17 @@ background-color: black;
   .card-container .card-content .card-btn:active {
     transform: scale(1);
   }
+
+
+
+.marquee-containerrr{
+
+margin-top: 120px;
+overflow: hidden;
+
+}
+
+
+  
+    
   

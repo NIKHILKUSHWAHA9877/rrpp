@@ -31,7 +31,7 @@ const Layout: React.FC = () => {
                     <div className="stack">
                         <div className="card">
                             <div className="image">
-                                <div className='tr'> <img src="https://cdn.relinns.com/assets/images/home-rt-integrity-logo.png" alt="Logo" className="logo" />
+                                <div className='tr'> <img src="https://cdn.relinns.com/assets/images/home-rt-integrity-logo.png" alt="Logo" className="logo5" />
                                     <h2>Detailed Brand Analysis</h2></div>
 
                                 <ul className='ju'>
@@ -44,7 +44,7 @@ const Layout: React.FC = () => {
 
                         <div className="card">
                             <div className="image">
-                                <div className='tr'>  <img src="https://cdn.relinns.com/assets/images/home-rt-collaboration-logo.png" alt="Logo" className="logo" />
+                                <div className='tr'>  <img src="https://cdn.relinns.com/assets/images/home-rt-collaboration-logo.png" alt="Logo" className="logo5" />
                                     <h2>Most Affordable Packages</h2></div>
 
                                 <ul className='ju'>
@@ -57,7 +57,7 @@ const Layout: React.FC = () => {
 
                         <div className="card">
                             <div className="image">
-                                <div className='tr'>    <img src="https://cdn.relinns.com/assets/images/home-rt-responsibility-logo.png" alt="Logo" className="logo" />
+                                <div className='tr'>    <img src="https://cdn.relinns.com/assets/images/home-rt-responsibility-logo.png" alt="Logo" className="logo5" />
                                     <h2>Experienced Designers</h2></div>
 
                                 <ul className='ju'>
@@ -70,7 +70,7 @@ const Layout: React.FC = () => {
 
                         <div className="card">
                             <div className="image">
-                                <div className='tr'>  <img src="https://cdn.relinns.com/assets/images/home-rt-taking-initiative-logo.png" alt="Logo" className="logo" />
+                                <div className='tr'>  <img src="https://cdn.relinns.com/assets/images/home-rt-taking-initiative-logo.png" alt="Logo" className="logo5" />
                                     <h2>Multiple Design Concepts</h2> </div>
 
                                 <ul className='ju'>
@@ -83,7 +83,7 @@ const Layout: React.FC = () => {
 
                         <div className="card">
                             <div className="image">
-                                <div className='tr'> <img src="https://cdn.relinns.com/assets/images/home-rt-excellence-logo.png" alt="Logo" className="logo" />
+                                <div className='tr'> <img src="https://cdn.relinns.com/assets/images/home-rt-excellence-logo.png" alt="Logo" className="logo5" />
                                     <h2>4.8/5 rating</h2></div>
 
                                 <ul className='ju'>
@@ -99,7 +99,7 @@ const Layout: React.FC = () => {
 
                         <div className="card">
                             <div className="image">
-                                <div className='tr'><img src="https://cdn.relinns.com/assets/images/home-innovation-logo.png" alt="Logo" className="logo" />
+                                <div className='tr'><img src="https://cdn.relinns.com/assets/images/home-innovation-logo.png" alt="Logo" className="logo5" />
                                     <h2>24/7 creativity</h2>
                                 </div>
 

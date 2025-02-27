@@ -3,7 +3,7 @@
 import React, { useState , useEffect , useRef } from 'react';
 import "./logo.css"
 import Londa from './londa';
-import { renderCanvas } from '@/components/hero/renderCanvas';
+import { renderCanvas } from './renderCanvas';
 // Define the component to display the list of books (images)
 const BookList: React.FC = () => {
 
@@ -39,7 +39,7 @@ const BookList: React.FC = () => {
 
       <div>
         {/* Canvas for the animation */}
-<canvas id="canvas"></canvas>
+<canvas id="canvas6"></canvas>
 
         {/* Display a modal with the clicked image */}
         {selectedImage && (
