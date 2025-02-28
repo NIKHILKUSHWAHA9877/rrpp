@@ -94,7 +94,7 @@ const cardData = [
     link: "/dashboard/logoRoute",
     backContent: {
       images: ["/lgoBck.jpg"],
-        backgroundColor: "#ffcc00",  // Custom background color
+        backgroundColor: "white",  // Custom background color
         imageSize: { width: "100%", height: "250px" },
       text: [<h2 className="thDh">WHY WORK WITH US?</h2>,
         <p className="thDp">🎨 Your brand’s first impression matters! We craft custom logos & graphics that capture your identity and leave a lasting impact.</p>,
@@ -110,33 +110,43 @@ const cardData = [
     title: "Boost & Rank – SEO, Ads & Listings 🚀",
     description:
       "Get ahead of the competition with our SEO, Paid Ads, and E-commerce Listing Optimization services. We ensure your brand gets maximum visibility, drives high-intent traffic, and converts visitors into loyal customers. Better rankings, better sales, better ROI!",
-    imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-three.png",
+    imageUrl: "/seoo.webp",
+    imageWidth: "220px", 
+    imageHeight: "260px",
     link: "/dashboard/error",
     backContent: {
       images: [
-        "/",
-        "https://cdn.relinns.com/assets/images/back-image-2.png"],
-        backgroundColor: "#ffcc00",  // Custom background color
+        "/notebook.jpg"],
+        backgroundColor: "white",  // Custom background color
         imageSize: { width: "100%", height: "200px" },
-      text: "Here’s some more information about our Custom Software Development services. We provide scalable and customized solutions for your business."
+        
+        text: [<h2 className="thDh">WHY WORK WITH US?</h2>,
+          <p className="thDp">🎨If you're looking for the best SEO Services for your business, Googenix is the perfect choice. We have over two decades of experience in the SEO industry, and we know exactly how to get your website rank in Google.
+</p>,
+          <p className="thDp">🔥PAID ADVERTISING (PPC) SERVICES Googenix’s PPC services are designed to help you create a successful advertising campaign that delivers the desired results.</p>,
+          <p className="thDp">✨INCREASED ORGANIC REVENUE BY 47% Our Ecommerce Listings and SEO strategies
+  </p>,]
     },// Example route for this card
   },
 
 
 
   {
-    title: "AI Model Development",
+    title: "AI Powered Business Development and Marketing services 📈",
     description:
-      "We shape AI algorithms & ML models to enhance data analysis, automate processes, & predict outcomes.",
-    imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-six.png",
+      "",
+    imageUrl: "/aien.jpeg",
+    imageWidth: "100%", 
+    imageHeight: "380px",
     link: "/dashboard/error",
     backContent: {
       images: [
-        "https://cdn.relinns.com/assets/images/back-image-1.png",
-        "https://cdn.relinns.com/assets/images/back-image-2.png"],
-        backgroundColor: "#ffcc00",  // Custom background color
-        imageSize: { width: "100%", height: "200px" },
-      text: "Here’s some more information about our Custom Software Development services. We provide scalable and customized solutions for your business."
+        "/aib.jpeg",
+        ],
+        backgroundColor: "white",  // Custom background color
+        imageSize: { width: "100%", height: "480px" },
+
+        text: [""]
     }, // Example route for this card
   },
 
@@ -290,6 +300,7 @@ const GridCards = () => {
               width: hoveredDetails.backContent.imageSize.width,  // Use card's image width
               height: hoveredDetails.backContent.imageSize.height,  // Use card's image height
               objectFit: 'cover',
+              opacity: hoveredDetails.backContent.imageOpacity || 1,
             }}
           />
         ))}

@@ -40,43 +40,6 @@ const Testimonials: React.FC = () => {
 
 
 
-  // Separate useEffect for last testimonial highlight
-  
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const section = document.querySelector(".testimonial-item");
-  //     if (!section) return;
-
-  //     const bounding = section.getBoundingClientRect();
-  //     const viewportHeight = window.innerHeight;
-
-  //     // First span highlights when it enters viewport
-  //     if (bounding.top < viewportHeight * 0.7 && !highlightFirst) {
-  //       setHighlightFirst(true);
-  //       setScrollCount(0); // Reset scroll counter for second span
-  //     }
-
-  //     // Count scrolls after first span is highlighted
-  //     if (highlightFirst && !highlightSecond) {
-  //       setScrollCount((prev) => prev + 1);
-
-  //       // After 3 scrolls, second span highlights
-  //       if (scrollCount >= 5) {
-  //         setHighlightSecond(true);
-  //       }
-  //     }
-
-  //     // Reset effect when scrolling out of section
-  //     if (bounding.bottom < 0 || bounding.top > viewportHeight) {
-  //       setHighlightFirst(false);
-  //       setHighlightSecond(false);
-  //       setScrollCount(0); // Reset scroll count
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [highlightFirst, highlightSecond, scrollCount]);
   useEffect(() => {
     if (!firstRef.current || !secondRef.current) return;
 
@@ -240,7 +203,7 @@ const Testimonials: React.FC = () => {
          ----These guys are highly reliable, always delivering on time and with high quality. Their attention to detail, professionalism, and responsiveness contribute to our success.
     </div>
         <figcaption>
-          <div><div><h3>Black Panther</h3></div></div>
+          <div><div><h3>Professionalism</h3></div></div>
         </figcaption>
       </figure>
 

@@ -200,9 +200,16 @@ export const FloatingNav: React.FC = () => {
 
         {/* Get in Touch Button (Desktop) */}
         <div className="hidden md:block">
+        <a 
+  href="https://wa.me/919877851595?text=Hello_Googenix%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20this%3F" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ textDecoration: 'none', color: 'inherit' }} // Keeps the original text styling
+>
         <Button className="custom-button border text-white px-6 py-2 transition">
     Get in Touch
 </Button>
+</a>
         </div>
       </div>
 
@@ -296,9 +303,13 @@ export const FloatingNav: React.FC = () => {
     ))}
 
     {/* Get in Touch Button (Mobile) */}
-    <Button className="w-full border border-green-400 text-white rounded-full hover:bg-green-500 transition mt-2 text-xs px-4 py-2">
-      Get in Touch
-    </Button>
+    <Button
+  className="w-full border"
+  onClick={() => (window.location.href = "https://wa.me/919877851595?text=Hello%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20this%3F")}
+>
+  Get in Touch
+</Button>
+
   </div>
 )}
 

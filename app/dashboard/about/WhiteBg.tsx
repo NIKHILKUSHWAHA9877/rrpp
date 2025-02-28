@@ -31,9 +31,6 @@ const WhiteBg: FC<WhiteBgProps> = ({ className = '', style, children }) => {
 
 
 
-      <img src="/bottomG.jpg" alt="Logo" className="bottomG" />
-
-
       <div className="absolute bottom-0 left-0 w-full px-4 py-3 flex flex-col md:flex-row justify-between items-center overflow-hidden text-center md:text-left">
   {/* Copyright Section */}
   <p className="text-gray-600 text-xs md:text-sm font-light md:font-normal fancy2">

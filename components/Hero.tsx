@@ -135,17 +135,20 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Build AI with Us Button */}
-          <div className="pt-8 sm:pt-16 md:pt-24 pb-0 md:pb-0 -mb-14">
+       {/* Build AI with Us Button */}
+<div className="pt-8 sm:pt-16 md:pt-24 pb-0 md:pb-0 -mb-14">
   <div className="buttons-wrapper w-auto min-w-[200px] mx-auto">
     <a 
-      href="#about"
+      href="https://wa.me/919877851595?text=Hello_Googenix%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20this%3F" 
+      target="_blank" 
+      rel="noopener noreferrer"
       className="sec-button pointer bg-[#38413A] text-sm sm:text-base md:text-xl text-[#e0e4e1] font-regular flex items-center justify-center cursor-pointer py-2 px-4 sm:py-4 sm:px-7 rounded-3xl border-2 border-[#6D3776] hover:shadow-[0_0_15px_4px_rgba(255,255,255,0.4)] transition-all duration-300"
     >
       <span className="cursor-pointer">Book Our Creatives</span>
     </a>
   </div>
 </div>
+
 
         </div>
       </div>

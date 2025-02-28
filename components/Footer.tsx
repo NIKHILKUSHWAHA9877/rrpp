@@ -97,73 +97,59 @@ const Footer = () => {
 
                     {/* Right side: Form */}
                     <div className="portfolio-form-right">
-                        <form id="LpForm" method="post" name="LpForm">
-                            <h4>Let's Build It Together</h4>
-                            <p className="LpForm-p">Get Free Consultation From Experts</p>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
-                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
-                                </svg>
-                                <input type="text" placeholder="Enter Name" id="name" name="NAME" />
-                            </span>
+    <form 
+        id="LpForm" 
+        method="POST" 
+        name="LpForm"
+        action="https://formspree.io/f/xzzdndwg" // Your Formspree link
+        encType="multipart/form-data"
+    >
+        <h4>Let's Build It Together</h4>
+        <p className="LpForm-p">Get Free Consultation From Experts</p>
+        
+        <span>
+            <input type="text" placeholder="Enter Name" id="name" name="NAME" required />
+        </span>
 
-                            <span>
-                                <span className="prefix"/>
-                                <input type="text" placeholder="Enter Phone Number" id="phone" name="NUMBER" />
-                            </span>
+        <span>
+            <input type="text" placeholder="Enter Phone Number" id="phone" name="NUMBER" required />
+        </span>
 
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
-                                </svg>
-                                <input type="text" placeholder="Enter Location" id="location" name="CITY" />
-                            </span>
-                            <div className="form-group"> 
-  
-  <div className="requirements-box">
-    <textarea 
-      id="requirements" 
-      name="requirements" 
-      className="requirements-textarea"
-      placeholder="Write Your Requirements here"
-    ></textarea>
-    
-    {/* File Upload (Hidden) */}
-    <input 
-      type="file" 
-      id="fileUpload" 
-      className="file-input" 
-      multiple 
-    />
-    
-    {/* Browse Files Button Inside Textarea */}
-    <label htmlFor="fileUpload" className="file-upload-label">
-      BROWSE FILES
-    </label>
-  </div>
+        <span>
+            <input type="text" placeholder="Enter Location" id="location" name="CITY" required />
+        </span>
+
+        <div className="form-group"> 
+            <div className="requirements-box">
+                <textarea 
+                    id="requirements" 
+                    name="requirements" 
+                    className="requirements-textarea"
+                    placeholder="Write Your Requirements here"
+                ></textarea>
+
+                {/* File Upload (Hidden) */}
+                <input 
+                    type="file" 
+                    id="fileUpload" 
+                    className="file-input" 
+                    name="attachment" 
+                    multiple
+                />
+
+                {/* Browse Files Button */}
+                <label htmlFor="fileUpload" className="file-upload-label">
+                    BROWSE FILES
+                </label>
+            </div>
+        </div>
+
+        <button className="dev-submit" type="submit">
+            <div className="button-text">Submit</div>
+        </button>
+    </form>
 </div>
-
-
-                            {/* <input type="hidden" id="submissionDate" name="submissionDate" />
-                            <div className="cheak-box-class">
-                                <div className="chekbox-sec">
-                                    
-                                    <input
-                                        type="checkbox"
-                                        checked={true} 
-                                        required
-                                    />
-                                    <label>By engaging Visible Gain, you consent to our Privacy Policy</label>
-                                </div>
-                            </div> */}
-
-                            <button className="dev-submit" type="submit">
-                                <div className="button-text">Submit</div>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+</div>
             </section>
 
             <div className="text-white-200 md:mt-10 my-5 text-center title-sec">
@@ -180,9 +166,17 @@ const Footer = () => {
 
      
 
-            <article>
-    <h1>OK,let's do it</h1>
+            <a 
+  href="https://wa.me/919877851595?text=Hello_Googenix%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20this%3F" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ textDecoration: 'none', color: 'inherit' }} // Keeps the original text styling
+>
+  <article>
+    <h1>OK, let's do it</h1>
   </article>
+</a>
+
         </footer>
     );
 }

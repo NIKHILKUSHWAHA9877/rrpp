@@ -69,10 +69,16 @@ const Page = () => {
     <div className="bg-black abtmain">
       {/* The Googenix Story Section */}
       <section className="text-center py-16">
-        <h1 className="text-6xl mt-28 text-white">The Googenix Story</h1>
-        <p className="mt-4 max-w-2xl mx-auto text-xl text-white">
+        <h1 className="text-6xl mt-28 text-white">
+        The Googenix <span className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#b23ed5] to-[#AA55B5]">Story</span>
+          
+           </h1>
+        <hr className="fade-2" />
+      
+        <p className="mt-4 max-w-2xl mx-auto text-xl text-white  ">
           Our repertoire caters to everything digital and necessary for today’s businesses. Our work culture mirrors our digital solutions, forged for reliability, innovation, & speed. It starts with a line of code and ends with our clients' smiles.
         </p>
+       
       </section>
 
       {/* Founder and Cofounder Section */}
@@ -197,7 +203,9 @@ const Page = () => {
 
       {/* The rest of the sections */}
       <section className="text-center py-16 bg-black text-white">
-  <h2 className="text-5xl font-semibold">How We Work for You at Googenix</h2>
+  <h2 className="text-5xl font-semibold"> <span
+className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#338e62] to-[#66CDAA] transition-all">How We Work for</span> You at Googenix</h2>
+  <hr className="fade-3"/>
   <p className="mt-4 text-xl max-w-3xl mx-auto">
     At Googenix, we follow two distinct, yet effective approaches to ensure your project runs smoothly and successfully. Here’s how we guarantee top-tier results:
   </p>
@@ -248,8 +256,10 @@ const Page = () => {
 
   {/* Why Choose Googenix Section with 6 Grid Cards */}
   <div className="mt-36 text-center">
-    <h3 className="text-5xl font-semibold mb-4">Why Choose Googenix?</h3>
+    <h3 className="text-5xl font-semibold mb-4">
+    <span className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#b23ed5] to-[#AA55B5]">Why Choose</span> Googenix?</h3>
 
+    <hr className="fade-2" />
 
     {/* Grid of 6 Cards */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center text-left p-10">
@@ -360,7 +370,8 @@ const Page = () => {
       {/* Heading Section */}
       <div className="text-center mb-8">
         <h2 className="text-5xl font-bold text-white">
-          Delivering Success <br/> Consistently And At Scale
+        <span className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[#5a6042] to-[#b4b98d]">Delivering Success</span> <br/> Consistently And At Scale
+
         </h2>
       </div>
 
@@ -434,11 +445,12 @@ const Page = () => {
 
 
       <section className="py-16 px-8">
-        <h2 className="text-5xl  text-center text-white">Our Vision & Mission Statement</h2>
+        <h2 className="text-5xl  text-center text-white">
+        <span className="relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-[rgb(51,58,110)] via-[#7A8BD1] to-[#6A80C3] transition-all">Our Vision & Mission</span> Statement</h2>
         <h3 className="text-2xl font-semibold text-center mt-4 text-white">
           App Development Process which Results in Engaging Apps
         </h3>
-
+        <hr className="fade-2" />
         <div className="grid grid-cols-3 gap-8 mt-8">
           <div className="text-center">
             <img
