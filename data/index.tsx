@@ -1,6 +1,4 @@
-// "use client"; // Required for Next.js Client Component
 
-import { Button } from "@/components/ui/MovingBorders";
 import { IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix } from "@/components/Icons";
 
 export const navItems = [

@@ -9,6 +9,7 @@ import ReactCompareImage from "react-compare-image";
 
 // Define card data dynamically
 const cardData = [
+ 
   {
     title: "From Edits to Voice: Full Video Solutions",
     description:
@@ -23,9 +24,9 @@ const cardData = [
         backgroundColor: "#ffcc00",  // Custom background color
         imageSize: { width: "70%", height: "100%" },
       text: [
-        <h2 className="thDh">DO YOU KNOW?</h2>,
+        <h2 className="thDh">WHY WORK WITH US?</h2>,
         <p className="thDp">🔝With over <b>400 million</b> views on YouTube, our work speaks for itself. We've partnered with industry giants like Amazon Prime Video, Stage OTT, and many more, delivering high-quality, impactful content that truly engages audiences. 🎥✨</p>,
-        <p className="thDp">🏆Googenix is Trusted by startups and enterprises alike for stunning work.
+        <p className="thDp" id="carddd">🏆Googenix is Trusted by startups and enterprises alike for stunning work.
 </p>,
       ],
     },
@@ -36,17 +37,25 @@ const cardData = [
   {
     title: "Low Code Development",
     description:
-      "Our solutions are low on code but high on performance, resulting in faster & efficient apps.",
+      "Our solutions are low on code but high on performance, resulting in faster & efficient apps and websites.",
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-four.png",
     imageWidth: "100%",
     imageHeight: "100%",  // Add specific width
     link: "/services/low-code-development",
     backContent: {
       images: [
-        "" ],
-        backgroundColor: "#ffcc00",  // Custom background color
-        imageSize: { width: "70%", height: "100%" },
-      text: "software dev"
+        "/soft.webp" ],
+        backgroundColor: "skyblue",  // Custom background color
+        imageSize: { width: "87%", height: "100%" },
+        text: [
+          <h2 className="thDh">WHY WORK WITH US?</h2>,
+          <p className="thDp">🚀We have 100+ ready-made templates for shopping, delivery, and business apps. Once we discuss your needs, we start immediately! </p>,
+          <p className="thDp">⚡Our pre-built solutions are fully customizable to match your brand, ensuring a unique look & feel without the wait.
+  </p>,
+  <p className="thDp">💰Get a professional app 5x faster than traditional development, saving time & money while maintaining top-notch quality. 
+  </p>
+  ,
+        ],
     },// Example route for this card
   },
 
@@ -65,7 +74,7 @@ const cardData = [
       backgroundColor: "#A01F29",  // Custom background color
       imageSize: { width: "85%", height: "100%" },
       text: [
-        <h2 className="thDh">DO YOU KNOW?</h2>,
+        <h2 className="thDh">WHY WORK WITH US?</h2>,
         <p className="thDp">✅ We Successfully collaborated with 11+ clients on high-quality 3D projects.</p>,
         <p className="thDp">🔁 Proud to have a 90% client retention rate, showcasing our commitment to quality and satisfaction.</p>,
         <p className="thDp">🏆Googenix is Trusted by startups and enterprises alike for stunning 3D visuals.
@@ -87,7 +96,7 @@ const cardData = [
       images: ["/lgoBck.jpg"],
         backgroundColor: "#ffcc00",  // Custom background color
         imageSize: { width: "100%", height: "250px" },
-      text: [<h2 className="thDh">DO YOU KNOW?</h2>,
+      text: [<h2 className="thDh">WHY WORK WITH US?</h2>,
         <p className="thDp">🎨 Your brand’s first impression matters! We craft custom logos & graphics that capture your identity and leave a lasting impact.</p>,
         <p className="thDp">🔥 50+ brands trust Googenix for visually stunning, memorable designs that set them apart.</p>,
         <p className="thDp">✨ More options, better choices! Our designers don’t just create one logo—we provide multiple unique designs so you can choose the perfect fit for your brand.
@@ -98,11 +107,11 @@ const cardData = [
 
 
   {
-    title: "Generative AI Consulting",
+    title: "Boost & Rank – SEO, Ads & Listings 🚀",
     description:
-      "We are your pathfinders in the generative AI age, helping you strategize the perfect blueprint for all things AI.",
+      "Get ahead of the competition with our SEO, Paid Ads, and E-commerce Listing Optimization services. We ensure your brand gets maximum visibility, drives high-intent traffic, and converts visitors into loyal customers. Better rankings, better sales, better ROI!",
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-three.png",
-    link: "/services/generative-ai-consulting",
+    link: "/dashboard/error",
     backContent: {
       images: [
         "/",
@@ -120,7 +129,7 @@ const cardData = [
     description:
       "We shape AI algorithms & ML models to enhance data analysis, automate processes, & predict outcomes.",
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-six.png",
-    link: "/services/ai-model-development",
+    link: "/dashboard/error",
     backContent: {
       images: [
         "https://cdn.relinns.com/assets/images/back-image-1.png",
@@ -336,9 +345,13 @@ const GridCards = () => {
               </div>
             </Link>
 
+
           </li>
+          
         );
+        
       })}
+      
     </ul>
   );
 };
