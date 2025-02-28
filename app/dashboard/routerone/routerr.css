@@ -75,17 +75,21 @@ overflow-x: hidden;
     .fancy {
       font-size: 0.9rem; 
     }
-     
+     body{
+/* overflow:  hidden !important; */
+
+     }
   }
 .marquee-containerrrO{
 position: absolute;
-overflow: hidden;
-
+bottom: 2%; 
+left: 0;
+width: 100%;
 }
 
 .marqueeOne h2{
 margin-top: 190px;
-overflow: hidden;
+/* overflow: hidden !important; */
 }
 
 

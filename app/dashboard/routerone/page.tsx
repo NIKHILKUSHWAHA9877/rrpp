@@ -22,9 +22,9 @@ const Projects = () => {
       </ScrollProvider>
       </main>
        <WhiteBg
-        className="w-full h-[85vh] mt-[-120px]" // Keep negative margin to pull up
+        className="w-full h-[85vh] mt-[-120px]" 
         style={{
-          zIndex: 1, // Ensuring it appears above the background but below the main content
+          zIndex: 1, 
           display: "flex",
         }}
       />

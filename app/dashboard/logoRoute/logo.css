@@ -721,7 +721,10 @@ display: flex !important;
 }
 
 .marquee-containerrrr{
-position: absolute;
+  position: absolute;
+  bottom: 2%; 
+  left: 0;
+  width: 100%;
 
 }
 
