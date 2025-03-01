@@ -36,7 +36,7 @@ const cardData = [
     imageUrl: "https://cdn.relinns.com/assets/images/home-what-we-do-four.png",
     imageWidth: "100%",
     imageHeight: "100%",  // Add specific width
-    link: "/services/low-code-development",
+    link: "/dashboard/software",
     backContent: {
       images: [
         "/jut.jpg" ],
