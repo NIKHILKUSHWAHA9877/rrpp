@@ -17,7 +17,7 @@ const sections = [
 export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleButtonClick = (index) => setActiveIndex(index);
+  const handleButtonClick = (index: number) => setActiveIndex(index);
   const handleNext = () => setActiveIndex((prev) => (prev + 1) % sections.length);
   const handlePrev = () => setActiveIndex((prev) => (prev - 1 + sections.length) % sections.length);
 

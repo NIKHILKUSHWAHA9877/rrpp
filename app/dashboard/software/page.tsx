@@ -17,13 +17,13 @@ const images = [
 
 export default function Page() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(0) ;
 
   const [fade, setFade] = useState(false);
 
-  const [selectedIndex, setSelectedIndex] = useState(null); // Track clicked button
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);; // Track clicked button
 
-  const handleButtonClick = (index) => {
+  const handleButtonClick = (index :number) => {
     setSelectedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
@@ -33,7 +33,7 @@ export default function Page() {
 
 
   // Handle smooth image change effect
-  const changeImage = (index) => {
+  const changeImage = (index :number) => {
     setFade(false); // Start fading out
     setTimeout(() => {
       setHoveredIndex(index); // Change image
